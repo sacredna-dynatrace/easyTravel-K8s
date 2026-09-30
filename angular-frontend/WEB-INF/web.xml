@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+    
+  <display-name>CustomerFrontendREST</display-name>
+  <description>dynaTrace EasyTravel demo app REST Service</description>
+  
+  <context-param>
+	<param-name>extension.point.start</param-name>
+	<param-value>lifecycle.frontend.start</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>extension.point.shutdown</param-name>
+	<param-value>lifecycle.frontend.shutdown</param-value>
+  </context-param>
+  
+  <context-param>
+	<param-name>contextConfigLocation</param-name>
+	<param-value>/WEB-INF/spring/root-context.xml</param-value>
+  </context-param>
+  
+  <listener>
+	<listener-class>com.dynatrace.easytravel.spring.CustomLoaderListener</listener-class>
+  </listener>
+  
+  <listener>
+  	<listener-class>com.dynatrace.easytravel.frontend.servlet.ShutdownListener</listener-class>
+  </listener>
+  
+  <listener>
+	<listener-class>com.dynatrace.easytravel.spring.ContextStateListener</listener-class>
+  </listener>
+  
+  <listener>
+    <listener-class>
+        com.dynatrace.easytravel.metrics.MetricsServletInit
+    </listener-class>
+  </listener>
+   
+  <servlet>
+    <servlet-name>Customer Frontend REST Service</servlet-name>
+    <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+    <init-param>
+      <param-name>com.sun.jersey.config.property.packages</param-name>
+      <param-value>
+				com.dynatrace.easytravel.rest.services,
+				com.fasterxml.jackson.jaxrs
+	  </param-value> 
+    </init-param>
+    <!-- CORS only for development -->
+    <init-param>
+  	  <param-name>com.sun.jersey.spi.container.ContainerResponseFilters</param-name>
+  	  <param-value>com.dynatrace.easytravel.rest.services.CorsFilter</param-value>
+	</init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Customer Frontend REST Service</servlet-name>
+    <url-pattern>/easytravel/rest/*</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Redirect all routes from angular app to index.html -->
+  <servlet>
+      <servlet-name>AngularApp</servlet-name>
+      <jsp-file>/index.html</jsp-file>
+  </servlet>
+  
+  <!-- Metrics provider --> 
+  <servlet>
+    <servlet-name>metrics</servlet-name>
+    <servlet-class>com.codahale.metrics.servlets.MetricsServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>threads</servlet-name>
+    <servlet-class>com.codahale.metrics.servlets.ThreadDumpServlet</servlet-class>
+  </servlet>  
+  
+  
+  <servlet-mapping>
+      <servlet-name>AngularApp</servlet-name>
+      <url-pattern>/easytravel/*</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>metrics</servlet-name>
+    <url-pattern>/metrics</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>threads</servlet-name>
+    <url-pattern>/threads</url-pattern>
+  </servlet-mapping>
+  
+  
+</web-app>

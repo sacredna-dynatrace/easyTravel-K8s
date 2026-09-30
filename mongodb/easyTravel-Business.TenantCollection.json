@@ -1,0 +1,37 @@
+[{
+	"_id": "Speed Travel Agency",
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:09.712Z"
+	},
+	"password": "sta",
+	"description": "Online and offline travel booking.",
+	"lastLogin": null
+},
+{
+	"_id": "Personal Travel Inc.",
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:09.761Z"
+	},
+	"password": "pti",
+	"description": "Customzied travel offerings.",
+	"lastLogin": null
+},
+{
+	"_id": "Thomas Chef",
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:09.763Z"
+	},
+	"password": "tch",
+	"description": "Worldwide provider of travels.",
+	"lastLogin": null
+},
+{
+	"_id": "TravelNiche Ltd.",
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:09.765Z"
+	},
+	"password": "tni",
+	"description": "Your provider for customized travel offerings.",
+	"lastLogin": null
+}]
+

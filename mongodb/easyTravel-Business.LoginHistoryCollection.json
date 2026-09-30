@@ -1,0 +1,9501 @@
+[{
+	"_id": 385537956,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.280Z"
+	},
+	"loginDate": {
+		"$date": "2019-07-14T20:58:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -832216984,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.310Z"
+	},
+	"loginDate": {
+		"$date": "2019-12-28T04:32:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 227917605,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.310Z"
+	},
+	"loginDate": {
+		"$date": "2019-05-06T20:41:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -431053624,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.310Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-27T19:21:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1653009654,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.311Z"
+	},
+	"loginDate": {
+		"$date": "2019-09-30T16:29:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1253843123,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.311Z"
+	},
+	"loginDate": {
+		"$date": "2020-08-27T02:31:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -730446477,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.311Z"
+	},
+	"loginDate": {
+		"$date": "2020-09-19T10:01:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1857485490,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.311Z"
+	},
+	"loginDate": {
+		"$date": "2020-03-31T09:59:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1458526844,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.312Z"
+	},
+	"loginDate": {
+		"$date": "2019-06-10T12:15:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1693348485,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.312Z"
+	},
+	"loginDate": {
+		"$date": "2019-05-09T00:18:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1469006483,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.312Z"
+	},
+	"loginDate": {
+		"$date": "2020-09-26T15:40:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -194810580,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.312Z"
+	},
+	"loginDate": {
+		"$date": "2020-07-03T01:02:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -777624827,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.313Z"
+	},
+	"loginDate": {
+		"$date": "2019-05-14T12:06:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -306082164,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.313Z"
+	},
+	"loginDate": {
+		"$date": "2020-07-27T01:19:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1855786640,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.313Z"
+	},
+	"loginDate": {
+		"$date": "2021-01-28T11:44:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1831423269,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.313Z"
+	},
+	"loginDate": {
+		"$date": "2019-04-23T00:41:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 877000101,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.314Z"
+	},
+	"loginDate": {
+		"$date": "2019-04-24T06:37:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1826116623,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.314Z"
+	},
+	"loginDate": {
+		"$date": "2020-02-16T21:24:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 832962577,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.314Z"
+	},
+	"loginDate": {
+		"$date": "2020-12-26T19:38:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -544592980,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.315Z"
+	},
+	"loginDate": {
+		"$date": "2020-08-12T00:02:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1808875210,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.315Z"
+	},
+	"loginDate": {
+		"$date": "2019-09-15T22:39:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1892807177,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.315Z"
+	},
+	"loginDate": {
+		"$date": "2019-12-01T22:42:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -123496247,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.315Z"
+	},
+	"loginDate": {
+		"$date": "2019-11-05T12:52:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 454766643,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.316Z"
+	},
+	"loginDate": {
+		"$date": "2020-09-03T19:47:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1737984271,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.316Z"
+	},
+	"loginDate": {
+		"$date": "2021-01-10T21:27:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -2052285298,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.316Z"
+	},
+	"loginDate": {
+		"$date": "2020-04-09T23:09:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -269725394,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.316Z"
+	},
+	"loginDate": {
+		"$date": "2020-04-05T19:40:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1411217619,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.317Z"
+	},
+	"loginDate": {
+		"$date": "2020-08-19T03:30:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1535034714,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.317Z"
+	},
+	"loginDate": {
+		"$date": "2019-03-25T12:16:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1058553834,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.318Z"
+	},
+	"loginDate": {
+		"$date": "2019-09-07T15:30:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1487620856,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.318Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-01T18:07:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 2016099141,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.318Z"
+	},
+	"loginDate": {
+		"$date": "2019-05-15T13:08:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1188013165,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.319Z"
+	},
+	"loginDate": {
+		"$date": "2020-06-01T11:43:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -413456698,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.319Z"
+	},
+	"loginDate": {
+		"$date": "2019-03-25T22:19:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -117821051,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.319Z"
+	},
+	"loginDate": {
+		"$date": "2019-05-05T03:06:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 951602340,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.319Z"
+	},
+	"loginDate": {
+		"$date": "2019-06-27T10:42:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1640966536,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.320Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-28T13:55:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1113441417,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.320Z"
+	},
+	"loginDate": {
+		"$date": "2019-11-18T19:50:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1164714602,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.321Z"
+	},
+	"loginDate": {
+		"$date": "2019-10-16T04:06:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1506286267,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.321Z"
+	},
+	"loginDate": {
+		"$date": "2019-05-11T00:36:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 453878768,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.321Z"
+	},
+	"loginDate": {
+		"$date": "2021-02-01T13:24:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1828800776,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.322Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-15T19:43:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -165552699,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.322Z"
+	},
+	"loginDate": {
+		"$date": "2019-04-17T11:20:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 991184079,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.322Z"
+	},
+	"loginDate": {
+		"$date": "2020-02-14T23:26:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -415492499,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.323Z"
+	},
+	"loginDate": {
+		"$date": "2020-06-15T07:43:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -98769263,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.323Z"
+	},
+	"loginDate": {
+		"$date": "2020-11-29T05:02:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 177870602,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.324Z"
+	},
+	"loginDate": {
+		"$date": "2019-09-13T17:33:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -299098225,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.324Z"
+	},
+	"loginDate": {
+		"$date": "2020-03-07T22:40:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 2051596210,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.324Z"
+	},
+	"loginDate": {
+		"$date": "2020-11-15T13:56:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -848475411,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.325Z"
+	},
+	"loginDate": {
+		"$date": "2020-05-30T02:59:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -688188216,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.325Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-30T22:01:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1762004645,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.325Z"
+	},
+	"loginDate": {
+		"$date": "2019-05-23T11:17:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1813846360,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.325Z"
+	},
+	"loginDate": {
+		"$date": "2019-12-24T14:46:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1096399953,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.326Z"
+	},
+	"loginDate": {
+		"$date": "2020-02-19T00:11:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1630732813,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.326Z"
+	},
+	"loginDate": {
+		"$date": "2020-06-14T11:34:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1497281264,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.327Z"
+	},
+	"loginDate": {
+		"$date": "2021-01-20T02:52:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1521468216,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.327Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-30T14:33:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1691676868,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.327Z"
+	},
+	"loginDate": {
+		"$date": "2019-06-29T07:49:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 288366597,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.328Z"
+	},
+	"loginDate": {
+		"$date": "2019-05-13T07:10:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1575668723,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.328Z"
+	},
+	"loginDate": {
+		"$date": "2020-09-09T01:17:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -432439899,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.329Z"
+	},
+	"loginDate": {
+		"$date": "2019-04-23T18:53:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -832207124,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.329Z"
+	},
+	"loginDate": {
+		"$date": "2020-08-07T02:00:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 705980458,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.329Z"
+	},
+	"loginDate": {
+		"$date": "2019-10-11T04:32:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 592318925,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.330Z"
+	},
+	"loginDate": {
+		"$date": "2020-05-22T15:28:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -142632913,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.330Z"
+	},
+	"loginDate": {
+		"$date": "2020-03-06T09:35:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1465401004,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.331Z"
+	},
+	"loginDate": {
+		"$date": "2020-08-17T13:30:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1026971469,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.331Z"
+	},
+	"loginDate": {
+		"$date": "2020-08-29T11:03:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1021247220,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.331Z"
+	},
+	"loginDate": {
+		"$date": "2020-08-02T04:51:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -880967634,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.331Z"
+	},
+	"loginDate": {
+		"$date": "2020-03-31T18:44:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 996473576,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.332Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-21T22:12:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 626281318,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.332Z"
+	},
+	"loginDate": {
+		"$date": "2019-03-26T07:38:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1260140996,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.332Z"
+	},
+	"loginDate": {
+		"$date": "2019-06-29T03:57:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 544241769,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.333Z"
+	},
+	"loginDate": {
+		"$date": "2019-11-05T18:51:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1411688843,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.333Z"
+	},
+	"loginDate": {
+		"$date": "2019-08-27T13:16:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -543035547,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.333Z"
+	},
+	"loginDate": {
+		"$date": "2019-05-12T23:43:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1682544342,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.334Z"
+	},
+	"loginDate": {
+		"$date": "2019-09-29T01:44:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1015736053,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.334Z"
+	},
+	"loginDate": {
+		"$date": "2019-07-19T03:52:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 513938693,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.335Z"
+	},
+	"loginDate": {
+		"$date": "2019-05-23T00:06:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1999669423,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.335Z"
+	},
+	"loginDate": {
+		"$date": "2020-11-28T12:00:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -574529399,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.335Z"
+	},
+	"loginDate": {
+		"$date": "2019-11-11T18:46:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1010029688,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.335Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-17T23:15:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1437420267,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.336Z"
+	},
+	"loginDate": {
+		"$date": "2019-08-03T12:13:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1118228890,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.336Z"
+	},
+	"loginDate": {
+		"$date": "2019-03-11T05:38:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -285083762,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.336Z"
+	},
+	"loginDate": {
+		"$date": "2020-03-27T04:37:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1884128300,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.337Z"
+	},
+	"loginDate": {
+		"$date": "2020-08-16T02:46:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1365251784,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.337Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-31T16:25:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -745270901,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.337Z"
+	},
+	"loginDate": {
+		"$date": "2019-08-09T02:36:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1415728590,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.338Z"
+	},
+	"loginDate": {
+		"$date": "2020-11-03T01:28:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1890715210,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.338Z"
+	},
+	"loginDate": {
+		"$date": "2019-09-15T23:23:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 177143114,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.338Z"
+	},
+	"loginDate": {
+		"$date": "2019-09-05T17:07:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1609058197,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.339Z"
+	},
+	"loginDate": {
+		"$date": "2019-07-18T22:33:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 922045009,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.339Z"
+	},
+	"loginDate": {
+		"$date": "2021-01-10T06:48:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 499046029,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.339Z"
+	},
+	"loginDate": {
+		"$date": "2020-05-11T09:14:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 95310962,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.340Z"
+	},
+	"loginDate": {
+		"$date": "2020-11-11T15:26:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1897282384,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.340Z"
+	},
+	"loginDate": {
+		"$date": "2021-02-14T22:13:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 427703243,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.340Z"
+	},
+	"loginDate": {
+		"$date": "2019-08-14T08:34:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -714478039,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.341Z"
+	},
+	"loginDate": {
+		"$date": "2019-11-14T22:29:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 924496432,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.341Z"
+	},
+	"loginDate": {
+		"$date": "2021-02-14T13:30:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 2111925094,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.341Z"
+	},
+	"loginDate": {
+		"$date": "2019-03-17T06:02:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -333427187,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.342Z"
+	},
+	"loginDate": {
+		"$date": "2020-06-13T17:58:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1881170030,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.342Z"
+	},
+	"loginDate": {
+		"$date": "2020-04-14T15:22:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1043676581,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.343Z"
+	},
+	"loginDate": {
+		"$date": "2019-04-16T07:41:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -615545819,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.343Z"
+	},
+	"loginDate": {
+		"$date": "2019-05-25T18:57:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1087994001,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.343Z"
+	},
+	"loginDate": {
+		"$date": "2020-12-25T07:26:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -217058645,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.344Z"
+	},
+	"loginDate": {
+		"$date": "2019-07-27T11:27:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1804068241,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.344Z"
+	},
+	"loginDate": {
+		"$date": "2020-12-12T17:58:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1488709294,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.344Z"
+	},
+	"loginDate": {
+		"$date": "2020-11-06T05:47:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1999608689,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.345Z"
+	},
+	"loginDate": {
+		"$date": "2020-03-10T12:24:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 262089811,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.345Z"
+	},
+	"loginDate": {
+		"$date": "2020-09-24T14:22:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1920775029,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.345Z"
+	},
+	"loginDate": {
+		"$date": "2019-08-08T16:04:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -402279662,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.345Z"
+	},
+	"loginDate": {
+		"$date": "2020-10-23T05:09:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 701464755,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.346Z"
+	},
+	"loginDate": {
+		"$date": "2020-09-08T17:27:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1494833532,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.346Z"
+	},
+	"loginDate": {
+		"$date": "2019-06-04T01:59:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1559211996,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.346Z"
+	},
+	"loginDate": {
+		"$date": "2019-06-12T01:50:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -288257179,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.346Z"
+	},
+	"loginDate": {
+		"$date": "2019-04-30T06:07:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1931647483,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.347Z"
+	},
+	"loginDate": {
+		"$date": "2019-04-10T09:34:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 417551563,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.347Z"
+	},
+	"loginDate": {
+		"$date": "2019-09-02T14:18:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1462163123,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.347Z"
+	},
+	"loginDate": {
+		"$date": "2020-08-27T04:23:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1737809231,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.348Z"
+	},
+	"loginDate": {
+		"$date": "2020-03-07T02:26:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -240795282,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.348Z"
+	},
+	"loginDate": {
+		"$date": "2020-05-07T21:38:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1681537243,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.348Z"
+	},
+	"loginDate": {
+		"$date": "2019-05-26T23:53:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -836643386,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.348Z"
+	},
+	"loginDate": {
+		"$date": "2019-03-19T08:35:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -382137398,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.349Z"
+	},
+	"loginDate": {
+		"$date": "2019-10-10T18:47:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1590764114,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.349Z"
+	},
+	"loginDate": {
+		"$date": "2020-04-08T12:48:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -308623509,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.349Z"
+	},
+	"loginDate": {
+		"$date": "2019-08-12T11:29:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1811753875,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.349Z"
+	},
+	"loginDate": {
+		"$date": "2020-05-15T07:59:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -61435580,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.350Z"
+	},
+	"loginDate": {
+		"$date": "2019-06-09T10:17:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -611408976,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.350Z"
+	},
+	"loginDate": {
+		"$date": "2021-02-10T18:46:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1319093075,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.350Z"
+	},
+	"loginDate": {
+		"$date": "2020-05-17T02:53:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1087054840,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.350Z"
+	},
+	"loginDate": {
+		"$date": "2019-12-28T02:15:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1956743410,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.351Z"
+	},
+	"loginDate": {
+		"$date": "2020-04-05T04:33:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -176206612,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.351Z"
+	},
+	"loginDate": {
+		"$date": "2020-07-03T01:12:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 829181868,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.351Z"
+	},
+	"loginDate": {
+		"$date": "2020-07-22T16:02:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1409210811,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.352Z"
+	},
+	"loginDate": {
+		"$date": "2019-04-12T04:44:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 215724200,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.352Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-18T10:14:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -2081407054,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.352Z"
+	},
+	"loginDate": {
+		"$date": "2020-10-19T09:08:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -507344144,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.353Z"
+	},
+	"loginDate": {
+		"$date": "2021-01-16T03:56:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 844271795,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.353Z"
+	},
+	"loginDate": {
+		"$date": "2020-09-24T19:35:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1138809392,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.353Z"
+	},
+	"loginDate": {
+		"$date": "2021-01-29T14:34:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1347518295,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.353Z"
+	},
+	"loginDate": {
+		"$date": "2019-12-02T08:09:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -778495889,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.354Z"
+	},
+	"loginDate": {
+		"$date": "2020-03-17T09:17:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1255554668,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.354Z"
+	},
+	"loginDate": {
+		"$date": "2020-07-06T19:00:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1478656722,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.354Z"
+	},
+	"loginDate": {
+		"$date": "2020-11-02T12:55:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -2024461084,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.355Z"
+	},
+	"loginDate": {
+		"$date": "2019-05-31T16:16:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1279687816,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.355Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-31T15:39:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 763277037,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.356Z"
+	},
+	"loginDate": {
+		"$date": "2020-06-18T23:15:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 516663441,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.356Z"
+	},
+	"loginDate": {
+		"$date": "2020-12-01T01:02:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -396192699,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.356Z"
+	},
+	"loginDate": {
+		"$date": "2019-04-17T09:16:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -569909677,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.357Z"
+	},
+	"loginDate": {
+		"$date": "2020-08-20T00:14:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -233778074,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.357Z"
+	},
+	"loginDate": {
+		"$date": "2019-03-17T23:30:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -419285385,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.358Z"
+	},
+	"loginDate": {
+		"$date": "2021-03-05T07:17:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 53247827,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.358Z"
+	},
+	"loginDate": {
+		"$date": "2020-09-02T01:42:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 231551506,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.358Z"
+	},
+	"loginDate": {
+		"$date": "2020-11-08T11:41:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 977305932,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.359Z"
+	},
+	"loginDate": {
+		"$date": "2020-07-27T12:49:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 164809617,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.359Z"
+	},
+	"loginDate": {
+		"$date": "2021-01-11T14:30:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 144159310,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.360Z"
+	},
+	"loginDate": {
+		"$date": "2020-04-12T09:19:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1343072333,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.360Z"
+	},
+	"loginDate": {
+		"$date": "2020-09-23T23:59:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1738472808,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.360Z"
+	},
+	"loginDate": {
+		"$date": "2019-12-14T17:12:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1775591469,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.361Z"
+	},
+	"loginDate": {
+		"$date": "2020-06-16T03:21:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -39308016,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.361Z"
+	},
+	"loginDate": {
+		"$date": "2021-01-21T03:35:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -362754359,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.361Z"
+	},
+	"loginDate": {
+		"$date": "2019-10-31T15:16:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 2120578829,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.361Z"
+	},
+	"loginDate": {
+		"$date": "2020-06-09T20:30:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1873415501,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.362Z"
+	},
+	"loginDate": {
+		"$date": "2020-09-25T09:43:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 501123377,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.362Z"
+	},
+	"loginDate": {
+		"$date": "2020-12-05T20:21:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1765398185,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.362Z"
+	},
+	"loginDate": {
+		"$date": "2019-11-25T11:37:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1153506961,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.362Z"
+	},
+	"loginDate": {
+		"$date": "2020-12-09T07:10:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -991884280,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.363Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-21T04:23:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1205418417,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.363Z"
+	},
+	"loginDate": {
+		"$date": "2020-02-26T23:38:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -468200060,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.363Z"
+	},
+	"loginDate": {
+		"$date": "2019-07-14T13:19:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1221771277,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.363Z"
+	},
+	"loginDate": {
+		"$date": "2020-09-08T00:13:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -2119109660,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.364Z"
+	},
+	"loginDate": {
+		"$date": "2019-05-30T00:56:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 261109572,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.364Z"
+	},
+	"loginDate": {
+		"$date": "2019-06-30T09:29:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 519134729,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.364Z"
+	},
+	"loginDate": {
+		"$date": "2019-11-12T04:34:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 840440326,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.365Z"
+	},
+	"loginDate": {
+		"$date": "2019-04-06T14:57:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1678597352,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.365Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-12T13:24:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1878321547,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.365Z"
+	},
+	"loginDate": {
+		"$date": "2019-08-29T07:56:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1026755343,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.366Z"
+	},
+	"loginDate": {
+		"$date": "2020-02-13T09:16:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 743362154,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.366Z"
+	},
+	"loginDate": {
+		"$date": "2019-09-26T18:30:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 425662988,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.366Z"
+	},
+	"loginDate": {
+		"$date": "2020-08-17T04:11:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 143275889,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.366Z"
+	},
+	"loginDate": {
+		"$date": "2020-11-27T16:43:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -85707631,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.367Z"
+	},
+	"loginDate": {
+		"$date": "2020-12-12T01:02:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -2003480597,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.367Z"
+	},
+	"loginDate": {
+		"$date": "2019-08-27T21:09:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1669120816,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.367Z"
+	},
+	"loginDate": {
+		"$date": "2021-01-28T04:50:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 773032392,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.368Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-23T10:41:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1105450866,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.368Z"
+	},
+	"loginDate": {
+		"$date": "2020-10-15T18:14:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1447401334,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.368Z"
+	},
+	"loginDate": {
+		"$date": "2019-10-20T00:09:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1990680292,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.369Z"
+	},
+	"loginDate": {
+		"$date": "2019-07-02T15:28:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 978279058,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.369Z"
+	},
+	"loginDate": {
+		"$date": "2020-10-20T12:33:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 341587017,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.369Z"
+	},
+	"loginDate": {
+		"$date": "2019-12-01T08:48:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -14068059,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.369Z"
+	},
+	"loginDate": {
+		"$date": "2019-05-21T04:53:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1583618835,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.370Z"
+	},
+	"loginDate": {
+		"$date": "2020-09-18T16:16:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -295459260,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.370Z"
+	},
+	"loginDate": {
+		"$date": "2019-07-16T05:21:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -367233647,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.370Z"
+	},
+	"loginDate": {
+		"$date": "2020-12-16T17:58:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -2011960629,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.371Z"
+	},
+	"loginDate": {
+		"$date": "2019-07-26T19:22:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -934497882,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.371Z"
+	},
+	"loginDate": {
+		"$date": "2019-03-27T08:08:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1731666072,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.371Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-30T12:40:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -800620763,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.371Z"
+	},
+	"loginDate": {
+		"$date": "2019-05-19T07:21:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -2026971565,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.371Z"
+	},
+	"loginDate": {
+		"$date": "2020-08-24T06:38:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -398315763,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.372Z"
+	},
+	"loginDate": {
+		"$date": "2020-06-12T02:54:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1332499758,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.372Z"
+	},
+	"loginDate": {
+		"$date": "2020-04-27T06:20:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1290027116,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.372Z"
+	},
+	"loginDate": {
+		"$date": "2020-07-26T01:08:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 2024926693,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.373Z"
+	},
+	"loginDate": {
+		"$date": "2019-05-18T18:11:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -35783571,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.373Z"
+	},
+	"loginDate": {
+		"$date": "2020-06-26T16:31:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -490195183,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.373Z"
+	},
+	"loginDate": {
+		"$date": "2020-12-31T03:14:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -2054536463,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.374Z"
+	},
+	"loginDate": {
+		"$date": "2020-12-04T21:27:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 560827054,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.374Z"
+	},
+	"loginDate": {
+		"$date": "2020-04-25T08:56:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -220687502,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.374Z"
+	},
+	"loginDate": {
+		"$date": "2020-10-28T02:14:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1412724604,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.375Z"
+	},
+	"loginDate": {
+		"$date": "2019-06-15T08:07:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -195444912,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.375Z"
+	},
+	"loginDate": {
+		"$date": "2021-02-15T17:57:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1589350064,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.375Z"
+	},
+	"loginDate": {
+		"$date": "2021-01-25T09:09:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 573264333,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.375Z"
+	},
+	"loginDate": {
+		"$date": "2020-05-25T20:16:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -2134955155,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.376Z"
+	},
+	"loginDate": {
+		"$date": "2020-05-12T00:07:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1791360049,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.376Z"
+	},
+	"loginDate": {
+		"$date": "2020-02-13T22:30:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1378500758,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.376Z"
+	},
+	"loginDate": {
+		"$date": "2019-09-09T22:38:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1956527532,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.377Z"
+	},
+	"loginDate": {
+		"$date": "2020-07-08T15:46:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1928317916,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.377Z"
+	},
+	"loginDate": {
+		"$date": "2019-07-14T00:14:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1336908112,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.377Z"
+	},
+	"loginDate": {
+		"$date": "2021-01-15T20:30:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1690613458,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.377Z"
+	},
+	"loginDate": {
+		"$date": "2020-10-07T23:03:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1099224715,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.378Z"
+	},
+	"loginDate": {
+		"$date": "2019-08-27T10:28:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 815966859,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.378Z"
+	},
+	"loginDate": {
+		"$date": "2019-08-04T21:08:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -2138020279,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.378Z"
+	},
+	"loginDate": {
+		"$date": "2019-12-02T01:04:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -186049173,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.379Z"
+	},
+	"loginDate": {
+		"$date": "2019-08-26T22:57:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 308569488,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.379Z"
+	},
+	"loginDate": {
+		"$date": "2021-02-03T02:35:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1561516238,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.379Z"
+	},
+	"loginDate": {
+		"$date": "2020-10-25T23:44:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -135854199,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.379Z"
+	},
+	"loginDate": {
+		"$date": "2019-10-31T17:18:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 630110345,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.380Z"
+	},
+	"loginDate": {
+		"$date": "2019-11-29T20:54:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1497588916,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.380Z"
+	},
+	"loginDate": {
+		"$date": "2020-08-16T10:57:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1987435210,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.380Z"
+	},
+	"loginDate": {
+		"$date": "2019-09-16T00:15:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1849289744,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.381Z"
+	},
+	"loginDate": {
+		"$date": "2021-01-17T01:03:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1454838922,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.381Z"
+	},
+	"loginDate": {
+		"$date": "2019-10-03T10:49:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -895535825,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.381Z"
+	},
+	"loginDate": {
+		"$date": "2020-02-19T01:59:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 453396457,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.381Z"
+	},
+	"loginDate": {
+		"$date": "2019-11-29T19:19:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -78546450,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.382Z"
+	},
+	"loginDate": {
+		"$date": "2020-04-21T22:14:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -419149778,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.382Z"
+	},
+	"loginDate": {
+		"$date": "2020-04-23T09:40:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -2048648593,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.382Z"
+	},
+	"loginDate": {
+		"$date": "2020-03-15T07:25:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1649103990,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.383Z"
+	},
+	"loginDate": {
+		"$date": "2019-09-16T06:09:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -209057468,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.383Z"
+	},
+	"loginDate": {
+		"$date": "2019-06-14T04:25:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -832409306,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.384Z"
+	},
+	"loginDate": {
+		"$date": "2019-03-28T23:32:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1252921637,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.384Z"
+	},
+	"loginDate": {
+		"$date": "2019-04-09T23:37:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -17480187,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.384Z"
+	},
+	"loginDate": {
+		"$date": "2019-04-09T12:14:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -478805903,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.385Z"
+	},
+	"loginDate": {
+		"$date": "2020-12-29T12:51:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 101273736,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.385Z"
+	},
+	"loginDate": {
+		"$date": "2019-12-30T03:23:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1722860618,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.386Z"
+	},
+	"loginDate": {
+		"$date": "2019-09-19T02:51:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1846597651,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.386Z"
+	},
+	"loginDate": {
+		"$date": "2020-05-24T22:35:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1979208881,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.386Z"
+	},
+	"loginDate": {
+		"$date": "2021-01-05T20:49:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1839355162,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.387Z"
+	},
+	"loginDate": {
+		"$date": "2019-04-02T09:58:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1859820436,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.388Z"
+	},
+	"loginDate": {
+		"$date": "2020-08-13T02:44:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1807093200,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.388Z"
+	},
+	"loginDate": {
+		"$date": "2021-02-21T07:21:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 932794064,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.389Z"
+	},
+	"loginDate": {
+		"$date": "2021-01-26T07:45:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -492246711,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.389Z"
+	},
+	"loginDate": {
+		"$date": "2019-11-08T14:32:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1160068813,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.389Z"
+	},
+	"loginDate": {
+		"$date": "2020-10-02T02:03:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1612691786,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.390Z"
+	},
+	"loginDate": {
+		"$date": "2019-10-05T02:43:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1462347535,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.390Z"
+	},
+	"loginDate": {
+		"$date": "2020-03-21T10:20:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1853005098,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.391Z"
+	},
+	"loginDate": {
+		"$date": "2019-09-06T08:08:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1655782377,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.391Z"
+	},
+	"loginDate": {
+		"$date": "2019-10-29T04:23:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 800436168,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.391Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-13T20:01:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1371780341,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.392Z"
+	},
+	"loginDate": {
+		"$date": "2019-09-01T22:16:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -160696247,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.392Z"
+	},
+	"loginDate": {
+		"$date": "2019-11-05T12:32:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -559111600,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.392Z"
+	},
+	"loginDate": {
+		"$date": "2021-02-09T04:45:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 882350793,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.393Z"
+	},
+	"loginDate": {
+		"$date": "2019-11-21T22:44:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 335194193,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.393Z"
+	},
+	"loginDate": {
+		"$date": "2021-01-03T15:36:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1727675435,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.393Z"
+	},
+	"loginDate": {
+		"$date": "2019-08-29T06:35:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1027219119,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.393Z"
+	},
+	"loginDate": {
+		"$date": "2021-01-09T13:20:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1628934798,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.394Z"
+	},
+	"loginDate": {
+		"$date": "2020-10-29T04:06:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 700143374,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.394Z"
+	},
+	"loginDate": {
+		"$date": "2020-05-09T20:33:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1784947474,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.394Z"
+	},
+	"loginDate": {
+		"$date": "2020-03-31T10:38:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -831561679,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.394Z"
+	},
+	"loginDate": {
+		"$date": "2020-12-11T18:21:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -25970198,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.395Z"
+	},
+	"loginDate": {
+		"$date": "2019-10-04T12:02:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 851924805,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.395Z"
+	},
+	"loginDate": {
+		"$date": "2019-04-30T16:20:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1859103086,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.395Z"
+	},
+	"loginDate": {
+		"$date": "2020-04-25T20:34:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1070174289,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.395Z"
+	},
+	"loginDate": {
+		"$date": "2020-02-04T14:03:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1564054893,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.396Z"
+	},
+	"loginDate": {
+		"$date": "2020-08-26T01:16:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 488801162,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.396Z"
+	},
+	"loginDate": {
+		"$date": "2019-10-07T21:37:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1485336358,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.396Z"
+	},
+	"loginDate": {
+		"$date": "2019-03-15T09:56:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -2003573018,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.396Z"
+	},
+	"loginDate": {
+		"$date": "2019-03-10T21:42:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 904017873,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.397Z"
+	},
+	"loginDate": {
+		"$date": "2020-11-27T23:32:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1791210917,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.397Z"
+	},
+	"loginDate": {
+		"$date": "2019-05-01T00:45:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 2047559268,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.398Z"
+	},
+	"loginDate": {
+		"$date": "2019-06-11T19:40:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 610002596,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.398Z"
+	},
+	"loginDate": {
+		"$date": "2019-06-09T16:18:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -2019049627,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.398Z"
+	},
+	"loginDate": {
+		"$date": "2019-04-10T08:47:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 387399940,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.398Z"
+	},
+	"loginDate": {
+		"$date": "2019-07-14T20:59:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 68665683,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.398Z"
+	},
+	"loginDate": {
+		"$date": "2020-09-24T12:38:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -356659548,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.399Z"
+	},
+	"loginDate": {
+		"$date": "2019-07-01T18:26:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1133307704,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.399Z"
+	},
+	"loginDate": {
+		"$date": "2019-12-26T11:21:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1793501427,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.399Z"
+	},
+	"loginDate": {
+		"$date": "2020-06-26T00:46:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -235624243,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.399Z"
+	},
+	"loginDate": {
+		"$date": "2020-05-23T22:32:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -556294747,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.400Z"
+	},
+	"loginDate": {
+		"$date": "2019-05-14T14:05:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -2069946326,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.400Z"
+	},
+	"loginDate": {
+		"$date": "2019-09-06T11:28:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -434834581,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.400Z"
+	},
+	"loginDate": {
+		"$date": "2019-08-23T15:45:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 860906221,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.400Z"
+	},
+	"loginDate": {
+		"$date": "2020-06-12T14:11:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1649454744,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.400Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-01T16:40:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 357837203,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.401Z"
+	},
+	"loginDate": {
+		"$date": "2020-09-05T09:24:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 328524650,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.401Z"
+	},
+	"loginDate": {
+		"$date": "2019-09-13T18:54:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 251777040,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.401Z"
+	},
+	"loginDate": {
+		"$date": "2021-01-14T20:15:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 625746064,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.402Z"
+	},
+	"loginDate": {
+		"$date": "2021-02-22T11:15:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1458411716,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.402Z"
+	},
+	"loginDate": {
+		"$date": "2019-06-08T09:25:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1714349546,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.402Z"
+	},
+	"loginDate": {
+		"$date": "2019-10-22T18:58:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 363379021,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.403Z"
+	},
+	"loginDate": {
+		"$date": "2020-06-18T19:40:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -980228301,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.403Z"
+	},
+	"loginDate": {
+		"$date": "2020-08-27T20:59:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -758455228,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.403Z"
+	},
+	"loginDate": {
+		"$date": "2019-06-18T18:57:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1585680399,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.404Z"
+	},
+	"loginDate": {
+		"$date": "2020-02-07T04:20:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1111607177,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.404Z"
+	},
+	"loginDate": {
+		"$date": "2019-12-01T15:42:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 992352548,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.404Z"
+	},
+	"loginDate": {
+		"$date": "2019-07-11T21:26:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -265097431,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.404Z"
+	},
+	"loginDate": {
+		"$date": "2019-11-07T02:05:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -394297104,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.405Z"
+	},
+	"loginDate": {
+		"$date": "2021-02-01T05:48:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -2063676590,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.405Z"
+	},
+	"loginDate": {
+		"$date": "2020-11-07T15:07:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -402021112,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.405Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-19T19:11:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -467516923,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.405Z"
+	},
+	"loginDate": {
+		"$date": "2019-05-04T23:58:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1095262710,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.406Z"
+	},
+	"loginDate": {
+		"$date": "2019-09-19T16:05:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -236000242,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.406Z"
+	},
+	"loginDate": {
+		"$date": "2020-04-04T05:29:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1851082071,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.406Z"
+	},
+	"loginDate": {
+		"$date": "2019-12-11T18:33:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1482460474,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.406Z"
+	},
+	"loginDate": {
+		"$date": "2019-04-04T03:39:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -2049506194,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.407Z"
+	},
+	"loginDate": {
+		"$date": "2020-04-03T13:14:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -522802843,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.407Z"
+	},
+	"loginDate": {
+		"$date": "2019-05-14T14:23:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1914400424,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.407Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-28T16:22:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -2060695982,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.407Z"
+	},
+	"loginDate": {
+		"$date": "2020-10-30T14:43:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 277128522,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.408Z"
+	},
+	"loginDate": {
+		"$date": "2019-09-08T22:59:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -567686039,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.408Z"
+	},
+	"loginDate": {
+		"$date": "2019-12-12T06:03:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 669532974,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.408Z"
+	},
+	"loginDate": {
+		"$date": "2020-03-24T08:12:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1127059277,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.408Z"
+	},
+	"loginDate": {
+		"$date": "2020-10-05T07:19:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -402382031,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.409Z"
+	},
+	"loginDate": {
+		"$date": "2020-12-02T07:17:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -793216500,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.409Z"
+	},
+	"loginDate": {
+		"$date": "2020-07-12T10:35:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1239662349,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.409Z"
+	},
+	"loginDate": {
+		"$date": "2020-06-17T13:02:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1417303762,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.409Z"
+	},
+	"loginDate": {
+		"$date": "2020-04-18T05:16:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 218909546,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.410Z"
+	},
+	"loginDate": {
+		"$date": "2019-10-22T05:34:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1349843571,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.410Z"
+	},
+	"loginDate": {
+		"$date": "2020-08-19T02:57:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 332235923,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.410Z"
+	},
+	"loginDate": {
+		"$date": "2020-09-02T04:12:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 2102192972,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.410Z"
+	},
+	"loginDate": {
+		"$date": "2020-08-12T23:45:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -238061806,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.410Z"
+	},
+	"loginDate": {
+		"$date": "2020-11-14T17:25:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1094146098,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.411Z"
+	},
+	"loginDate": {
+		"$date": "2020-04-08T17:15:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1015801550,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.411Z"
+	},
+	"loginDate": {
+		"$date": "2020-04-17T12:35:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 2096497290,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.411Z"
+	},
+	"loginDate": {
+		"$date": "2019-09-20T20:41:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1902199601,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.411Z"
+	},
+	"loginDate": {
+		"$date": "2020-12-15T23:49:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1982480023,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.411Z"
+	},
+	"loginDate": {
+		"$date": "2019-12-06T21:55:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 865887628,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.412Z"
+	},
+	"loginDate": {
+		"$date": "2020-07-13T01:27:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1495618829,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.412Z"
+	},
+	"loginDate": {
+		"$date": "2020-06-09T14:54:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1992260375,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.412Z"
+	},
+	"loginDate": {
+		"$date": "2019-11-27T06:55:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 504984659,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.412Z"
+	},
+	"loginDate": {
+		"$date": "2020-09-03T20:14:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -911342893,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.413Z"
+	},
+	"loginDate": {
+		"$date": "2020-09-22T13:22:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1105609268,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.413Z"
+	},
+	"loginDate": {
+		"$date": "2020-08-06T23:33:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1766801609,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.413Z"
+	},
+	"loginDate": {
+		"$date": "2019-11-28T16:36:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -481835994,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.413Z"
+	},
+	"loginDate": {
+		"$date": "2019-03-22T16:44:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 236459080,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.413Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-29T15:49:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1048955825,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.414Z"
+	},
+	"loginDate": {
+		"$date": "2020-12-25T07:05:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 495449732,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.414Z"
+	},
+	"loginDate": {
+		"$date": "2019-06-30T11:35:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -993628080,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.414Z"
+	},
+	"loginDate": {
+		"$date": "2021-02-17T01:17:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 374432684,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.414Z"
+	},
+	"loginDate": {
+		"$date": "2020-07-28T21:54:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 36036905,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.414Z"
+	},
+	"loginDate": {
+		"$date": "2019-11-21T15:09:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 458825798,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.415Z"
+	},
+	"loginDate": {
+		"$date": "2019-03-13T10:15:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 822756168,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.415Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-13T20:13:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -647306157,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.415Z"
+	},
+	"loginDate": {
+		"$date": "2020-08-27T23:58:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1570774606,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.415Z"
+	},
+	"loginDate": {
+		"$date": "2020-11-07T19:32:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -740598644,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.416Z"
+	},
+	"loginDate": {
+		"$date": "2020-08-03T21:51:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 967994088,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.416Z"
+	},
+	"loginDate": {
+		"$date": "2019-12-17T15:16:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -677301112,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.416Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-19T16:43:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -766263348,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.416Z"
+	},
+	"loginDate": {
+		"$date": "2020-07-06T00:53:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1749795608,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.416Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-27T07:32:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1768819526,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.417Z"
+	},
+	"loginDate": {
+		"$date": "2019-04-05T08:47:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -60410990,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.417Z"
+	},
+	"loginDate": {
+		"$date": "2020-11-21T04:57:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1478286160,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.418Z"
+	},
+	"loginDate": {
+		"$date": "2021-02-05T03:33:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1065502710,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.418Z"
+	},
+	"loginDate": {
+		"$date": "2019-09-19T16:21:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -928022611,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.418Z"
+	},
+	"loginDate": {
+		"$date": "2020-05-14T01:25:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 2099078091,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.419Z"
+	},
+	"loginDate": {
+		"$date": "2019-07-25T03:14:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1021928048,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.419Z"
+	},
+	"loginDate": {
+		"$date": "2021-02-22T14:48:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 754620498,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.419Z"
+	},
+	"loginDate": {
+		"$date": "2020-10-23T15:31:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -492410580,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.419Z"
+	},
+	"loginDate": {
+		"$date": "2020-07-02T22:22:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 396335816,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.420Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-04T01:29:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 821079057,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.420Z"
+	},
+	"loginDate": {
+		"$date": "2020-12-18T19:06:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1807185431,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.420Z"
+	},
+	"loginDate": {
+		"$date": "2019-12-03T18:31:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1674980664,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.420Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-11T07:21:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 662997704,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.421Z"
+	},
+	"loginDate": {
+		"$date": "2019-12-30T08:25:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1468707369,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.421Z"
+	},
+	"loginDate": {
+		"$date": "2019-11-18T23:01:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1804754125,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.421Z"
+	},
+	"loginDate": {
+		"$date": "2020-05-11T20:56:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -633596028,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.421Z"
+	},
+	"loginDate": {
+		"$date": "2019-06-17T05:35:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1529274545,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.422Z"
+	},
+	"loginDate": {
+		"$date": "2020-12-22T06:25:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -2019298012,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.422Z"
+	},
+	"loginDate": {
+		"$date": "2019-06-16T17:10:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 303529328,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.422Z"
+	},
+	"loginDate": {
+		"$date": "2021-02-25T13:20:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 642822987,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.422Z"
+	},
+	"loginDate": {
+		"$date": "2019-09-01T01:50:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -555503374,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.422Z"
+	},
+	"loginDate": {
+		"$date": "2020-10-27T23:14:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 181241069,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.423Z"
+	},
+	"loginDate": {
+		"$date": "2020-05-22T11:47:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 122141259,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.423Z"
+	},
+	"loginDate": {
+		"$date": "2019-07-22T19:02:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1634041868,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.423Z"
+	},
+	"loginDate": {
+		"$date": "2020-06-30T12:27:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1021661924,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.423Z"
+	},
+	"loginDate": {
+		"$date": "2019-07-15T02:40:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 247453007,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.424Z"
+	},
+	"loginDate": {
+		"$date": "2020-02-25T22:10:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1358159791,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.424Z"
+	},
+	"loginDate": {
+		"$date": "2020-03-08T13:31:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 544838378,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.424Z"
+	},
+	"loginDate": {
+		"$date": "2019-10-06T07:38:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1312503506,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.424Z"
+	},
+	"loginDate": {
+		"$date": "2020-03-31T14:52:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1458790157,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.424Z"
+	},
+	"loginDate": {
+		"$date": "2020-05-11T17:50:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1221604204,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.425Z"
+	},
+	"loginDate": {
+		"$date": "2020-07-09T23:40:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1601080828,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.425Z"
+	},
+	"loginDate": {
+		"$date": "2019-06-05T15:31:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1313281754,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.425Z"
+	},
+	"loginDate": {
+		"$date": "2019-03-09T13:24:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1316931672,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.426Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-17T20:30:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 2032271955,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.426Z"
+	},
+	"loginDate": {
+		"$date": "2020-09-02T19:26:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1126658925,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.426Z"
+	},
+	"loginDate": {
+		"$date": "2020-06-14T07:03:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 121157450,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.426Z"
+	},
+	"loginDate": {
+		"$date": "2019-09-20T02:59:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 58031666,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.426Z"
+	},
+	"loginDate": {
+		"$date": "2020-10-16T23:20:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 374576688,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.427Z"
+	},
+	"loginDate": {
+		"$date": "2021-01-27T17:14:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -2075270608,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.427Z"
+	},
+	"loginDate": {
+		"$date": "2021-01-28T09:46:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1176703269,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.427Z"
+	},
+	"loginDate": {
+		"$date": "2019-04-22T18:49:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1826308179,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.428Z"
+	},
+	"loginDate": {
+		"$date": "2020-09-12T08:30:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1049918573,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.428Z"
+	},
+	"loginDate": {
+		"$date": "2020-06-04T15:27:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1645991768,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.428Z"
+	},
+	"loginDate": {
+		"$date": "2019-12-21T11:18:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1910478671,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.429Z"
+	},
+	"loginDate": {
+		"$date": "2020-02-12T02:42:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1476259686,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.429Z"
+	},
+	"loginDate": {
+		"$date": "2019-03-13T19:22:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1135858540,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.429Z"
+	},
+	"loginDate": {
+		"$date": "2020-07-24T09:16:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1759917071,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.430Z"
+	},
+	"loginDate": {
+		"$date": "2020-12-13T00:31:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1457666344,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.430Z"
+	},
+	"loginDate": {
+		"$date": "2019-12-27T10:34:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -206806448,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.430Z"
+	},
+	"loginDate": {
+		"$date": "2021-03-02T04:13:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1516848494,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.430Z"
+	},
+	"loginDate": {
+		"$date": "2020-11-07T20:01:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -75217530,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.431Z"
+	},
+	"loginDate": {
+		"$date": "2019-03-14T19:57:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 881855818,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.431Z"
+	},
+	"loginDate": {
+		"$date": "2019-09-07T13:55:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 575929924,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.431Z"
+	},
+	"loginDate": {
+		"$date": "2019-07-10T03:13:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1390636908,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.432Z"
+	},
+	"loginDate": {
+		"$date": "2020-07-11T15:40:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1989576527,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.432Z"
+	},
+	"loginDate": {
+		"$date": "2021-01-01T04:17:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -450367501,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.432Z"
+	},
+	"loginDate": {
+		"$date": "2020-08-29T16:13:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1841879557,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.433Z"
+	},
+	"loginDate": {
+		"$date": "2019-04-27T20:14:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -476336596,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.433Z"
+	},
+	"loginDate": {
+		"$date": "2020-07-07T17:58:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1227720563,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.433Z"
+	},
+	"loginDate": {
+		"$date": "2020-10-06T04:25:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 428633736,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.434Z"
+	},
+	"loginDate": {
+		"$date": "2019-12-30T06:19:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -993144435,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.434Z"
+	},
+	"loginDate": {
+		"$date": "2020-05-14T00:50:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -2036178811,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.434Z"
+	},
+	"loginDate": {
+		"$date": "2019-05-09T05:22:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1977702867,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.435Z"
+	},
+	"loginDate": {
+		"$date": "2020-05-31T07:21:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1811989813,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.435Z"
+	},
+	"loginDate": {
+		"$date": "2019-08-02T07:06:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1517378387,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.436Z"
+	},
+	"loginDate": {
+		"$date": "2020-09-26T16:06:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -629593489,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.436Z"
+	},
+	"loginDate": {
+		"$date": "2020-02-06T08:29:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 285488301,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.436Z"
+	},
+	"loginDate": {
+		"$date": "2020-06-17T04:29:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 188496626,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.437Z"
+	},
+	"loginDate": {
+		"$date": "2020-10-28T05:54:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1770210286,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.437Z"
+	},
+	"loginDate": {
+		"$date": "2020-03-27T23:02:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1789925456,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.437Z"
+	},
+	"loginDate": {
+		"$date": "2021-02-18T08:38:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 91790056,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.438Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-13T13:40:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1269161871,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.438Z"
+	},
+	"loginDate": {
+		"$date": "2020-12-01T23:31:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -312864055,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.438Z"
+	},
+	"loginDate": {
+		"$date": "2019-12-12T08:20:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1932675976,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.439Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-04T15:15:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 798909744,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.439Z"
+	},
+	"loginDate": {
+		"$date": "2021-02-08T02:26:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -738675895,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.439Z"
+	},
+	"loginDate": {
+		"$date": "2019-11-14T22:16:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -197338065,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.439Z"
+	},
+	"loginDate": {
+		"$date": "2020-02-14T12:47:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1298214652,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.440Z"
+	},
+	"loginDate": {
+		"$date": "2019-07-17T10:51:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1752941498,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.440Z"
+	},
+	"loginDate": {
+		"$date": "2019-03-14T04:55:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1765510959,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.440Z"
+	},
+	"loginDate": {
+		"$date": "2020-12-13T00:28:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1406446844,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.441Z"
+	},
+	"loginDate": {
+		"$date": "2019-06-10T12:43:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -141610734,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.441Z"
+	},
+	"loginDate": {
+		"$date": "2020-11-03T12:53:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -686142094,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.441Z"
+	},
+	"loginDate": {
+		"$date": "2020-10-31T03:02:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -417234230,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.442Z"
+	},
+	"loginDate": {
+		"$date": "2019-10-09T03:59:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -140996728,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.442Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-02T06:11:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1728776632,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.442Z"
+	},
+	"loginDate": {
+		"$date": "2019-12-15T00:37:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1058411022,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.442Z"
+	},
+	"loginDate": {
+		"$date": "2020-10-19T18:18:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 536312200,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.443Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-13T17:39:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1732141541,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.443Z"
+	},
+	"loginDate": {
+		"$date": "2019-04-27T19:15:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 121301423,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.443Z"
+	},
+	"loginDate": {
+		"$date": "2020-03-20T22:19:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 2112127276,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.444Z"
+	},
+	"loginDate": {
+		"$date": "2020-07-26T08:30:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -395662044,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.444Z"
+	},
+	"loginDate": {
+		"$date": "2019-07-14T13:58:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1897632403,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.444Z"
+	},
+	"loginDate": {
+		"$date": "2020-08-25T17:48:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 2068447334,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.445Z"
+	},
+	"loginDate": {
+		"$date": "2019-03-22T01:06:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 791725387,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.445Z"
+	},
+	"loginDate": {
+		"$date": "2019-07-23T01:02:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1747563062,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.445Z"
+	},
+	"loginDate": {
+		"$date": "2019-10-24T16:55:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1030116376,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.446Z"
+	},
+	"loginDate": {
+		"$date": "2019-12-20T02:20:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1063806885,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.446Z"
+	},
+	"loginDate": {
+		"$date": "2019-05-28T00:29:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 637202090,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.446Z"
+	},
+	"loginDate": {
+		"$date": "2019-10-23T23:48:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1006059625,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.447Z"
+	},
+	"loginDate": {
+		"$date": "2019-11-28T09:47:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 506811268,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.447Z"
+	},
+	"loginDate": {
+		"$date": "2019-06-16T01:19:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 194405070,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.447Z"
+	},
+	"loginDate": {
+		"$date": "2020-04-25T05:39:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 811866317,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.447Z"
+	},
+	"loginDate": {
+		"$date": "2020-06-17T09:12:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1093198030,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.448Z"
+	},
+	"loginDate": {
+		"$date": "2020-04-09T12:51:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1570918122,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.448Z"
+	},
+	"loginDate": {
+		"$date": "2019-10-24T08:10:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1192000594,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.448Z"
+	},
+	"loginDate": {
+		"$date": "2020-04-16T16:48:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -83460920,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.448Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-29T12:57:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1044796827,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.449Z"
+	},
+	"loginDate": {
+		"$date": "2019-05-09T14:15:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -738775822,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.449Z"
+	},
+	"loginDate": {
+		"$date": "2020-10-08T15:46:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 288192780,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.449Z"
+	},
+	"loginDate": {
+		"$date": "2020-08-02T16:35:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1670760292,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.450Z"
+	},
+	"loginDate": {
+		"$date": "2019-07-02T12:36:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1488512922,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.450Z"
+	},
+	"loginDate": {
+		"$date": "2019-04-07T08:34:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1918715595,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.450Z"
+	},
+	"loginDate": {
+		"$date": "2019-08-06T21:30:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 578447301,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.451Z"
+	},
+	"loginDate": {
+		"$date": "2019-04-17T18:00:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 771729356,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.451Z"
+	},
+	"loginDate": {
+		"$date": "2020-07-08T05:09:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 234801865,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.451Z"
+	},
+	"loginDate": {
+		"$date": "2019-11-10T11:32:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 309432366,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.452Z"
+	},
+	"loginDate": {
+		"$date": "2020-04-01T05:24:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1217128177,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.452Z"
+	},
+	"loginDate": {
+		"$date": "2020-02-04T12:44:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1102844024,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.452Z"
+	},
+	"loginDate": {
+		"$date": "2020-01-03T12:03:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1301561646,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.453Z"
+	},
+	"loginDate": {
+		"$date": "2020-04-22T10:36:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1625605878,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.453Z"
+	},
+	"loginDate": {
+		"$date": "2019-09-21T01:49:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -138064438,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.453Z"
+	},
+	"loginDate": {
+		"$date": "2019-09-24T20:07:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1047421979,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.454Z"
+	},
+	"loginDate": {
+		"$date": "2019-04-18T17:55:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -242607695,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.454Z"
+	},
+	"loginDate": {
+		"$date": "2020-12-16T19:05:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1915263024,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.454Z"
+	},
+	"loginDate": {
+		"$date": "2021-02-10T07:05:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -568465079,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.455Z"
+	},
+	"loginDate": {
+		"$date": "2019-11-21T09:44:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1191769636,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.455Z"
+	},
+	"loginDate": {
+		"$date": "2019-06-25T22:22:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1828091172,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.455Z"
+	},
+	"loginDate": {
+		"$date": "2019-06-11T17:42:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -355245011,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.455Z"
+	},
+	"loginDate": {
+		"$date": "2020-06-23T08:41:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1572559953,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.456Z"
+	},
+	"loginDate": {
+		"$date": "2020-02-18T19:55:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -2002187535,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.456Z"
+	},
+	"loginDate": {
+		"$date": "2020-12-16T03:19:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 425183885,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.456Z"
+	},
+	"loginDate": {
+		"$date": "2020-06-02T19:22:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -492541402,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.456Z"
+	},
+	"loginDate": {
+		"$date": "2019-03-19T11:40:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1097869609,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.457Z"
+	},
+	"loginDate": {
+		"$date": "2019-11-23T15:09:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1237872243,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.457Z"
+	},
+	"loginDate": {
+		"$date": "2020-09-16T22:41:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -502213948,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.457Z"
+	},
+	"loginDate": {
+		"$date": "2019-06-22T02:13:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -1485582701,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.458Z"
+	},
+	"loginDate": {
+		"$date": "2020-10-01T23:08:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 790099310,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.458Z"
+	},
+	"loginDate": {
+		"$date": "2020-05-05T01:54:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": -207708343,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.459Z"
+	},
+	"loginDate": {
+		"$date": "2019-10-26T21:12:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 1064913637,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.459Z"
+	},
+	"loginDate": {
+		"$date": "2019-05-07T04:11:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+},
+{
+	"_id": 981288202,
+	"dateCreated": {
+		"$date": "2021-03-05T08:38:25.459Z"
+	},
+	"loginDate": {
+		"$date": "2019-10-24T02:53:25.276Z"
+	},
+	"user": {
+		"dateCreated": {
+			"$date": "2021-03-05T08:38:15.604Z"
+		},
+		"_id": "monica",
+		"fullName": "Monica Tailor",
+		"email": "Monica Tailor",
+		"password": "monica",
+		"loyaltyStatus": "None"
+	}
+}]
+

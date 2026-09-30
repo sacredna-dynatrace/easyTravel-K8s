@@ -1,0 +1,12 @@
+36M	angular-frontend
+4.0K	angular-frontend.image.txt
+4.0K	angular-frontend.jars.txt
+4.4M	backend
+4.0K	backend.image.txt
+8.0K	backend.jars.txt
+22M	frontend
+4.0K	frontend.image.txt
+8.0K	frontend.jars.txt
+2.1M	headless-loadgen
+4.0K	headless-loadgen.files.txt
+9.8M	mongodb

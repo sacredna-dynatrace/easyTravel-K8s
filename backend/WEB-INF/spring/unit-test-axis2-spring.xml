@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"	
+	xmlns:context="http://www.springframework.org/schema/context"	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd		
+			http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd">
+
+  	<!-- needs to come as service: bean id="bookingService" class="com.dynatrace.easytravel.business.booking.JpaBookingService"/-->
+
+	<!-- done by component-scan below: bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" /-->
+
+	<!--  mainly for loading JpaDatabaseAccess, needed in order to get the "bookingService" service loaded -->
+	<context:component-scan base-package="com.dynatrace.easytravel.jpa.business" />
+
+  	<!-- Axis2 Web Services, but to Spring, its just another bean that has dependencies -->
+  	<bean id="springAwareConfigurationService" class="com.dynatrace.easytravel.business.webservice.ConfigurationService">
+		<!-- Here we can set the default values for the configuration -->
+
+		<!--  just some url that we use for accessing external content as part of webservices
+		remove this property to not have the application access this external content -->
+    	<property name="externalUrl" value=""/>
+    	<!-- triggers a subtle memory leak in JourneyService.getLocations -->
+    	<property name="memoryLeakEnabled" value="false" />
+    	<!-- triggers execution of unnecessery sql-statements in BookingService.storeBooking -->
+    	<property name="dBSpammingEnabled" value="false" />
+    	<!-- triggers a deadlock in frontend application when header banner is cycled -->
+    	<property name="frontendDeadlockEnabled" value="false" />
+  	</bean>
+
+  	<bean id="springAwareJourneyService" class="com.dynatrace.easytravel.business.webservice.JourneyService">
+    	<property name="configuration" ref="springAwareConfigurationService"/>
+    	<property name="databaseAccess" ref="databaseAccess"/>
+  	</bean>
+
+  	<bean id="springAwareAuthenticationService" class="com.dynatrace.easytravel.business.webservice.AuthenticationService">
+    	<property name="configuration" ref="springAwareConfigurationService"/>
+    	<property name="databaseAccess" ref="databaseAccess"/>
+  	</bean>
+
+  	<bean id="springAwareBookingService" class="com.dynatrace.easytravel.business.webservice.BookingService">
+    	<property name="configuration" ref="springAwareConfigurationService"/>
+    	<property name="databaseAccess" ref="databaseAccess"/>
+  	</bean>
+</beans>

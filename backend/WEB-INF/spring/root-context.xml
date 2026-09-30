@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- Root Context: defines shared resources accessible to all other web components -->
+
+		<!-- read config values from the default file -->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	    <property name="locations">
+	        <value>WEB-INF/classes/easyTravelConfig.properties</value>
+	    </property>
+	</bean>
+
+	<bean id="postProcessor" class="com.dynatrace.easytravel.business.MBeanPostProcessor"/>
+
+	<!-- Configures shared data layer -->
+	<import resource="mongodb.xml" />
+
+	<!-- Configures shared security layer -->
+	<!-- import resource="security.xml" / -->
+
+	<import resource="axis2-spring.xml"/>
+
+	<!-- Bean which receives generic plugin instances for the backend -->
+  	<bean id="pluginHolder" class="com.dynatrace.easytravel.spring.PluginHolder">
+    	<property name="plugins">
+    		<list></list> <!-- added via plugin mechanism -->
+    	</property>
+  	</bean>
+
+  	<!-- Bean for querying enabled plugins -->
+  	<bean id="pluginStateProxy" class="com.dynatrace.easytravel.spring.SpringPluginStateProxy"/>
+  	
+  	<!-- Bean for querying active components -->
+  	<bean id="componentsManagerProxy" class="com.dynatrace.easytravel.components.SpringComponentManagerProxy"/>
+    
+    <!--  Bean holding running tomcat instance. -->
+    <bean id="tomcatHolderBean" class="com.dynatrace.easytravel.spring.TomcatHolderBean" />
+    
+	<!--  Plugin-support: import any additional spring bean definition that we find on the classpath -->
+	<import resource="classpath*:META-INF/services/*.ctx.xml"/>
+</beans>
