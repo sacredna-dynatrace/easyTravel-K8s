@@ -1,0 +1,61 @@
+<ice:form xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:ice="http://www.icesoft.com/icefaces/component"
+     xmlns:gate11="http://www.dynatrace.com/gate11/taglib"
+	 id="loginForm">
+	<ice:outputText rendered="#{loginBean.userContext.authenticated}" styleClass="loggedInUser">
+		#{loginBean.userContext.fullName}님, 안녕하세요!
+	</ice:outputText>
+	<div class="orangeHeaderLogin">
+		<ice:outputLink id="logoutLink" styleClass="button loggedIn" rendered="#{loginBean.userContext.authenticated}" value="j_invalidate_session" title="로그인 사용자: #{loginBean.userContext.validUserName} (#{loginBean.userContext.fullName})">
+		<ice:outputText rendered="#{loginBean.userContext.hasLoyaltyStatus}">#{loginBean.userContext.loyaltyStatus} 등급!</ice:outputText>
+		로그아웃</ice:outputLink>
+		<ice:commandLink id="loginLink" styleClass="button" rendered="#{not loginBean.userContext.authenticated}" action="#{loginRequestBean.showPopup}">로그인</ice:commandLink>
+	</div>
+	<ice:panelTooltip id="userList" styleClass="tripDetailsTip" draggable="false" displayOn="click" hideOn="mousedown" rendered="#{not empty adBean.currentPromotion}">
+		<f:facet name="body">
+			<gate11:userListPanel showBookButton="true" showDetailsLink="true"/>
+		</f:facet>
+	</ice:panelTooltip>
+	<div class="orangeHeaderLoginForm">
+           <ice:panelPopup modal="false" draggable="false" visible="#{loginRequestBean.popupVisible}">
+           	<f:facet name="body">
+           		<ice:panelGroup>
+           			<ice:outputText styleClass="orangeLoginMessage" rendered="#{not loginRequestBean.loginFailed}">
+           				<strong>로그인</strong>하거나 <strong>회원가입</strong>을 진행해 주세요
+           			</ice:outputText>
+           			<ice:outputText styleClass="orangeLoginMessage" rendered="#{loginRequestBean.loginFailed}">
+           				<strong class="loginFailed">로그인 실패!</strong> <strong>다시 시도</strong>하거나 <strong>회원가입</strong>을 진행해 주세요
+           			</ice:outputText>
+
+           			<ice:outputLabel for="username" styleClass="orangeLoginUsername" value="사용자 이름" />
+					<ice:inputText id="username" styleClass="orangeLoginTextbox orangeLoginUsername" value="#{loginBean.userName}" action="#{loginRequestBean.popupLogin}"/>
+
+           			<ice:outputLabel for="password" styleClass="orangeLoginPassword" value="비밀번호" />
+					<ice:inputSecret id="password" styleClass="orangeLoginTextbox orangeLoginPassword" value="#{loginBean.password}" action="#{loginRequestBean.popupLogin}"/>
+
+					<h:link id="newAccount" outcome="orange-newaccount" class="commonButton grayButton3 orangeLoginButton orangeLoginNewAccount" value="회원가입"/>
+					<ice:commandButton value="개인정보처리방침 이미지" image="img/privacypolicy_lock.png" action="#{loginRequestBean.showUserList}" styleClass="loginPrivacy" />
+					<ice:commandButton id="loginCancel" styleClass="commonButton grayButton4 orangeLoginButton orangeLoginCancel" action="#{loginRequestBean.hidePopup}" value="취소"/>
+					<ice:commandButton id="loginSubmit" styleClass="commonButton orangeButton4 orangeLoginButton orangeLoginSubmit" action="#{loginRequestBean.popupLogin}" value="로그인"/>
+				</ice:panelGroup>
+			</f:facet>
+           </ice:panelPopup>
+	</div>
+	<ice:panelGroup rendered="#{loginRequestBean.loginSuccessful}">
+    	<script type="text/javascript">
+			rumapi.tagVisit('#{loginBean.userName}');
+		</script>
+    </ice:panelGroup>
+	<ice:panelPopup modal="false" draggable="false" visible="#{loginRequestBean.userListVisible}" styleClass="userList">
+		<f:facet name="body">
+			<ice:panelSeries styleClass="tripDetailsPanel" var="user" value="#{loginBean.users}">
+				<ice:commandLink value="#{user.name}" action="#{loginRequestBean.loginFromUserList}" >
+		       		<f:param name="userName" value="#{user.name}" />
+		       		<f:param name="password" value="#{user.password}" />
+		       	</ice:commandLink>
+		       	<br />
+			</ice:panelSeries>
+		</f:facet>
+	</ice:panelPopup>
+</ice:form>

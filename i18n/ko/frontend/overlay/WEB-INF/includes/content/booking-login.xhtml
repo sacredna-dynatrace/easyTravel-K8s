@@ -1,0 +1,55 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:ice="http://www.icesoft.com/icefaces/component"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:gate11="http://www.dynatrace.com/gate11/taglib"
+        class="mainBox">
+        
+        <h1 class="mainBoxHeader">예약 진행</h1>
+        <gate11:bookingStepIndicator activeStep="1"/>
+        
+        <ice:panelGroup styleClass="bookLoginBox">
+  			<ice:outputText styleClass="bookLoginMessage" rendered="#{not loginRequestBean.loginFailed and not loginBean.userContext.authenticated}">
+  				여행을 예약하려면 <strong>로그인</strong>하거나 <strong>회원가입</strong>을 진행해 주세요.
+  			</ice:outputText>
+  			<ice:outputText styleClass="bookLoginMessage" rendered="#{loginRequestBean.loginFailed and not loginBean.userContext.authenticated}">
+  				<strong class="loginFailed">로그인 실패!</strong> <strong>다시 시도</strong>하거나 <strong>회원가입</strong>을 진행해 주세요
+  			</ice:outputText>
+  			<ice:outputText styleClass="bookLoginMessage" rendered="#{loginBean.userContext.authenticated}">
+  				로그인 사용자: <strong>#{loginBean.userContext.userName}</strong> (#{loginBean.userContext.fullName})<br/>
+  				<strong>다음</strong> 버튼을 누르거나, 원하시면 다른 사용자로 로그인하세요.
+  			</ice:outputText>
+        
+	       <ice:panelGrid columns="2" styleClass="bookLoginTable" cellspacing="2" cellpadding="2">
+	      		<ice:outputLabel for="username"  value="사용자 이름" />
+				<ice:inputText id="username" styleClass="bookLoginTextbox" value="#{loginBean.userName}" action="#{loginRequestBean.bookingLogin}"/>
+			
+	        	<ice:outputLabel for="password" value="비밀번호" />
+				<ice:inputSecret id="password" styleClass="bookLoginTextbox" value="#{loginBean.password}" action="#{loginRequestBean.bookingLogin}"/>
+				
+				<ice:outputLabel/> <!-- spacer -->
+				<ice:panelGroup>
+					<h:link id="bookNewAccount" outcome="orange-newaccount" class="commonButton grayButton3 bookLoginButton bookLoginNewAccount" value="회원가입"/>
+					<ice:commandButton value="개인정보처리방침 이미지" image="img/privacypolicy_lock.png" action="#{loginRequestBean.showUserListBook}" styleClass="loginPrivacyBook" />
+					<h:link id="bookLoginCancel" outcome="orange"  class="commonButton grayButton4 bookLoginButton bookLoginCancel" value="취소"/>
+					<ice:commandButton id="bookLoginSubmit" styleClass="commonButton orangeButton4 bookLoginButton bookLoginSubmit" action="#{loginRequestBean.bookingLogin}" value="로그인"/>
+				</ice:panelGroup>
+	       </ice:panelGrid>
+        </ice:panelGroup>
+		<ice:panelPopup modal="false" draggable="false" visible="#{loginRequestBean.userListBookVisible}" styleClass="userListBook">
+			<f:facet name="body">
+				<ice:panelSeries styleClass="tripDetailsPanel" var="user" value="#{loginBean.users}">
+					<ice:commandLink value="#{user.name}" action="#{loginRequestBean.loginFromUserList}" >
+			       		<f:param name="userName" value="#{user.name}" />
+			       		<f:param name="password" value="#{user.password}" />
+			       	</ice:commandLink>
+			       	<br />
+				</ice:panelSeries>
+			</f:facet>
+		</ice:panelPopup>
+        
+        <h:link id="bookLoginBack" outcome="orange" class="commonButton grayButton1 mainBoxButton backButton" value="이전" />
+        <h:link id="bookLoginNext" outcome="orange-booking-review" includeViewParams="true" class="commonButton orangeButton1 mainBoxButton nextButton" value="다음" rendered="#{bookingBean.stateValid}"/>
+		<ice:commandButton id="bookLoginNextSubmit" styleClass="commonButton orangeButton1 mainBoxButton nextButton" action="#{loginRequestBean.bookingLogin}" value="다음" rendered="#{not bookingBean.stateValid}"/>
+</div>

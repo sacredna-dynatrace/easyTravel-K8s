@@ -1,0 +1,47 @@
+{
+  "_comment": "Classic frontend WAR 내 Java 클래스의 화면 노출 문자열. patch_archive.py 가 빌드 시 적용 (로그·Dynatrace 전송 문자열은 제외)",
+  "WEB-INF/classes/com/dynatrace/easytravel/frontend/beans/AccountBean.class": {
+    "The provided password is too short. Minimum length is 6 characters.": "비밀번호가 너무 짧습니다. 최소 6자 이상 입력하세요.",
+    "The provided password is too long. Maxiumum length is 12 characters.": "비밀번호가 너무 깁니다. 최대 12자까지 입력할 수 있습니다.",
+    "Please enter a first name.": "이름을 입력하세요.",
+    "Please enter a last name.": "성을 입력하세요.",
+    "Please enter an email address.": "이메일 주소를 입력하세요.",
+    "Please provide a password.": "비밀번호를 입력하세요.",
+    "Please confirm your email address.": "이메일 주소를 한 번 더 입력하세요.",
+    "The confirmed email address doesn't match.": "확인용 이메일 주소가 일치하지 않습니다.",
+    "Please confirm your password.": "비밀번호를 한 번 더 입력하세요.",
+    "The confirmed password doesn't match.": "확인용 비밀번호가 일치하지 않습니다.",
+    "The email address you entered is already registered with another account.": "입력한 이메일 주소는 이미 다른 계정에 등록되어 있습니다."
+  },
+  "WEB-INF/classes/com/dynatrace/easytravel/frontend/beans/BookingRequestBean.class": {
+    "Please enter your credit card number.": "카드 번호를 입력하세요.",
+    "Please enter the name of the credit card owner.": "카드 소유자 이름을 입력하세요.",
+    "Please enter your credit card's expiration date.": "카드 유효 기간을 선택하세요.",
+    "Please enter the credit card's verification number.": "카드 CVC 번호를 입력하세요."
+  },
+  "WEB-INF/classes/com/dynatrace/easytravel/frontend/beans/JourneyAccount.class": {
+    "1 adult": "성인 1명",
+    "1 adult+1 kid": "성인 1명+아동 1명",
+    "1 adult+2 kids": "성인 1명+아동 2명",
+    "2 adults": "성인 2명",
+    "2 adults+1 kid": "성인 2명+아동 1명",
+    "2 adults+2 kids": "성인 2명+아동 2명"
+  },
+  "WEB-INF/classes/com/dynatrace/easytravel/frontend/beans/SearchDelayStateBean.class": {
+    "use waiting strategy idle waiting": "유휴 대기 방식 사용",
+    "consume cpu time during waiting": "대기 중 CPU 시간 소모",
+    "use simple getter methods to consume cpu": "단순 getter 호출로 CPU 소모",
+    "idle": "유휴 대기",
+    "busy - direct": "busy - 직접",
+    "busy - indirect, call a getter": "busy - 간접 (getter 호출)"
+  },
+  "WEB-INF/classes/com/dynatrace/easytravel/frontend/beans/RecommendationBean.class": {
+    "Recommendations": "추천 여행",
+    "')\" alt=\"no image available\" class=\"iceGphImg etResultsImage\" height=\"130\" src=\"": "')\" alt=\"이미지 없음\" class=\"iceGphImg etResultsImage\" height=\"130\" src=\"",
+    "\t\t<span class=\"iceOutTxt journeyDesc\">If you wish to stay in a hotel that has friendly staff and an inviting ambience that reminds you of home, then head to the Grand Hotel.</span>": "\t\t<span class=\"iceOutTxt journeyDesc\">친절한 직원과 집처럼 편안한 분위기의 호텔을 원하신다면 Grand Hotel로 떠나 보세요.</span>",
+    "\">Book Now</a>": "\">지금 예약</a>"
+  },
+  "WEB-INF/classes/com/dynatrace/easytravel/frontend/beans/SpecialOffersBean.class": {
+    "These are our best offers": "엄선한 특가 상품"
+  }
+}

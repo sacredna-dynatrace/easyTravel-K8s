@@ -1,0 +1,26 @@
+{
+  "_comment": "headless loadgen(uemload.jar) 가 화면 텍스트로 요소를 찾는 selector 를 한글 UI 와 일치시킴. 나머지 selector 는 id/name 기반이라 변경 불필요",
+  "com/dynatrace/diagnostics/uemload/HeadlessBySelectors.class": {
+    "Book Now": "지금 예약",
+    "[Clear]": "[초기화]",
+    "About": "회사 소개",
+    "Contact": "문의",
+    "Terms of Use": "이용약관",
+    "Privacy Policy": "개인정보처리방침",
+    "//button[text()='Sign Up']": "//button[text()='회원가입']"
+  },
+  "com/dynatrace/diagnostics/uemload/scenarios/easytravel/CreditCard.class": {
+    "January": "1월",
+    "February": "2월",
+    "March": "3월",
+    "April": "4월",
+    "May": "5월",
+    "June": "6월",
+    "July": "7월",
+    "August": "8월",
+    "September": "9월",
+    "October": "10월",
+    "November": "11월",
+    "December": "12월"
+  }
+}

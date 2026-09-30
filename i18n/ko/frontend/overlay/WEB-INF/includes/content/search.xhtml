@@ -1,0 +1,70 @@
+
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:ice="http://www.icesoft.com/icefaces/component"
+        xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <ice:panelGroup styleClass="orangeSearch">
+        <h1 class="mainBoxHeader">나의 여행</h1>
+		<ice:outputConnectionStatus id="connectStat2" styleClass="navConnectionStatus" />
+		<div class="orangeSearchForm">
+			<ice:panelGrid columns="2" columnClasses="label,data">
+				<ice:outputLabel for="destination" value="여행지"/>
+		    	<ice:selectInputText rows="10" width="95%" id="destination"
+						listVar="location"
+			          	listValue="#{searchBean.selectList}"
+			          	value="#{searchBean.destinationName}"
+						options="{minChars:3, frequency:0.01}"
+						textChangeListener="#{searchBean.searchDestination}"
+						actionListener="#{searchBean.selectDestination}"
+			          	title="여행지를 입력해 보세요...">
+					<f:facet name="selectInputText">
+						<ice:panelGrid columns="1">
+							<ice:outputText value="#{location.name}"/>
+						</ice:panelGrid>
+					</f:facet>
+				</ice:selectInputText>
+
+				<ice:outputLabel for="fromDate" value="출발일"/>
+				<ice:selectInputDate value="#{searchBean.fromDate}" renderAsPopup="true" width="95%"
+						id="fromDate" lang="en"
+						title="언제 출발하시나요...">
+		     		<f:convertDateTime dateStyle="medium"/>
+		     		<h:message style="color: red" for="fromDate"/>
+				</ice:selectInputDate>
+
+				<ice:outputLabel for="toDate" value="귀국일"/>
+				<ice:selectInputDate value="#{searchBean.toDate}" renderAsPopup="true" width="95%"
+						id="toDate" lang="en"
+						title="언제 돌아오시나요...">
+					<f:convertDateTime dateStyle="medium"/>
+					<h:message style="color: red" for="toDate"/>
+				</ice:selectInputDate>
+			</ice:panelGrid>
+
+			<ice:commandButton id="search" actionListener="#{searchBean.searchJourneys}" value="검색" styleClass="commonButton orangeButton1 orangeSearchButton" onclick="showRecommendation();" />
+
+			<ice:panelGroup styleClass="searchHint">
+				<ice:outputText rendered="#{empty searchBean.destinationName}" value="위 항목을 입력하면 아래에 검색 결과가 표시됩니다."/>
+				<ice:panelGroup rendered="#{not empty searchBean.destinationName}">
+					<ice:outputText rendered="#{searchBean.journeyCount eq 0}" styleClass="searchResult" value="검색된 여행이 없습니다."/>
+					<ice:outputText rendered="#{searchBean.journeyCount eq 1}" styleClass="searchResult" value="여행 1건을 찾았습니다."/>
+					<ice:outputText rendered="#{searchBean.journeyCount gt 1}" styleClass="searchResult" value="여행 #{searchBean.journeyCount}건을 찾았습니다."/>
+					<ice:commandLink  id="clear" action="#{searchBean.clearSearch}" value=" [초기화]"/>
+					<h:link outcome="result" value=" [고정 링크]">
+						<f:param name="dest" value="#{searchBean.destinationName}" />
+						<f:param name="from" value="#{searchBean.fromDateAsString}"/>
+						<f:param name="to" value="#{searchBean.toDateAsString}" />
+					</h:link>
+				</ice:panelGroup>
+			</ice:panelGroup>
+		</div>
+	</ice:panelGroup>
+
+	<script>
+		<!-- cwpl-rpsciuk: code below is needed for IE8 to prevent displaying an error during page is loaded -->
+		var showRecommendationWait1000 = function() { showRecommendationWait(1000); };
+		window.onload = showRecommendationWait1000;
+	</script>
+</div>

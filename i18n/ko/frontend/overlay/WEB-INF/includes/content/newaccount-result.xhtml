@@ -1,0 +1,35 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:ice="http://www.icesoft.com/icefaces/component"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        class="mainBox">
+
+        <h1 class="mainBoxHeader">회원가입</h1>
+		<ice:graphicImage styleClass="newAccImage" value="img/newaccount/easyTravel_CreateNewLogin_Header.png" />
+
+		<div class="newAccResult">
+			<div class="heading"><ice:outputText>가입 완료</ice:outputText></div>
+			<div>
+				<ice:outputText>
+					<p>
+						<strong>#{loginBean.userContext.fullName}</strong>님, 환영합니다!<br/>
+						계정이 만들어졌습니다.<br/>
+		  				로그인 사용자: <strong>#{loginBean.userContext.userName}</strong><br/>
+		  				비밀번호: <strong>#{loginBean.userContext.password}</strong>
+	  				</p>
+	  				<p>
+	  					계정에 관한 문의는 이메일로 보내 주세요: <a href="mailto:easytravel@dynatrace.com">support@easytravel</a>
+	  				</p>
+				</ice:outputText>
+			</div>
+			<script type="text/javascript">
+				rumapi.tagVisit('#{loginBean.userContext.userName}');
+			</script>
+		</div>
+
+		<h:link id="newAccountNewSearch" outcome="orange" class="commonButton orangeButton2 mainBoxButton nextButton" value="새 검색" rendered="#{not bookingBean.stateValid}"/>
+		<h:link id="newAccountNext" outcome="orange-booking-review" class="commonButton orangeButton1 mainBoxButton nextButton" value="다음" rendered="#{bookingBean.stateValid}">
+		      <f:param name="journeyId" value="#{bookingBean.selectedJourney.id}" />
+		</h:link>
+</div>

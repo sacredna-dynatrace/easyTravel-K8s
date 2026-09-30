@@ -1,0 +1,53 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:ice="http://www.icesoft.com/icefaces/component"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        class="mainBox">
+        
+        <h1 class="mainBoxHeader">회원가입</h1>
+		<ice:graphicImage styleClass="newAccImage" rendered="#{not accountBean.inputError}" value="img/newaccount/easyTravel_CreateNewLogin_Header.png" />
+		<ice:panelGroup styleClass="newAccInputError" rendered="#{accountBean.inputError}">
+			<ice:messages />
+		</ice:panelGroup>
+		
+		<ice:panelGrid styleClass="newAccForm" columns="4" columnClasses="leftLabel,leftText,rightLabel,rightText" cellspacing="3">
+			<ice:outputLabel for="firstName" value="이름" styleClass="required"/>
+			<ice:inputText id="firstName" styleClass="newAccInput" value="#{accountBean.firstName}"/>
+			<ice:outputLabel for="lastName" value="성" styleClass="required"/> 
+			<ice:inputText id="lastName" styleClass="newAccInput" value="#{accountBean.lastName}"/>
+			
+			<ice:outputLabel for="email" value="이메일" styleClass="required" /> 
+			<ice:inputText id="email" styleClass="newAccInput" value="#{accountBean.email}"/>
+			<ice:outputLabel for="emailConfirm"  styleClass="required">이메일<br/>(확인)</ice:outputLabel> 
+			<ice:inputText id="emailConfirm" styleClass="newAccInput" value="#{accountBean.emailConfirm}"/>
+			
+			<ice:outputLabel for="password" value="비밀번호" styleClass="required"/> 
+			<ice:inputSecret id="password" styleClass="newAccInput" value="#{accountBean.password}" redisplay="true"/>
+			<ice:outputLabel for="passwordConfirm" styleClass="required">비밀번호<br/>(확인)</ice:outputLabel> 
+			<ice:inputSecret id="passwordConfirm" styleClass="newAccInput" value="#{accountBean.passwordConfirm}" redisplay="true"/>
+			
+			<ice:outputLabel for="state" value="시/도" /> 
+			<ice:inputText id="state" styleClass="newAccInput" value="#{accountBean.state}" />
+			<ice:outputLabel for="city" value="시/군/구" /> 
+			<ice:inputText id="city" styleClass="newAccInput" value="#{accountBean.city}" />
+			
+			<ice:outputLabel for="street" value="도로명" /> 
+			<ice:inputText id="street" styleClass="newAccInput" value="#{accountBean.street}" />
+			<ice:outputLabel for="door" value="상세 주소" /> 
+			<ice:inputText id="door" styleClass="newAccInput" value="#{accountBean.door}" />
+			
+			<ice:outputLabel for="phone" value="전화번호" /> 
+			<ice:inputText id="phone" styleClass="newAccInput" value="#{accountBean.phone}" />
+		</ice:panelGrid>
+		
+		<div class="required">
+			<ice:outputText value="필수 항목" />
+		</div>
+		<div class="privacyPolicy">
+			<ice:commandButton value="개인정보처리방침 이미지" image="img/privacypolicy_lock.png" action="#{accountBean.fillMock}"/>
+			<ice:commandLink value="개인정보처리방침" action="#{accountBean.fillMock}" id="fillMock"/>
+		</div>
+		<h:link id="newAccountCancel" outcome="orange" class="commonButton grayButton1 mainBoxButton backButton" value="취소"/>
+		<ice:commandButton id="newAccountCreate" styleClass="commonButton orangeButton2 mainBoxButton nextButton" value="가입하기" action="#{accountBean.createAccount}"/>
+</div>

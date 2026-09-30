@@ -1,5 +1,5 @@
 # 2단계: 한글 이미지 빌드 → GHCR push
-#   ghcr.io/<owner>/easytravel-{frontend,angular-frontend,backend,mongodb}-ko:<tag>
+#   ghcr.io/<owner>/easytravel-{frontend,angular-frontend,headless-loadgen,mongodb}-ko:{latest,<sha>}
 # 실행: Actions → "i18n 2) Build Korean images" → Run workflow
 name: "i18n 2) Build Korean images"
 
@@ -19,11 +19,13 @@ env:
   BASE_TAG: ${{ inputs.base_tag || 'latest' }}
 
 jobs:
+  # ---------------------------------------------------------------- WAR (Classic / Angular frontend)
   war:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        component: [frontend, angular-frontend, backend]
+        component: [frontend, angular-frontend]
     steps:
       - uses: actions/checkout@v4
       - uses: docker/login-action@v3
@@ -31,6 +33,19 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Patch ROOT.war
+        run: |
+          set -euo pipefail
+          BASE="dynatrace/easytravel-${{ matrix.component }}:${BASE_TAG}"
+          docker pull -q "$BASE"
+          cid=$(docker create "$BASE")
+          docker cp "$cid:/usr/local/tomcat/webapps/ROOT.war" /tmp/ROOT.orig.war
+          docker rm "$cid" >/dev/null
+          mkdir -p /tmp/ctx
+          python3 i18n/tools/patch_archive.py \
+            --in /tmp/ROOT.orig.war --out /tmp/ctx/ROOT.war \
+            --overlay "i18n/ko/${{ matrix.component }}/overlay" \
+            --strings "i18n/ko/${{ matrix.component }}/class-strings.json"
       - name: Build & push
         run: |
           set -euo pipefail
@@ -38,11 +53,44 @@ jobs:
           IMG="ghcr.io/${OWNER}/easytravel-${{ matrix.component }}-ko"
           docker build \
             --build-arg BASE_IMAGE="dynatrace/easytravel-${{ matrix.component }}:${BASE_TAG}" \
-            -f i18n/docker/war-overlay.Dockerfile \
-            -t "${IMG}:latest" -t "${IMG}:${{ github.sha }}" \
-            "i18n/ko/${{ matrix.component }}"
+            -f i18n/docker/war.Dockerfile \
+            -t "${IMG}:latest" -t "${IMG}:${{ github.sha }}" /tmp/ctx
           docker push -a "${IMG}"
 
+  # ---------------------------------------------------------------- headless loadgen (한글 링크 텍스트 selector)
+  loadgen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Patch uemload.jar
+        run: |
+          set -euo pipefail
+          BASE="dynatrace/easytravel-headless-loadgen:${BASE_TAG}"
+          docker pull -q "$BASE"
+          cid=$(docker create "$BASE")
+          docker cp "$cid:/easytravel/uemload.jar" /tmp/uemload.orig.jar
+          docker rm "$cid" >/dev/null
+          mkdir -p /tmp/ctx
+          python3 i18n/tools/patch_archive.py \
+            --in /tmp/uemload.orig.jar --out /tmp/ctx/uemload.jar \
+            --strings i18n/ko/headless-loadgen/class-strings.json
+      - name: Build & push
+        run: |
+          set -euo pipefail
+          OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          IMG="ghcr.io/${OWNER}/easytravel-headless-loadgen-ko"
+          docker build \
+            --build-arg BASE_IMAGE="dynatrace/easytravel-headless-loadgen:${BASE_TAG}" \
+            -f i18n/docker/loadgen.Dockerfile \
+            -t "${IMG}:latest" -t "${IMG}:${{ github.sha }}" /tmp/ctx
+          docker push -a "${IMG}"
+
+  # ---------------------------------------------------------------- MongoDB (여행상품 이름·여행사 설명)
   mongodb:
     runs-on: ubuntu-latest
     steps:
@@ -56,6 +104,7 @@ jobs:
         run: |
           set -euo pipefail
           BASE="dynatrace/easytravel-mongodb:${BASE_TAG}"
+          docker pull -q "$BASE"
           docker network create et
           docker run -d --name mongodb --network et "$BASE"
           AUTH="--host mongodb -u etAdmin -p adminadmin --authenticationDatabase admin"
@@ -65,10 +114,12 @@ jobs:
           done
           docker run --rm --network et -v "$PWD/i18n/ko/mongodb:/ko:ro" mongo:3.4 mongo $AUTH /ko/translate.js
           docker stop -t 60 mongodb          # clean shutdown → 데이터 파일 flush
-          rm -rf /tmp/db && mkdir -p /tmp/db
+          rm -rf /tmp/db && mkdir -p /tmp/db /tmp/ctx
           docker cp mongodb:/data/db/easyTravel/. /tmp/db/
           rm -f /tmp/db/mongod.lock
-          tar -czf i18n/ko/mongodb/easyTravel-mongodb-db.tar.gz -C /tmp/db .
+          chmod -R u+rwX,g+rwX /tmp/db
+          tar -czf /tmp/ctx/easyTravel-mongodb-db.tar.gz -C /tmp/db .
+          ls -la /tmp/ctx
       - name: Build & push
         run: |
           set -euo pipefail
@@ -77,6 +128,64 @@ jobs:
           docker build \
             --build-arg BASE_IMAGE="dynatrace/easytravel-mongodb:${BASE_TAG}" \
             -f i18n/docker/mongodb.Dockerfile \
-            -t "${IMG}:latest" -t "${IMG}:${{ github.sha }}" \
-            i18n/ko/mongodb
+            -t "${IMG}:latest" -t "${IMG}:${{ github.sha }}" /tmp/ctx
           docker push -a "${IMG}"
+
+  # ---------------------------------------------------------------- 스모크 테스트: 한글 이미지로 전체 스택 기동 후 화면 문구 확인
+  smoke:
+    needs: [war, loadgen, mongodb]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Start stack with -ko images
+        run: |
+          set -euo pipefail
+          OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          KO="ghcr.io/${OWNER}"; TAG="${{ github.sha }}"
+          docker network create et
+          docker run -d --name easytravel-mongodb --network et "${KO}/easytravel-mongodb-ko:${TAG}"
+          docker run -d --name easytravel-backend --network et \
+            -e ET_DATABASE_LOCATION=easytravel-mongodb:27017 -e ET_MONGO_AUTH_DB=admin \
+            -e ET_DATABASE_USER=etAdmin -e ET_DATABASE_PASSWORD=adminadmin \
+            -e CATALINA_OPTS="-Dconfig.apmServerDefault=APM -Xmx300m" "dynatrace/easytravel-backend:${BASE_TAG}"
+          docker run -d --name easytravel-frontend --network et \
+            -e ET_BACKEND_URL=http://easytravel-backend:8080 -e CATALINA_OPTS="-Dconfig.apmServerDefault=APM -Xmx525m" \
+            "${KO}/easytravel-frontend-ko:${TAG}"
+          docker run -d --name easytravel-angular-frontend --network et \
+            -e ET_BACKEND_URL=http://easytravel-backend:8080 -e CATALINA_OPTS="-Dconfig.apmServerDefault=APM -Xmx525m" \
+            "${KO}/easytravel-angular-frontend-ko:${TAG}"
+          docker run -d --name easytravel-www --network et -p 8000:80 -p 9079:9079 \
+            -e ET_FRONTEND_LOCATION=easytravel-frontend:8080 -e ET_ANGULAR_FRONTEND_LOCATION=easytravel-angular-frontend:8080 \
+            -e ET_BACKEND_LOCATION=easytravel-backend:8080 "dynatrace/easytravel-nginx:${BASE_TAG}"
+          for n in $(seq 1 60); do
+            curl -sf -o /dev/null http://localhost:8000/orange.jsf && curl -sf -o /dev/null http://localhost:9079/ && break
+            sleep 10
+          done
+      - name: Check Korean UI
+        run: |
+          set -uo pipefail
+          fail=0
+          check() {  # url, 기대 문자열
+            if curl -sf "$1" | grep -q "$2"; then echo "OK    $1 : $2"; else echo "FAIL  $1 : $2"; fail=1; fi
+          }
+          check http://localhost:8000/orange.jsf          "여행지"
+          check http://localhost:8000/orange.jsf          "회사 소개"
+          check http://localhost:8000/orange.jsf          "운임 약관"
+          check http://localhost:8000/legal-orange.jsf    "이용약관"
+          check http://localhost:8000/privacy-orange.jsf  "개인정보처리방침"
+          check http://localhost:8000/orange-newaccount.jsf "가입하기"
+          check http://localhost:8000/special-offers.jsp  "특가 상품"
+          check http://localhost:9079/                    'lang="ko"'
+          echo "--- MongoDB 번역 확인"
+          docker run --rm --network et mongo:3.4 mongo --quiet --host easytravel-mongodb \
+            -u etAdmin -p adminadmin --authenticationDatabase admin \
+            --eval 'db.getSiblingDB("easyTravel-Business").JourneyCollection.count({name:"파리 - 사랑의 도시"})' | tee /tmp/cnt
+          grep -qv '^0$' /tmp/cnt || fail=1
+          exit $fail
+      - name: Logs on failure
+        if: failure()
+        run: for c in easytravel-mongodb easytravel-backend easytravel-frontend easytravel-angular-frontend easytravel-www; do echo "=== $c"; docker logs --tail 80 $c; done

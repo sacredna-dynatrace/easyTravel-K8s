@@ -1,0 +1,135 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:ice="http://www.icesoft.com/icefaces/component"
+     xmlns:ui="http://java.sun.com/jsf/facelets"
+	 xmlns:gate11="http://www.dynatrace.com/gate11/taglib"
+     class="mainBox">
+         
+        <h1 class="mainBoxHeader">여행을 평가해 주세요!</h1>
+     
+	    <div class="tripDetailsHeader">
+			<div id="tenant">#{journeyBean.selectedJourney.tenant}</div>
+			<strong>#{journeyBean.selectedJourney.name}</strong>
+			<ice:panelGroup id="showratinglinks" visible="#{journeyBean.isStartPhpServer()}" style="float:right;width:150px;">
+	       		<span style="padding-left:10px">
+	   			<h:link id="rating-details" outcome="orange-rating-results" value="평가 상세" tilte ="평가 상세">
+		      		<f:param name="journeyId" value="#{journeyBean.selectedJourney.id}" />
+	   			</h:link>
+	   		    </span>
+	   		    
+	   		    <span style="padding-left:10px">
+	   				<h:link id="rating-action" outcome="orange-rating-action" value="평가하기" tilte ="평가하기">
+		      		<f:param name="journeyId" value="#{journeyBean.selectedJourney.id}" />
+	   				</h:link>
+	   		    </span>
+   		    </ice:panelGroup>   
+		</div>  
+        <div class="mainScrollBox" id="ratingScrollBox">
+	      <div class="mainTextBox">
+	        <span style="font-size: .9em;"><div id="username">
+	        <p><strong><span id ="user">#{loginBean.userContext.userName}</span></strong>님께</p></div>
+	        <p><strong>#{journeyBean.selectedJourney.name}</strong>에서의 경험을 들려주세요.
+	           작성하신 후기는 easyTravel에 게시되어 다른 여행자가 딱 맞는 여행을 고르는 데
+	           도움이 됩니다. 
+	        </p>
+	        </span>
+		    <p><Br/><strong><font size="3">1. 다음 항목을 평가해 주세요</font></strong></p>
+		    <table width="500" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#c2e1f5" >
+					  <tr>
+					    
+                        <td width="20" height="10" ><img src="img/arrow_style.png" alt="" />
+                        <span ><strong>직원:</strong></span></td>
+                        <td width="80" align= "center">
+						  <div class="rate_widget rating_#{journeyBean.selectedJourney.id}_staff" rel="#{journeyBean.selectedJourney.id}_staff">	
+						  <div class="star_1 ratings_stars"></div>
+                          <div class="star_2 ratings_stars"></div>
+                          <div class="star_3 ratings_stars"></div>
+                          <div class="star_4 ratings_stars"></div>
+                          <div class="star_5 ratings_stars"></div> 
+						  </div>
+						</td>
+                      </tr>
+                      <tr>
+					  <td width="20" height="10"  > <img src="img/arrow_style.png" alt="" />
+					  <span><strong>서비스/시설:</strong></span></td>
+                        <td width="80" align= "center" >
+						  <div class="rate_widget rating_#{journeyBean.selectedJourney.id}_services" rel="#{journeyBean.selectedJourney.id}_services">		
+						  <div class="star_1 ratings_stars"></div>
+                          <div class="star_2 ratings_stars"></div>
+                          <div class="star_3 ratings_stars"></div>
+                          <div class="star_4 ratings_stars"></div>
+                          <div class="star_5 ratings_stars"></div>
+						  </div>
+						</td>
+                      </tr>
+                      <tr>
+					  <td width="20" height="10" font-size="10pt"> <img src="img/arrow_style.png" alt="" />
+					  <span><strong>객실 청결도:</strong></span></td>
+                        <td width="80" align= "center" font-size="10pt">
+						  <div class="rate_widget rating_#{journeyBean.selectedJourney.id}_cleanliness" rel="#{journeyBean.selectedJourney.id}_cleanliness">		
+						  <div class="star_1 ratings_stars"></div>
+                          <div class="star_2 ratings_stars"></div>
+                          <div class="star_3 ratings_stars"></div>
+                          <div class="star_4 ratings_stars"></div>
+                          <div class="star_5 ratings_stars"></div>
+						  </div>
+						</td>
+                      </tr>
+                      <tr>
+					  <td width="20" height="10" font-size="10pt"> <img src="img/arrow_style.png" alt="" />
+					  <span><strong>편안함:</strong></span></td>
+                        <td width="80" align= "center" font-size="10pt">
+						  <div class="rate_widget rating_#{journeyBean.selectedJourney.id}_comfort" rel="#{journeyBean.selectedJourney.id}_comfort">	
+						  <div class="star_1 ratings_stars"></div>
+                          <div class="star_2 ratings_stars"></div>
+                          <div class="star_3 ratings_stars"></div>
+                          <div class="star_4 ratings_stars"></div>
+                          <div class="star_5 ratings_stars"></div>
+						  </div>
+						</td>
+                      </tr>
+                      
+                       <tr>
+					  <td width="20" height="10" font-size="10pt"> <img src="img/arrow_style.png" alt="" />
+					  <span><strong>가격 대비 만족도:</strong></span></td>
+                        <td width="80" align= "center" font-size="10pt">
+	                      <div class="rate_widget rating_#{journeyBean.selectedJourney.id}_value" rel="#{journeyBean.selectedJourney.id}_value">	
+						  <div class="star_1 ratings_stars"></div>
+                          <div class="star_2 ratings_stars"></div>
+                          <div class="star_3 ratings_stars"></div>
+                          <div class="star_4 ratings_stars"></div>
+                          <div class="star_5 ratings_stars"></div>
+						  </div>
+						</td>
+                      </tr>
+                        <tr>
+                      	<td width="20" height="10" font-size="10pt"> <img src="img/arrow_style.png" alt="" />
+                      	<span><strong>위치:</strong></span></td>
+                        <td width="80" align= "center" font-size="10pt">
+						  <div class="rate_widget rating_#{journeyBean.selectedJourney.id}_location" rel="#{journeyBean.selectedJourney.id}_location">	
+						  <div class="star_1 ratings_stars"></div>
+                          <div class="star_2 ratings_stars"></div>
+                          <div class="star_3 ratings_stars"></div>
+                          <div class="star_4 ratings_stars"></div>
+                          <div class="star_5 ratings_stars"></div>
+						  </div>
+						</td>
+                      </tr>
+                      
+                    </table>
+                          
+            <p><Br/><strong><font size="3">2. #{journeyBean.selectedJourney.name} 숙박 후기</font></strong></p>
+            <form name="comment"  onSubmit="window.location='http://localhost:8080'"><font size="1">(최대 300자까지 작성할 수 있습니다.)<br/>
+            <textarea rows="8" cols="50" name="limitedtextarea" onKeyDown="limitText(this.form.limitedtextarea,this.form.countdown,300);" 
+             onKeyUp="limitText(this.form.limitedtextarea,this.form.countdown,300);"></textarea><br/> <input class="button" type="submit" value="제출" />
+            남은 글자 수: <input readonly="readonly" type="text" name="countdown" size="2" value="300"> </input></font>
+             
+            </form>
+            
+            <div id="journeyID" style="visibility: hidden">#{journeyBean.selectedJourney.id}</div>
+            
+		  </div>
+		</div>
+		                         
+</div>

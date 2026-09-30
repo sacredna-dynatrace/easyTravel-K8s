@@ -9,8 +9,8 @@ images:
   - name: dynatrace/easytravel-angular-frontend
     newName: ghcr.io/sacredna-dynatrace/easytravel-angular-frontend-ko
     newTag: latest
-  - name: dynatrace/easytravel-backend
-    newName: ghcr.io/sacredna-dynatrace/easytravel-backend-ko
+  - name: dynatrace/easytravel-headless-loadgen          # 한글 링크 텍스트에 맞춘 selector
+    newName: ghcr.io/sacredna-dynatrace/easytravel-headless-loadgen-ko
     newTag: latest
   - name: dynatrace/easytravel-mongodb
     newName: ghcr.io/sacredna-dynatrace/easytravel-mongodb-ko

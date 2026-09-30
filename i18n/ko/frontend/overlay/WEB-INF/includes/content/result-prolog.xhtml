@@ -1,0 +1,24 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:ice="http://www.icesoft.com/icefaces/component"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:gate11="http://www.dynatrace.com/gate11/taglib">
+        
+   	<ice:panelGroup styleClass="pagingArea">
+   		<div class="left">
+   			<ice:outputText rendered="#{searchBean.journeyCount eq 0}">
+		   		'<strong>#{searchBean.destinationName}</strong>'에 대한
+		   			검색 결과가 없습니다.
+   			</ice:outputText>
+   			<ice:outputText rendered="#{searchBean.journeyCount eq 1}">
+		   		'<strong>#{searchBean.destinationName}</strong>'에 대한 여행을
+		   			<strong>1</strong>건 찾았습니다.
+   			</ice:outputText>
+   			<ice:outputText rendered="#{searchBean.journeyCount gt 1}">
+		   		'<strong>#{searchBean.destinationName}</strong>'에 대한 여행을
+		   			<strong>#{searchBean.journeyCount}</strong>건 찾았습니다.
+   			</ice:outputText>
+   		</div>
+   	</ice:panelGroup>
+</div>

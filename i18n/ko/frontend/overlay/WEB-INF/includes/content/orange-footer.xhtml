@@ -1,0 +1,48 @@
+<div    xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:ice="http://www.icesoft.com/icefaces/component"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:fb="http://www.facebook.com/2008/fbml"
+        xmlns:og="http://ogp.me/ns#"
+        class="footer_container">
+	<!--  ensure nothing from the main panel overflows into the footer, &#160; is non-breaking-space -->
+	<div class="" style="width:100%;clear:both">&#160;</div>
+
+    <div class="footer_content">
+		<div style="clear: both;"></div>
+		<!-- TODO: place and style footer content from plugins -->
+		<span class="pluginFooter"><ice:outputText value="#{pluginBean.footer}" escape="false" nospan="true"/></span>
+
+		<ice:panelGroup rendered="#{facebookBean.facebookEnabled and facebookBean.facebookGloballyEnabled}">
+		<div class="twitter-facebook-block">
+		<div id="fb-root"></div>
+		<div class="twitter-facebook">
+			<script src="//connect.facebook.net/en_US/all.js#xfbml=1"></script>
+			<fb:like align="right" show_faces="false" width="225" href="http://www.facebook.com/pages/dynaTrace/110934948924599" style="position: static !important"></fb:like>
+		</div>
+		<div class="twitter-facebook">
+			<a href="http://twitter.com/share" class="twitter-share-button" data-url="dynatrace" data-count="horizontal">Tweet</a>
+			<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+		</div>
+		</div>
+		</ice:panelGroup>
+
+		<div style="clear: both;"></div>
+		<div class="orangeLegal">
+		  운임 약관: www.easytravel.com에 게시된 왕복 및 편도 예시 운임은 1인 기준이며, 관련 세금과 수수료가 모두 포함되어 있습니다. 여기에는 미국 공항 출발 구간당 최대 $500의 9·11 보안 수수료, 여정에 따라 최대 $18의 공항시설 이용료, 구간당 $3.70의 연방 구간 수수료, 경로와 목적지에 따라 국제선 왕복 1회당 최대 $400의 해외 및 미국 정부 부과금이 포함되며 이에 한정되지 않습니다. 비행 구간은 1회 이륙과 1회 착륙을 의미합니다. 운임은 좌석 상황에 따라 달라질 수 있으며 사전 고지 없이 변경될 수 있습니다. 선택한 날짜에 광고된 운임을 이용할 수 없는 경우 더 높은 운임이 제시될 수 있습니다. 실제 가격은 실제 경로, 환율 변동(국제선에 한함), 요일에 따라 달라질 수 있습니다.
+		  <!--br/>
+		  (c) 2011 dynaTrace  All rights reserved. Copyright for travel announcements appearing on this website is owned by dynaTrace
+		  -->
+		</div>
+		<div style="clear: both;"></div>
+	
+		<div class="orangeFooter">
+		</div>
+
+    </div>
+
+	<span class="pluginFooter"><ice:outputText value="#{pluginBean.footerScript}" escape="false" nospan="true"/></span>
+    <script type="text/javascript" src="js/GlobalProd.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+</div>

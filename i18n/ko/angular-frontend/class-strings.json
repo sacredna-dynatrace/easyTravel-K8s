@@ -1,0 +1,7 @@
+{
+  "_comment": "Angular frontend REST API 가 화면에 그대로 전달하는 오류 메시지 (bizevent 로 전송되는 문자열은 DQL 호환을 위해 영문 유지)",
+  "WEB-INF/lib/com.dynatrace.easytravel.customer.frontend.rest.jar!/com/dynatrace/easytravel/rest/services/EasytravelService.class": {
+    "User authentication failure.": "사용자 인증에 실패했습니다.",
+    "The email address you entered is already registered.": "입력한 이메일 주소는 이미 등록되어 있습니다."
+  }
+}

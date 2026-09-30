@@ -1,0 +1,74 @@
+<div    xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:ice="http://www.icesoft.com/icefaces/component"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:fb="http://www.facebook.com/2008/fbml"
+        xmlns:og="http://ogp.me/ns#"
+        class="mainBox">
+
+    <h1 class="mainBoxHeader">easyTravel 소개</h1>
+    <div class="mainScrollBox">
+	    <div class="mainTextBox">
+			<p>easyTravel은 로그인, 다양한 여행지 검색, 특가·프로모션 여행 선택, 신용카드를 이용한 여행 구매 기능을 제공하는 웹 포털입니다.</p>
+			<p>이 애플리케이션은 <a href="https://www.dynatrace.com/en/products/application-monitoring.html">Dynatrace APM 제품</a>의 기능을 보여 주기 위한 데모입니다.</p>
+
+			<ice:panelCollapsible style="width:300px;margin-top:10px" expanded="true">
+				<f:facet name="header">
+					<ice:panelGroup><ice:outputText value="Problem pattern 설정" /></ice:panelGroup>
+				</f:facet>
+				<ui:include src="searchdelay.xhtml" />
+			</ice:panelCollapsible>
+
+			<script type="text/javascript">
+				$(function() {
+					setTimeout(function() {
+						var actionId = rumapi.enterAction('Longer stay', 'custom');
+						var randomTime = Math.floor(Math.random() * 1000);
+						setTimeout(function() {
+							rumapi.leaveAction(actionId);
+						}, randomTime);
+					}, 10000);
+				});
+			</script>
+
+			<p style="float:right;font-size: 8px;"><a href="http://www.photoeverywhere.co.uk">photoeverywhere.co.uk의 이미지</a>를 포함합니다.</p>
+			
+			<div>
+				<p>
+					<b>easyTravel</b>
+				</p>
+				<p>버전: <span class="version">#{adBean.version}</span></p>
+				<p>빌드 날짜: <span class="string">#{adBean.buildDate}</span></p>
+			</div>
+
+			<div>
+				<p>
+					<b>iOS 앱 설치</b>
+				</p>
+				<p>
+					iOS 7.1 이상에서는 이 사이트가 사용하는 자체 서명 SSL 인증서를 먼저 설치해야 합니다. 
+					<a href="/cert/easytravel-san.crt">SSL 인증서</a> 링크를 눌러 내려받은 뒤 안내에 따라 설치하세요.
+					<br/>
+					iOS 10.3에서는 인증서를 직접 신뢰해야 합니다: 설정 -> 일반 -> 정보 -> 인증서 신뢰 설정에서 '루트 인증서 전체 신뢰 활성화'를 켜세요.
+					<br/>
+					앱 설치 후에는 설정 -> 일반 -> 프로파일 -> 구성 프로파일에서 인증서를 삭제할 수 있습니다.
+					<br/>
+					마지막으로 앱을 신뢰해야 합니다: 설정 -> 일반 -> 프로파일 및 기기 관리에서 Dynatrace LLC enterprise APP을 누르고 "Dynatrace LCC" 신뢰를 선택하세요.				
+					<br/>					
+					인증서는 자동으로 생성되며, Linux에서는 OpenSSL이 설치되어 있어야 합니다 (Windows용 OpenSSL 바이너리는 easyTravel에 포함).
+					easyTravelLocal.properties 파일의 config.apacheWebServerSslHost 속성을 실제 주소에 맞게 설정하세요.										
+				</p>
+			</div>
+			<div>
+				<p>
+					<b>크래시 리포트 난독화 해제 / 심볼리케이션</b>
+				</p>
+				<p>
+					easyTravel Android 크래시 리포트의 난독화 해제용 Proguard mapping 파일은 <a href="/apps/proguard/mapping.txt" download="mapping.txt">여기</a>에서 받을 수 있습니다.
+					easyTravel iOS symbol extract 파일은 <a href="/apps/iOSeasyTravel_symbolsExtract.zip" download="iOSeasyTravel_symbolsExtract.zip">여기</a>에서 zip 형식으로 받을 수 있습니다.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>

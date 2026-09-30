@@ -1,0 +1,26 @@
+<div    xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:ice="http://www.icesoft.com/icefaces/component"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:fb="http://www.facebook.com/2008/fbml"
+        xmlns:og="http://ogp.me/ns#">
+        
+	<ice:panelGrid columns="2">
+		<ice:outputLabel value="지연 시간 [ms]:" for="delaytime" styleClass=""/>
+		 <ice:inputText id="delaytime" value="#{searchDelayStateBean.delaytime}" partialSubmit="true" title="여행 검색을 지연시킬 시간(밀리초). 0이면 지연하지 않습니다.">
+			<f:converter converterId="javax.faces.Integer"/>
+			<f:validateLongRange maximum="100000" minimum="0"/>
+			</ice:inputText>
+<!-- 			
+			<ice:outputLabel value="busy waiting:"/>
+			<ice:selectBooleanCheckbox id="useBusyWaiting" value="#{searchDelayStateBean.useBusyWaiting}" 
+			title="consume cpu time yes/no"
+			partialSubmit="true"/>
+-->
+		<ice:outputLabel value="대기 방식:" />
+		<ice:selectOneMenu id="waitingStrategy" value="#{searchDelayStateBean.waitingStrategy}" partialSubmit="true">
+			<f:selectItems value="#{searchDelayStateBean.waitSelectItems}" />
+		</ice:selectOneMenu>
+	</ice:panelGrid>	
+</div>
