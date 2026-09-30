@@ -1,0 +1,41 @@
+# Headless Chrome 부하 발생기 — Angular 프론트엔드 대상
+# ET_BACKEND_URL 을 주지 않음 → problem pattern 제어는 loadgen-classic 한 곳에서만 (중복 토글 방지)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: loadgen-angular
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: loadgen-angular
+  template:
+    metadata:
+      labels:
+        app: loadgen-angular
+        app.kubernetes.io/name: loadgen-angular
+        app.kubernetes.io/component: load-generator
+      annotations:
+        oneagent.dynatrace.com/inject: "false"
+    spec:
+      enableServiceLinks: false
+      nodeSelector:
+        kubernetes.io/arch: amd64
+      containers:
+        - name: loadgen
+          image: dynatrace/easytravel-headless-loadgen
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: ET_FRONTEND_URL
+              value: "http://www:9079"
+            - name: SCENARIO_NAME
+              value: "Headless Angular Scenario"
+            - name: ET_VISIT_NUMBER
+              value: "2"
+            - name: MAX_CHROME_DRIVERS
+              value: "2"
+            - name: ET_APM_SERVER_DEFAULT
+              valueFrom: { configMapKeyRef: { name: easytravel-config, key: ET_APM_SERVER_DEFAULT } }
+          resources:
+            requests: { cpu: 500m, memory: 1Gi }
+            limits:   { cpu: "1500m", memory: 1536Mi }

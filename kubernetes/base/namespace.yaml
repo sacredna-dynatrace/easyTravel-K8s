@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: easytravel
+  labels:
+    # DynaKube 의 namespaceSelector 와 매칭되는 라벨 (dynatrace/dynakube.yaml 참고)
+    monitoring: dynatrace

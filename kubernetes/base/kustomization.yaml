@@ -1,0 +1,41 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# 모든 리소스가 배포될 네임스페이스 (변경 시 namespace.yaml 의 name 도 함께 변경)
+namespace: easytravel
+
+resources:
+  - namespace.yaml
+  - configmap.yaml
+  - mongodb.yaml
+  - backend.yaml
+  - frontend.yaml
+  - angular-frontend.yaml
+  - nginx.yaml
+  - loadgen-classic.yaml
+  - loadgen-angular.yaml
+
+# Dynatrace release detection / metadata enrichment 에 사용되는 공통 라벨
+#  - app.kubernetes.io/part-of  → Release "product"
+#  - app.kubernetes.io/version  → Release "version"
+labels:
+  - pairs:
+      app.kubernetes.io/part-of: easytravel
+      app.kubernetes.io/version: "2.0.0"   # [CUSTOMIZE] 데모 버전 표기용
+    includeSelectors: false
+    includeTemplates: true
+
+# 이미지 태그 고정/사설 레지스트리 미러 사용 시 여기서 일괄 변경
+images:
+  - name: dynatrace/easytravel-mongodb
+    newTag: latest
+  - name: dynatrace/easytravel-backend
+    newTag: latest
+  - name: dynatrace/easytravel-frontend
+    newTag: latest
+  - name: dynatrace/easytravel-angular-frontend
+    newTag: latest
+  - name: dynatrace/easytravel-nginx
+    newTag: latest
+  - name: dynatrace/easytravel-headless-loadgen
+    newTag: latest

@@ -1,0 +1,64 @@
+# easyTravel WWW (NGINX reverse proxy)
+#   :80   → frontend (Classic)
+#   :9079 → angular-frontend
+#   :8080 → backend  (클러스터 내부 전용, Ingress 로 노출하지 않음)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: www
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: www
+  template:
+    metadata:
+      labels:
+        app: www
+        app.kubernetes.io/name: www
+        app.kubernetes.io/component: web-server
+    spec:
+      enableServiceLinks: false
+      nodeSelector:
+        kubernetes.io/arch: amd64
+      containers:
+        - name: nginx
+          image: dynatrace/easytravel-nginx
+          imagePullPolicy: IfNotPresent
+          ports:
+            - { name: classic, containerPort: 80 }
+            - { name: angular, containerPort: 9079 }
+            - { name: backend, containerPort: 8080 }
+          env:
+            - name: ET_FRONTEND_LOCATION
+              valueFrom: { configMapKeyRef: { name: easytravel-config, key: ET_FRONTEND_LOCATION } }
+            - name: ET_ANGULAR_FRONTEND_LOCATION
+              valueFrom: { configMapKeyRef: { name: easytravel-config, key: ET_ANGULAR_FRONTEND_LOCATION } }
+            - name: ET_BACKEND_LOCATION
+              valueFrom: { configMapKeyRef: { name: easytravel-config, key: ET_BACKEND_LOCATION } }
+          # run-process.sh 가 upstream 3개를 모두 기다린 뒤 nginx 기동
+          startupProbe:
+            tcpSocket: { port: classic }
+            periodSeconds: 10
+            failureThreshold: 60
+          readinessProbe:
+            tcpSocket: { port: classic }
+            periodSeconds: 10
+          livenessProbe:
+            tcpSocket: { port: classic }
+            periodSeconds: 20
+          resources:
+            requests: { cpu: 50m, memory: 64Mi }
+            limits:   { memory: 256Mi }
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: www
+spec:
+  selector:
+    app: www
+  ports:
+    - { name: classic, port: 80,   targetPort: classic }
+    - { name: angular, port: 9079, targetPort: angular }
+    - { name: backend, port: 8080, targetPort: backend }

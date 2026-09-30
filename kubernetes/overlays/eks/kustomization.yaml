@@ -1,0 +1,10 @@
+# Amazon EKS — AWS Load Balancer Controller(ALB) 사전 설치 필요
+# 배포: kubectl apply -k kubernetes/overlays/eks
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+  - ingress.yaml
+# components:
+  # - ../../components/problem-patterns-delayed    # [CUSTOMIZE] Davis baseline 학습 후 문제 발생시키려면 주석 해제
+  # - ../../components/mongodb-content-creator     # [CUSTOMIZE] 빈 MongoDB 사용 시에만

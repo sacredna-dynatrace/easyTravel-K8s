@@ -1,0 +1,60 @@
+# easyTravel Angular Customer Frontend (Tomcat / Java + Angular)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: angular-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: angular-frontend
+  template:
+    metadata:
+      labels:
+        app: angular-frontend
+        app.kubernetes.io/name: angular-frontend
+        app.kubernetes.io/component: customer-frontend
+    spec:
+      enableServiceLinks: false
+      nodeSelector:
+        kubernetes.io/arch: amd64
+      containers:
+        - name: angular-frontend
+          image: dynatrace/easytravel-angular-frontend
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+          env:
+            - name: ET_APM_SERVER_DEFAULT
+              valueFrom: { configMapKeyRef: { name: easytravel-config, key: ET_APM_SERVER_DEFAULT } }
+            - name: ET_BACKEND_URL
+              valueFrom: { configMapKeyRef: { name: easytravel-config, key: ET_BACKEND_URL } }
+            - name: CATALINA_OPTS
+              value: "-Dconfig.apmServerDefault=$(ET_APM_SERVER_DEFAULT) -Xmx525m"
+          startupProbe:
+            tcpSocket: { port: http }
+            periodSeconds: 10
+            failureThreshold: 60
+          readinessProbe:
+            tcpSocket: { port: http }
+            periodSeconds: 10
+          livenessProbe:
+            tcpSocket: { port: http }
+            periodSeconds: 20
+            failureThreshold: 5
+          resources:
+            requests: { cpu: 250m, memory: 768Mi }
+            limits:   { memory: 1Gi }
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: angular-frontend
+spec:
+  selector:
+    app: angular-frontend
+  ports:
+    - name: http
+      port: 8080
+      targetPort: http

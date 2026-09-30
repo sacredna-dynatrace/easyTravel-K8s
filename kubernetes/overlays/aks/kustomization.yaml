@@ -1,0 +1,11 @@
+# Azure AKS — Application Routing add-on(관리형 NGINX) 사용
+#   az aks approuting enable -g <RG> -n <CLUSTER>
+# 배포: kubectl apply -k kubernetes/overlays/aks
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+  - ingress.yaml
+# components:
+  # - ../../components/problem-patterns-delayed
+  # - ../../components/mongodb-content-creator

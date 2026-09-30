@@ -1,0 +1,49 @@
+# Headless Chrome 부하 발생기 — Classic 프론트엔드 대상 (docker-compose 의 headless-customer-loadgen)
+# ET_BACKEND_URL 이 설정되어 있으므로 Problem pattern 순환도 이 Pod 가 담당함.
+# (원본 K8s 매니페스트는 ET_BACKEND_URL 누락으로 problem pattern 이 동작하지 않았음)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: loadgen-classic
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: loadgen-classic
+  template:
+    metadata:
+      labels:
+        app: loadgen-classic
+        app.kubernetes.io/name: loadgen-classic
+        app.kubernetes.io/component: load-generator
+      annotations:
+        # 부하 발생기 자체는 모니터링 대상에서 제외 (OneAgent 주입 안 함)
+        oneagent.dynatrace.com/inject: "false"
+    spec:
+      enableServiceLinks: false
+      nodeSelector:
+        kubernetes.io/arch: amd64
+      containers:
+        - name: loadgen
+          image: dynatrace/easytravel-headless-loadgen
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: ET_FRONTEND_URL
+              value: "http://www:80"
+            - name: SCENARIO_NAME
+              value: "Headless Customer Scenario"
+            - name: ET_VISIT_NUMBER
+              value: "2"
+            - name: MAX_CHROME_DRIVERS
+              value: "2"
+            - name: ET_APM_SERVER_DEFAULT
+              valueFrom: { configMapKeyRef: { name: easytravel-config, key: ET_APM_SERVER_DEFAULT } }
+            - name: ET_BACKEND_URL
+              valueFrom: { configMapKeyRef: { name: easytravel-config, key: ET_BACKEND_URL } }
+            - name: ET_PROBLEMS
+              valueFrom: { configMapKeyRef: { name: easytravel-config, key: ET_PROBLEMS } }
+            - name: ET_PROBLEMS_DELAY
+              valueFrom: { configMapKeyRef: { name: easytravel-config, key: ET_PROBLEMS_DELAY } }
+          resources:
+            requests: { cpu: 500m, memory: 1Gi }
+            limits:   { cpu: "1500m", memory: 1536Mi }

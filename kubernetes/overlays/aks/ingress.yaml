@@ -1,0 +1,29 @@
+# AKS App Routing(NGINX) 는 80/443 만 노출하므로 Host 기반으로 Classic / Angular 분리
+# DNS 가 없으면 Ingress 외부 IP 확인 후 nip.io 사용:
+#   kubectl -n easytravel get ingress easytravel   → ADDRESS 가 20.1.2.3 이면
+#   host 를 easytravel.20.1.2.3.nip.io / angular.easytravel.20.1.2.3.nip.io 로 수정 후 재적용
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: easytravel
+spec:
+  ingressClassName: webapprouting.kubernetes.azure.com   # [CUSTOMIZE] 자체 ingress-nginx 사용 시 "nginx"
+  rules:
+    - host: easytravel.example.com                        # [CUSTOMIZE] Classic 프론트엔드 호스트
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: www
+                port: { name: classic }
+    - host: angular.easytravel.example.com                # [CUSTOMIZE] Angular 프론트엔드 호스트
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: www
+                port: { name: angular }

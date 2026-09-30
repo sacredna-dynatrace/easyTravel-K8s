@@ -1,0 +1,48 @@
+# Dynatrace Operator — DynaKube (cloudNativeFullStack)
+# 기준: dynatrace-operator 공식 샘플 assets/samples/dynakube/v1beta6/cloudNativeFullStack.yaml
+# 사전 조건:
+#   1) Operator 설치 (Helm 또는 manifest) — https://docs.dynatrace.com/docs/ingest-from/setup-on-k8s/deployment/full-stack-observability
+#   2) 토큰 Secret 생성 (Secret 이름 = DynaKube 이름)
+#        kubectl -n dynatrace create secret generic dynakube \
+#          --from-literal=apiToken=<OPERATOR_TOKEN> --from-literal=dataIngestToken=<DATA_INGEST_TOKEN>
+#   3) 이 파일 적용 후 easyTravel 배포 (주입은 Pod 생성 시점에 일어나므로 순서 중요)
+apiVersion: dynatrace.com/v1beta6
+kind: DynaKube
+metadata:
+  name: dynakube
+  namespace: dynatrace
+spec:
+  apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api   # [CUSTOMIZE] 테넌트 URL (Managed: https://<domain>/e/<env-id>/api)
+
+  metadataEnrichment:
+    enabled: true
+    namespaceSelector:
+      matchLabels:
+        monitoring: dynatrace            # kubernetes/base/namespace.yaml 라벨과 일치
+
+  # 선택: 컨테이너 로그 수집 (LogMonitoring)
+  # logMonitoring: {}
+
+  oneAgent:
+    hostGroup: easytravel-demo            # [CUSTOMIZE] 호스트 그룹 (EKS/AKS 구분 시 easytravel-eks 등)
+    cloudNativeFullStack:
+      # easyTravel 네임스페이스에만 code module 주입 (클러스터 전체 주입 방지)
+      namespaceSelector:
+        matchLabels:
+          monitoring: dynatrace
+      tolerations:
+        - effect: NoSchedule
+          key: node-role.kubernetes.io/master
+          operator: Exists
+        - effect: NoSchedule
+          key: node-role.kubernetes.io/control-plane
+          operator: Exists
+
+  activeGate:
+    capabilities:
+      - routing
+      - kubernetes-monitoring
+      - dynatrace-api
+    resources:
+      requests: { cpu: 200m, memory: 1Gi }   # [CUSTOMIZE] 데모 규모 기준. 운영 sizing: https://dt-url.net/26agsizes
+      limits:   { cpu: 1000m, memory: 2Gi }

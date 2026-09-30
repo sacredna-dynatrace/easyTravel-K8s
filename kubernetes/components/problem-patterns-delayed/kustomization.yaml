@@ -1,0 +1,11 @@
+# Davis AI 가 정상 baseline 을 먼저 학습하도록 problem pattern 시작을 ~2시간(7500s) 지연
+apiVersion: kustomize.config.k8s.io/v1alpha1
+kind: Component
+patches:
+  - target:
+      kind: ConfigMap
+      name: easytravel-config
+    patch: |-
+      - op: replace
+        path: /data/ET_PROBLEMS_DELAY
+        value: "7500"

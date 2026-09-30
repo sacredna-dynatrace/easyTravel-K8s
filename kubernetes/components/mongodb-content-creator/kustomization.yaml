@@ -1,0 +1,6 @@
+# (선택) 빈 MongoDB 에 easyTravel 데이터를 생성하는 1회성 Job.
+# 기본 easytravel-mongodb 이미지는 데이터가 사전 적재되어 있으므로 외부/빈 MongoDB 를 쓸 때만 활성화.
+apiVersion: kustomize.config.k8s.io/v1alpha1
+kind: Component
+resources:
+  - job.yaml

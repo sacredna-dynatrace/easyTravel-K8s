@@ -1,0 +1,65 @@
+# easyTravel Business Backend (Tomcat / Java)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  # Problem pattern(plugin) 상태가 인스턴스별로 관리되므로 데모 재현성을 위해 1 권장.
+  # 2 이상으로 늘리면 loadgen 이 5초마다 best-effort 로 재적용함.
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+        app.kubernetes.io/name: backend
+        app.kubernetes.io/component: business-backend
+    spec:
+      enableServiceLinks: false
+      nodeSelector:
+        kubernetes.io/arch: amd64
+      containers:
+        - name: backend
+          image: dynatrace/easytravel-backend
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+          env:
+            - name: ET_APM_SERVER_DEFAULT
+              valueFrom: { configMapKeyRef: { name: easytravel-config, key: ET_APM_SERVER_DEFAULT } }
+            - name: ET_DATABASE_LOCATION
+              valueFrom: { configMapKeyRef: { name: easytravel-config, key: ET_DATABASE_LOCATION } }
+            - name: CATALINA_OPTS
+              value: "-Dconfig.apmServerDefault=$(ET_APM_SERVER_DEFAULT) -Xmx300m"
+          envFrom:
+            - secretRef: { name: easytravel-mongodb }
+          # run-process.sh 가 MongoDB 대기(최대 360s) 후 Tomcat 기동 → startupProbe 로 충분히 대기
+          startupProbe:
+            tcpSocket: { port: http }
+            periodSeconds: 10
+            failureThreshold: 60
+          readinessProbe:
+            tcpSocket: { port: http }
+            periodSeconds: 10
+          livenessProbe:
+            tcpSocket: { port: http }
+            periodSeconds: 20
+            failureThreshold: 5
+          resources:
+            requests: { cpu: 250m, memory: 512Mi }
+            limits:   { memory: 768Mi }  # Xmx300m + metaspace + OneAgent code module 여유
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+spec:
+  selector:
+    app: backend
+  ports:
+    - name: http
+      port: 8080
+      targetPort: http

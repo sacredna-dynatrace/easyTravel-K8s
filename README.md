@@ -1,5 +1,7 @@
 # easyTravel-Docker
 
+> **Kubernetes (EKS / AKS) 배포:** [`kubernetes/README.md`](kubernetes/README.md)를 참고하세요. Kustomize, Ingress, Dynatrace Operator 구성이 들어 있습니다. 기존 `kubernetes-manifests/`는 upstream 원본 그대로 두었습니다.
+
 ![easyTravel Logo](https://github.com/dynatrace-innovationlab/easyTravel-Builder/blob/images/easyTravel-logo.png)
 
 This project builds and deploys the [Dynatrace easyTravel](https://community.dynatrace.com/community/display/DL/Demo+Applications+-+easyTravel) demo application in [Docker](https://www.docker.com/). All components are readily available on the [Docker Hub](https://hub.docker.com/u/dynatrace/).
