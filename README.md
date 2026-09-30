@@ -1,110 +1,112 @@
-# easyTravel-Docker
+# easyTravel-Docker (한국어)
 
 > **Kubernetes (EKS / AKS) 배포:** [`kubernetes/README.md`](kubernetes/README.md)를 참고하세요. Kustomize, Ingress, Dynatrace Operator 구성이 들어 있습니다. 기존 `kubernetes-manifests/`는 upstream 원본 그대로 두었습니다.
+>
+> **한글 UI:** 데모 화면 한글화 진행 절차는 [`i18n/README.md`](i18n/README.md)를 참고하세요.
 
 ![easyTravel Logo](https://github.com/dynatrace-innovationlab/easyTravel-Builder/blob/images/easyTravel-logo.png)
 
-This project builds and deploys the [Dynatrace easyTravel](https://community.dynatrace.com/community/display/DL/Demo+Applications+-+easyTravel) demo application in [Docker](https://www.docker.com/). All components are readily available on the [Docker Hub](https://hub.docker.com/u/dynatrace/).
+이 프로젝트는 [Dynatrace easyTravel](https://community.dynatrace.com/community/display/DL/Demo+Applications+-+easyTravel) 데모 애플리케이션을 [Docker](https://www.docker.com/)로 빌드하고 배포합니다. 모든 컴포넌트 이미지는 [Docker Hub](https://hub.docker.com/u/dynatrace/)에 공개되어 있습니다.
 
-## Application Components
+## 애플리케이션 구성 요소
 
-| Component               | Description
+| 컴포넌트                | 설명
 |:------------------------|:-----------
-| mongodb                 | A pre-populated travel database (MongoDB).
-| backend                 | The easyTravel Business Backend (Java).
-| frontend                | The easyTravel Customer Frontend (Java).
-| nginx                   | A reverse-proxy for the easyTravel Customer Frontend (NGINX).
-| angularfrontend         | The easyTravel Customer Frontend (Java,Angular).
-| headleassloadgen        | Load generator using headless Chrome (Java).
-| pluginservice           | Optional component that keeps state of plugins. Used in case of multiple backend components (Java).
-| mongodb-content-creator | Allows to create easyTravel database content in empty MongoDB database.
-| loadgen (deprecated)    | A synthetic load generator (Java).
+| mongodb                 | 여행 데이터가 미리 적재된 데이터베이스 (MongoDB)
+| backend                 | easyTravel Business Backend (Java)
+| frontend                | easyTravel Customer Frontend (Java)
+| nginx                   | easyTravel Customer Frontend 앞단의 reverse proxy (NGINX)
+| angularfrontend         | easyTravel Customer Frontend (Java, Angular)
+| headlessloadgen         | headless Chrome 기반 부하 발생기 (Java)
+| pluginservice           | plugin 상태를 보관하는 선택 컴포넌트. backend가 여러 개일 때 사용 (Java)
+| mongodb-content-creator | 비어 있는 MongoDB에 easyTravel 데이터를 생성
+| loadgen (deprecated)    | 합성 부하 발생기 (Java)
 
-## Run easyTravel in Docker
+## Docker로 easyTravel 실행
 
-You can run easyTravel by using [Docker Compose](https://docs.docker.com/compose/) with the provided `docker-compose.yml` file like so:
+제공되는 `docker-compose.yml` 파일로 [Docker Compose](https://docs.docker.com/compose/)를 실행합니다.
 
 ```
 docker-compose up
 ```
-NOTE: if you want to decrease memory usage, you can remove loadgen component from `docker-compose.yml`
-## Configure easyTravel in Docker
 
-Aligning with principles of [12factor apps](http://12factor.net/config), one of them which requires strict separation of configuration from code, easyTravel can be configured at startup time via the following environment variables:
+참고: 메모리 사용량을 줄이려면 `docker-compose.yml`에서 loadgen 컴포넌트를 빼세요.
 
-| Component                        | Environment Variable  | Defaults                                                                                                                                                                                                                   | Description
-|:---------------------------------|:----------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------
-| backend                          | ET_DATABASE_LOCATION  | easytravel-mongodb:27017      | The location of the database the easyTravel Business Backend shall connect to.
-| backend                          | ET_MONGO_AUTH_DB      | admin                         | Name of the MongoDB authentication database
-| backend                          | ET_DATABASE_USER      | etAdmin                       | Name of the MongoDB user
-| backend                          | ET_DATABASE_PASSWORD  | adminadmin                    | MongoDB user password
-| frontend                         | ET_BACKEND_URL        | http://easytravel-backend:8080| The URL to easyTravel's Business Backend.
-| nginx                            | ET_FRONTEND_LOCATION  | easytravel-frontend:8080      | The location of the Customer Frontend the easyTravel WWW server shall serve via port 80.
-| nginx                            | ET_BACKEND_LOCATION   | easytravel-backend:8080       | The location of the Business Backend the easyTravel WWW server shall serve via port 8080.
-| backend<br/>frontend		   | ET_APM_SERVER_DEFAULT | APM                           | The type of used server. Can be "APM" for Dynatrace and "Classic" for AppMon
-| angularfrontend                  | ET_BACKEND_URL        | http://easytravel-backend:8080| The URL to easyTravel's Business Backend
-| headlessloadgen                  | ET_FRONTEND_URL       | http://easytravel-www:9079    | The URL to easyTravel's Frontend
-| headlessloadgen                  | ET_VISIT_NUMBER       | 1                             | The number of visits generated per minute
-| headlessloadgen                  | MAX_CHROME_DRIVERS    | 1                             | Maximum number of chrome drivers
-| headlessloadgen                  | REUSE_CHROME_DRIVER_FREQUENCY | 1                     | How many times we should use one chrome instance for generating visits. Increasing this improves performance, however causes some strange behaviours with generated user sessions.
-| headlessloadgen                  | SCENARIO_NAME         | Headless Scenario             | Name of the scenario
-| headlessloadgen                  | ET_PROBLEMS           | BadCacheSynchronization,<br/>CPULoad,<br/>DatabaseCleanup,<br/>FetchSizeTooSmall,<br/>JourneySearchError404,<br/>JourneySearchError500,<br/>LoginProblems,<br/>MobileErrors,<br/>TravellersOptionBox | A list of supported problem patterns, see below on how to activate.
-| headlessloadgen                  | ET_PROBLEMS_DELAY     | 0                              | A delay in seconds. When used with Dynatrace, it is suggested to use a value of 7500 (slightly more than 2 hours) so that Dynatrace can learn from an error-free behavior first.
-| loadgen   | ET_WWW_URL            | http://easytravel-www:80       | The URL to easytravel's Customer Frontend.
-| loadgen   | ET_BACKEND_URL        | http://easytravel-www:8080     | The URL to easyTravel's Business Backend (optional). If provided, the problem patterns provided in `ET_PROBLEMS` will be applied consecutively for a duration of 10 minutes each.
-| loadgen   | ET_PROBLEMS           | BadCacheSynchronization,<br/>CPULoad,<br/>DatabaseCleanup,<br/>FetchSizeTooSmall,<br/>JourneySearchError404,<br/>JourneySearchError500,<br/>LoginProblems,<br/>MobileErrors,<br/>TravellersOptionBox | A list of supported problem patterns, see below on how to activate.
-| loadgen   | ET_PROBLEMS_DELAY     | 0                              | A delay in seconds. When used with Dynatrace, it is suggested to use a value of 7500 (slightly more than 2 hours) so that Dynatrace can learn from an error-free behavior first.
-| loadgen   | ET_VISIT_NUMBER       | 2                              | The number of visits generated per minute
+## Docker에서 easyTravel 설정
 
+[12factor app](http://12factor.net/config) 원칙(설정과 코드의 엄격한 분리)에 따라, easyTravel은 기동 시점에 아래 환경 변수로 설정합니다.
 
+| 컴포넌트                         | 환경 변수             | 기본값                        | 설명
+|:---------------------------------|:----------------------|:------------------------------|:-----------
+| backend                          | ET_DATABASE_LOCATION  | easytravel-mongodb:27017      | Business Backend가 연결할 데이터베이스 위치
+| backend                          | ET_MONGO_AUTH_DB      | admin                         | MongoDB 인증 데이터베이스 이름
+| backend                          | ET_DATABASE_USER      | etAdmin                       | MongoDB 사용자 이름
+| backend                          | ET_DATABASE_PASSWORD  | adminadmin                    | MongoDB 사용자 비밀번호
+| frontend                         | ET_BACKEND_URL        | http://easytravel-backend:8080| Business Backend URL
+| nginx                            | ET_FRONTEND_LOCATION  | easytravel-frontend:8080      | WWW 서버가 80 포트로 제공할 Customer Frontend 위치
+| nginx                            | ET_BACKEND_LOCATION   | easytravel-backend:8080       | WWW 서버가 8080 포트로 제공할 Business Backend 위치
+| backend<br/>frontend             | ET_APM_SERVER_DEFAULT | APM                           | 사용하는 서버 종류. Dynatrace는 "APM", AppMon은 "Classic"
+| angularfrontend                  | ET_BACKEND_URL        | http://easytravel-backend:8080| Business Backend URL
+| headlessloadgen                  | ET_FRONTEND_URL       | http://easytravel-www:9079    | Frontend URL
+| headlessloadgen                  | ET_VISIT_NUMBER       | 1                             | 분당 생성할 방문(visit) 수
+| headlessloadgen                  | MAX_CHROME_DRIVERS    | 1                             | 최대 Chrome driver 수
+| headlessloadgen                  | REUSE_CHROME_DRIVER_FREQUENCY | 1                     | Chrome 인스턴스 하나로 방문을 몇 번 생성할지. 값을 올리면 성능은 좋아지지만 생성되는 user session이 이상하게 보일 수 있음
+| headlessloadgen                  | SCENARIO_NAME         | Headless Scenario             | 시나리오 이름
+| headlessloadgen                  | ET_PROBLEMS           | BadCacheSynchronization,<br/>CPULoad,<br/>DatabaseCleanup,<br/>FetchSizeTooSmall,<br/>JourneySearchError404,<br/>JourneySearchError500,<br/>LoginProblems,<br/>MobileErrors,<br/>TravellersOptionBox | 지원하는 problem pattern 목록. 활성화 방법은 아래 참고
+| headlessloadgen                  | ET_PROBLEMS_DELAY     | 0                             | 지연 시간(초). Dynatrace와 함께 쓸 때는 7500(2시간 조금 넘음)을 권장합니다. Dynatrace가 먼저 정상 상태를 학습할 수 있습니다.
+| loadgen                          | ET_WWW_URL            | http://easytravel-www:80      | Customer Frontend URL
+| loadgen                          | ET_BACKEND_URL        | http://easytravel-www:8080    | Business Backend URL (선택). 지정하면 `ET_PROBLEMS`의 problem pattern을 10분씩 차례로 적용
+| loadgen                          | ET_PROBLEMS           | BadCacheSynchronization,<br/>CPULoad,<br/>DatabaseCleanup,<br/>FetchSizeTooSmall,<br/>JourneySearchError404,<br/>JourneySearchError500,<br/>LoginProblems,<br/>MobileErrors,<br/>TravellersOptionBox | 지원하는 problem pattern 목록. 활성화 방법은 아래 참고
+| loadgen                          | ET_PROBLEMS_DELAY     | 0                             | 지연 시간(초). Dynatrace와 함께 쓸 때는 7500(2시간 조금 넘음)을 권장합니다. Dynatrace가 먼저 정상 상태를 학습할 수 있습니다.
+| loadgen                          | ET_VISIT_NUMBER       | 2                             | 분당 생성할 방문(visit) 수
 
-## Enable easyTravel Problem Patterns
+## easyTravel Problem Pattern 활성화
 
-The following problem patterns are supported and triggered through the *loadgen* component, as described above:
+아래 problem pattern을 지원하며, 위에서 설명한 대로 *loadgen* 컴포넌트가 켜고 끕니다.
 
-| Pattern                 | Description
+| Pattern                 | 설명
 |:------------------------|:------------
-| BadCacheSynchronization | Activating this plugin causes synchronization problems in the customer frontend and uses a lot of CPU by doing an inefficient cache lookup. Activating this plugin should show a class 'CacheLookup' as doing lots of synchronization.
-| CPULoad                 | Causes high CPU usage in the business backend process to provoke an unhealthy host health state. The additional CPU time is triggered in 8 separate threads independent of any searching/booking activity.
-| DatabaseCleanup         | Cleans out items where we continuously accumulate data in the Database, e.g. Booking and LoginHistory and keeps the last 5000 to avoid filling up the database over time. This is done every 5 minutes at the point where a Journey is searched. Usually this plugin is enabled by default, if you disable it, the database will fill up over time, especially if traffic is generated automatically.
-| FetchSizeTooSmall       | This plugin sets the fetchsize of the Hibernate persistence layer to 1 when executing database queries. This will cause inefficient select statements to show up on databases where otherwise Hibernate is optimizing fetches into bulks.
-| JourneySearchError404   | Causes an HTTP 404 error code by returning an image name that does not exist when searching for journeys in the customer frontend web application.
-| JourneySearchError500   | Throws an HTTP 500 server error if the journey search parameters are invalid, e.g. toDate is before fromDate
-| LargeMemoryLeak         | Causes a large memory leak in the business backend when locations are queried for auto-completion in the search text box in the customer frontend. Note: This will quickly lead to a non-functional Java backend application because of out-of-memory errors.
-| LoginProblems           | Simulates an execption when a login is performed in the customer frontend application.
-| MobileErrors            | Journey searches and bookings from mobile devices create errors. (no errors created for Tablets)
-| TravellersOptionBox     | Causes an 'ArrayIndexOutOfBoundsException' wrapped in an 'InvalidTravellerCostItemException' if in the review-step of the booking flow in the customer frontend, the last option '2 adults+2 kids' is selected in the combo-box for 'travellers'.
+| BadCacheSynchronization | Customer Frontend에 동기화 문제를 일으키고, 비효율적인 cache lookup으로 CPU를 많이 씁니다. 활성화하면 'CacheLookup' 클래스가 동기화를 과도하게 수행하는 것으로 보입니다.
+| CPULoad                 | Business Backend 프로세스의 CPU 사용률을 높여 host health를 unhealthy 상태로 만듭니다. 검색·예약 활동과 무관하게 별도 스레드 8개에서 CPU 시간을 소모합니다.
+| DatabaseCleanup         | Booking, LoginHistory처럼 데이터베이스에 계속 쌓이는 항목을 정리하고 최근 5000건만 남깁니다. Journey 검색 시점에 5분마다 실행됩니다. 보통 기본으로 켜져 있으며, 끄면 특히 자동 트래픽이 있을 때 데이터베이스가 계속 커집니다.
+| FetchSizeTooSmall       | Hibernate persistence layer의 fetch size를 1로 설정합니다. Hibernate가 원래 묶어서 가져오던 조회가 비효율적인 select 문으로 데이터베이스에 나타납니다.
+| JourneySearchError404   | Customer Frontend에서 journey 검색 시 존재하지 않는 이미지 이름을 반환해 HTTP 404 오류를 일으킵니다.
+| JourneySearchError500   | journey 검색 조건이 잘못된 경우(예: toDate가 fromDate보다 앞선 경우) HTTP 500 서버 오류를 발생시킵니다.
+| LargeMemoryLeak         | Customer Frontend 검색창의 자동 완성으로 location을 조회할 때 Business Backend에 큰 메모리 누수를 일으킵니다. 주의: out-of-memory 오류로 Java backend가 금방 동작하지 않게 됩니다.
+| LoginProblems           | Customer Frontend에서 로그인할 때 exception을 발생시킵니다.
+| MobileErrors            | 모바일 기기에서의 journey 검색·예약에서 오류가 발생합니다. (태블릿은 제외)
+| TravellersOptionBox     | Customer Frontend 예약 흐름의 review 단계에서 'travellers' 콤보박스의 마지막 옵션('2 adults+2 kids')을 선택하면 'InvalidTravellerCostItemException'으로 감싼 'ArrayIndexOutOfBoundsException'이 발생합니다.
 
-## How to build easyTravel Docker images ?
+## easyTravel Docker 이미지 빌드
 
-Use `build.sh` if you want to build easyTravel Docker images yourself.
+이미지를 직접 빌드하려면 `build.sh`를 사용하세요.
 
-## How to build easyTravel deployment artefacts ?
+## easyTravel 배포 산출물 빌드
 
-### Option A: 'build-et.sh'
+### 방법 A: 'build-et.sh'
 
-The `build-et.sh` script builds easyTravel deployment artefacts into a directory `deploy` inside your current working directory, by default. You can override the default behavior by providing the following *environment variables* to the script:
+`build-et.sh`는 기본적으로 현재 작업 디렉터리 아래 `deploy` 디렉터리에 배포 산출물을 만듭니다. 아래 *환경 변수*로 기본 동작을 바꿀 수 있습니다.
 
-| Environment Variable  | Defaults                    | Description
+| 환경 변수             | 기본값                      | 설명
 |:----------------------|:----------------------------|:-----------
-| ET_SRC_URL            | http://etinstallers.demoability.dynatracelabs.com/latest/dynatrace-easytravel-src.zip | A URL to an easyTravel source distribution .zip file.
-| ET_DEPLOY_HOME        | ./deploy                    | A directory to contain the easyTravel deployment artefacts.
-| ET_BB_DEPLOY_HOME     | ./backend                   | A directory under `${ET_DEPLOY_HOME}` to contain the easyTravel Business Backend deployment artefact (will be located in `${ET_DEPLOY_HOME}/${ET_BB_DEPLOY_HOME}`).
-| ET_CF_DEPLOY_HOME     | ./frontend                  | A directory under `${ET_DEPLOY_HOME}` to contain the easyTravel Customer Frontend deployment artefact (will be located in `${ET_DEPLOY_HOME}/${ET_CF_DEPLOY_HOME}`).
-| ET_ACF_DEPLOY_HOME    | ./angularfrontend           | A directory under `${ET_DEPLOY_HOME}` to contain the easyTravel Customer Frontend (Angular) deployment artefact (will be located in `${ET_DEPLOY_HOME}/${ET_ACF_DEPLOY_HOME}`).
-| ET_LG_DEPLOY_HOME     | ./loadgen                   | A directory under `${ET_DEPLOY_HOME}` to contain the easyTravel UEM load generator deployment artefact (will be located in `${ET_DEPLOY_HOME}/${ET_LG_DEPLOY_HOME}`).
-| ET_HLG_DEPLOY_HOME    | ./headlessloadgen           | A directory under `${ET_DEPLOY_HOME}` to contain the easyTravel headless Angular load generator (Java) deployment artefact (will be located in `${ET_DEPLOY_HOME}/${ET_HLG_DEPLOY_HOME}`).
-| ET_MG_DEPLOY_HOME     | ./mongodb                   | A directory under `${ET_DEPLOY_HOME}` to contain the easyTravel pre-populated travel database (will be located in `${ET_DEPLOY_HOME}/${ET_MG_DEPLOY_HOME}`).
-| ET_MGC_DEPLOY_HOME    | ./mongodb-content-creator   | A directory under `${ET_DEPLOY_HOME}` to contain the easyTravel MongoDB Content Creator deployment artefact (will be located in `${ET_DEPLOY_HOME}/${ET_MGC_DEPLOY_HOME}`).
-| ET_PS_DEPLOY_HOME     | ./pluginservice             | A directory under `${ET_DEPLOY_HOME}` to contain the easyTravel Plugin Service deployment artefact (will be located in `${ET_DEPLOY_HOME}/${ET_PS_DEPLOY_HOME}`).
+| ET_SRC_URL            | http://etinstallers.demoability.dynatracelabs.com/latest/dynatrace-easytravel-src.zip | easyTravel 소스 배포본 .zip 파일 URL
+| ET_DEPLOY_HOME        | ./deploy                    | 배포 산출물을 담을 디렉터리
+| ET_BB_DEPLOY_HOME     | ./backend                   | `${ET_DEPLOY_HOME}` 아래 Business Backend 산출물 디렉터리 (`${ET_DEPLOY_HOME}/${ET_BB_DEPLOY_HOME}`)
+| ET_CF_DEPLOY_HOME     | ./frontend                  | `${ET_DEPLOY_HOME}` 아래 Customer Frontend 산출물 디렉터리 (`${ET_DEPLOY_HOME}/${ET_CF_DEPLOY_HOME}`)
+| ET_ACF_DEPLOY_HOME    | ./angularfrontend           | `${ET_DEPLOY_HOME}` 아래 Customer Frontend (Angular) 산출물 디렉터리 (`${ET_DEPLOY_HOME}/${ET_ACF_DEPLOY_HOME}`)
+| ET_LG_DEPLOY_HOME     | ./loadgen                   | `${ET_DEPLOY_HOME}` 아래 UEM load generator 산출물 디렉터리 (`${ET_DEPLOY_HOME}/${ET_LG_DEPLOY_HOME}`)
+| ET_HLG_DEPLOY_HOME    | ./headlessloadgen           | `${ET_DEPLOY_HOME}` 아래 headless Angular load generator (Java) 산출물 디렉터리 (`${ET_DEPLOY_HOME}/${ET_HLG_DEPLOY_HOME}`)
+| ET_MG_DEPLOY_HOME     | ./mongodb                   | `${ET_DEPLOY_HOME}` 아래 사전 적재 여행 데이터베이스 디렉터리 (`${ET_DEPLOY_HOME}/${ET_MG_DEPLOY_HOME}`)
+| ET_MGC_DEPLOY_HOME    | ./mongodb-content-creator   | `${ET_DEPLOY_HOME}` 아래 MongoDB Content Creator 산출물 디렉터리 (`${ET_DEPLOY_HOME}/${ET_MGC_DEPLOY_HOME}`)
+| ET_PS_DEPLOY_HOME     | ./pluginservice             | `${ET_DEPLOY_HOME}` 아래 Plugin Service 산출물 디렉터리 (`${ET_DEPLOY_HOME}/${ET_PS_DEPLOY_HOME}`)
 
-#### Example: create deployment artefacts in `./deploy`:
+#### 예시: `./deploy`에 배포 산출물 생성
 
 ```
 ./build-et.sh
 ```
 
-#### Example: create deployment artefacts in `./deploy` and no sub-folders:
+#### 예시: 하위 폴더 없이 `./deploy`에 바로 생성
 
 ```
 export ET_BB_DEPLOY_HOME=. \
@@ -118,14 +120,14 @@ export ET_PS_DEPLOY_HOME=. \
 ./build-et.sh
 ```
 
-### Option B: 'build-in-docker.sh'
+### 방법 B: 'build-in-docker.sh'
 
-Use `build-in-docker.sh` if you want to build easyTravel deployment artefacts in a build environment that runs in Docker, so you don't have to set up your own. Deployment artefacts can be found in a directory `deploy` inside your current working directory. You can override the default behavior by providing *environment variables* to the script (the same variables as in Option A).
+빌드 환경을 직접 준비하지 않고 Docker 안에서 배포 산출물을 빌드하려면 `build-in-docker.sh`를 사용하세요. 산출물은 현재 작업 디렉터리 아래 `deploy`에 생성됩니다. 방법 A와 같은 *환경 변수*로 기본 동작을 바꿀 수 있습니다.
 
-## Problems? Questions? Suggestions?
+## 문제·질문·제안
 
-This offering is [Dynatrace Community Supported](https://community.dynatrace.com/community/display/DL/Support+Levels#SupportLevels-Communitysupported/NotSupportedbyDynatrace(providedbyacommunitymember)). Feel free to share any problems, questions and suggestions with your peers on the Dynatrace Community's [Application Monitoring & UEM Forum](https://answers.dynatrace.com/spaces/146/index.html).
+이 프로젝트는 [Dynatrace Community Supported](https://community.dynatrace.com/community/display/DL/Support+Levels#SupportLevels-Communitysupported/NotSupportedbyDynatrace(providedbyacommunitymember)) 대상입니다. 문제나 질문, 제안은 Dynatrace Community의 [Application Monitoring & UEM Forum](https://answers.dynatrace.com/spaces/146/index.html)에서 공유해 주세요.
 
-## License
+## 라이선스
 
-Licensed under the MIT License. See the [LICENSE](https://github.com/dynatrace-innovationlab/easyTravel-Docker/blob/master/LICENSE) file for details.
+MIT License로 배포됩니다. 자세한 내용은 [LICENSE](https://github.com/dynatrace-innovationlab/easyTravel-Docker/blob/master/LICENSE) 파일을 참고하세요.

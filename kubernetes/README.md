@@ -17,6 +17,7 @@ kubernetes/
 │   ├── loadgen-classic.yaml      #   headless Chrome + problem pattern 순환 담당
 │   └── loadgen-angular.yaml
 ├── components/                   # 필요할 때만 켜는 옵션
+│   ├── korean/                   #   한글 UI 이미지(GHCR -ko)로 교체 → i18n/README.md
 │   ├── problem-patterns-delayed/ #   problem pattern 시작을 7500초 늦춤 (Davis baseline 학습용)
 │   └── mongodb-content-creator/  #   빈 MongoDB에 데이터 넣는 Job
 └── overlays/
@@ -91,6 +92,7 @@ Backend와 frontend는 MongoDB가 뜰 때까지 기다린 뒤 Tomcat을 시작�
 | Ingress class / host | `overlays/aks/ingress.yaml` |
 | Problem pattern 목록 | `base/configmap.yaml` → `ET_PROBLEMS` |
 | Problem pattern 시작 지연 | overlay의 `components`에서 `problem-patterns-delayed` 주석 해제 |
+| 한글 UI 사용 | overlay의 `components`에 `../../components/korean` 추가 |
 | 이미지 태그, 사설 레지스트리 | `base/kustomization.yaml` → `images` |
 | Release 버전 표기 | `base/kustomization.yaml` → `app.kubernetes.io/version` |
 

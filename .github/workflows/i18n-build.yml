@@ -1,0 +1,82 @@
+# 2단계: 한글 이미지 빌드 → GHCR push
+#   ghcr.io/<owner>/easytravel-{frontend,angular-frontend,backend,mongodb}-ko:<tag>
+# 실행: Actions → "i18n 2) Build Korean images" → Run workflow
+name: "i18n 2) Build Korean images"
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_tag:
+        description: "원본 easyTravel 이미지 태그"
+        default: "latest"
+        required: true
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  BASE_TAG: ${{ inputs.base_tag || 'latest' }}
+
+jobs:
+  war:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        component: [frontend, angular-frontend, backend]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build & push
+        run: |
+          set -euo pipefail
+          OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          IMG="ghcr.io/${OWNER}/easytravel-${{ matrix.component }}-ko"
+          docker build \
+            --build-arg BASE_IMAGE="dynatrace/easytravel-${{ matrix.component }}:${BASE_TAG}" \
+            -f i18n/docker/war-overlay.Dockerfile \
+            -t "${IMG}:latest" -t "${IMG}:${{ github.sha }}" \
+            "i18n/ko/${{ matrix.component }}"
+          docker push -a "${IMG}"
+
+  mongodb:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Apply translate.js and re-package DB
+        run: |
+          set -euo pipefail
+          BASE="dynatrace/easytravel-mongodb:${BASE_TAG}"
+          docker network create et
+          docker run -d --name mongodb --network et "$BASE"
+          AUTH="--host mongodb -u etAdmin -p adminadmin --authenticationDatabase admin"
+          for n in $(seq 1 60); do
+            docker run --rm --network et mongo:3.4 mongo $AUTH --quiet --eval 'db.adminCommand({ping:1}).ok' 2>/dev/null | grep -q 1 && break
+            sleep 5
+          done
+          docker run --rm --network et -v "$PWD/i18n/ko/mongodb:/ko:ro" mongo:3.4 mongo $AUTH /ko/translate.js
+          docker stop -t 60 mongodb          # clean shutdown → 데이터 파일 flush
+          rm -rf /tmp/db && mkdir -p /tmp/db
+          docker cp mongodb:/data/db/easyTravel/. /tmp/db/
+          rm -f /tmp/db/mongod.lock
+          tar -czf i18n/ko/mongodb/easyTravel-mongodb-db.tar.gz -C /tmp/db .
+      - name: Build & push
+        run: |
+          set -euo pipefail
+          OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          IMG="ghcr.io/${OWNER}/easytravel-mongodb-ko"
+          docker build \
+            --build-arg BASE_IMAGE="dynatrace/easytravel-mongodb:${BASE_TAG}" \
+            -f i18n/docker/mongodb.Dockerfile \
+            -t "${IMG}:latest" -t "${IMG}:${{ github.sha }}" \
+            i18n/ko/mongodb
+          docker push -a "${IMG}"

@@ -1,0 +1,24 @@
+# 한글 UI 이미지로 교체 (i18n/README.md 의 2단계 빌드 완료 후 사용)
+# overlay 의 components 에 - ../../components/korean 추가
+apiVersion: kustomize.config.k8s.io/v1alpha1
+kind: Component
+images:
+  - name: dynatrace/easytravel-frontend
+    newName: ghcr.io/sacredna-dynatrace/easytravel-frontend-ko           # [CUSTOMIZE] GHCR owner
+    newTag: latest
+  - name: dynatrace/easytravel-angular-frontend
+    newName: ghcr.io/sacredna-dynatrace/easytravel-angular-frontend-ko
+    newTag: latest
+  - name: dynatrace/easytravel-backend
+    newName: ghcr.io/sacredna-dynatrace/easytravel-backend-ko
+    newTag: latest
+  - name: dynatrace/easytravel-mongodb
+    newName: ghcr.io/sacredna-dynatrace/easytravel-mongodb-ko
+    newTag: latest
+patches:
+  # Dynatrace release detection 에서 한글판을 구분
+  - target: { kind: Deployment }
+    patch: |-
+      - op: add
+        path: /spec/template/metadata/labels/app.kubernetes.io~1version
+        value: "2.0.0-ko"

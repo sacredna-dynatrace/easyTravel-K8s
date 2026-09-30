@@ -1,0 +1,111 @@
+# 1단계: 한글화 대상 리소스 추출
+# Docker Hub 의 easyTravel 이미지에서 WAR / loadgen / MongoDB 데이터를 꺼내
+# 텍스트 리소스만 `i18n-source` 브랜치에 커밋한다. (master 는 건드리지 않음)
+#
+# 실행: GitHub → Actions → "i18n 1) Extract UI resources" → Run workflow
+name: "i18n 1) Extract UI resources"
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_tag:
+        description: "추출할 easyTravel 이미지 태그"
+        default: "latest"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    env:
+      TAG: ${{ inputs.image_tag }}
+      OUT: /tmp/i18n-source
+    steps:
+      - name: Pull images
+        run: |
+          for i in frontend angular-frontend backend headless-loadgen mongodb; do
+            docker pull -q "dynatrace/easytravel-$i:${TAG}"
+          done
+          docker pull -q mongo:3.4
+
+      - name: Extract WARs (frontend / angular-frontend / backend)
+        run: |
+          set -euo pipefail
+          mkdir -p "$OUT"
+          extract_war() {
+            local img="dynatrace/easytravel-$1:${TAG}" name="$1"
+            local cid; cid=$(docker create "$img")
+            docker cp "$cid:/usr/local/tomcat/webapps/ROOT.war" "$RUNNER_TEMP/$name.war"
+            docker rm "$cid" >/dev/null
+            mkdir -p "$OUT/$name"
+            unzip -q -o "$RUNNER_TEMP/$name.war" -d "$OUT/$name"
+            # 서드파티 jar 는 목록만 남기고 삭제, easyTravel 자체 jar 는 보존 (UI 문자열이 들어 있을 수 있음)
+            find "$OUT/$name" -name '*.jar' -printf '%P\n' | sort > "$OUT/$name.jars.txt"
+            find "$OUT/$name" -name '*.jar' ! -iname '*easytravel*' ! -iname '*dynatrace*' -delete
+            docker image inspect "$img" --format '{{.Id}} {{.Created}}' > "$OUT/$name.image.txt"
+          }
+          extract_war frontend
+          extract_war angular-frontend
+          extract_war backend
+
+      - name: Extract headless loadgen (scenario / selector 확인용)
+        run: |
+          set -euo pipefail
+          cid=$(docker create "dynatrace/easytravel-headless-loadgen:${TAG}")
+          docker cp "$cid:/easytravel" "$OUT/headless-loadgen"
+          docker rm "$cid" >/dev/null
+          cd "$OUT/headless-loadgen"
+          rm -rf chrome chromedriver* 2>/dev/null || true
+          find . -type f -printf '%P\t%s\n' | sort > ../headless-loadgen.files.txt
+          # 50MB 넘는 파일과 서드파티 jar 제거 (uemload / easytravel jar 만 유지)
+          find . -type f -size +50M -delete
+          find . -name '*.jar' ! -iname '*uemload*' ! -iname '*easytravel*' ! -iname '*dynatrace*' -delete
+
+      - name: Export MongoDB content
+        run: |
+          set -euo pipefail
+          docker network create et
+          docker run -d --name mongodb --network et "dynatrace/easytravel-mongodb:${TAG}"
+          AUTH="--host mongodb -u etAdmin -p adminadmin --authenticationDatabase admin"
+          for n in $(seq 1 60); do
+            docker run --rm --network et mongo:3.4 mongo $AUTH --quiet --eval 'db.adminCommand({ping:1}).ok' 2>/dev/null | grep -q 1 && break
+            sleep 5
+          done
+          mkdir -p "$OUT/mongodb"
+          DBS=$(docker run --rm --network et mongo:3.4 mongo $AUTH --quiet --eval \
+            'db.adminCommand({listDatabases:1}).databases.map(function(d){return d.name}).filter(function(n){return ["admin","local","config"].indexOf(n)<0}).join(" ")')
+          echo "databases: $DBS" | tee "$OUT/mongodb/_databases.txt"
+          for db in $DBS; do
+            COLS=$(docker run --rm --network et mongo:3.4 mongo $AUTH --quiet --eval \
+              "db.getSiblingDB('$db').getCollectionNames().join(' ')")
+            for c in $COLS; do
+              cnt=$(docker run --rm --network et mongo:3.4 mongo $AUTH --quiet --eval "db.getSiblingDB('$db').getCollection('$c').count()")
+              echo -e "$db\t$c\t$cnt" >> "$OUT/mongodb/_collections.tsv"
+              # 큰 컬렉션은 앞 500건만 샘플 (번역 대상 필드 파악용)
+              docker run --rm --network et mongo:3.4 mongoexport $AUTH -d "$db" -c "$c" --jsonArray --pretty --limit 500 \
+                > "$OUT/mongodb/$db.$c.json"
+            done
+          done
+          cat "$OUT/mongodb/_collections.tsv"
+
+      - name: Summary
+        run: |
+          cd "$OUT"
+          du -sh * | tee SIZE.txt
+          find . -type f \( -name '*.xhtml' -o -name '*.jsp' -o -name '*.html' -o -name '*.properties' -o -name '*.js' -o -name '*.json' \) \
+            -printf '%P\t%s\n' | sort > TEXT_FILES.tsv
+          wc -l TEXT_FILES.tsv
+
+      - name: Commit to i18n-source branch
+        run: |
+          set -euo pipefail
+          cd "$OUT"
+          git init -q -b i18n-source
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "i18n: extracted easyTravel resources (${TAG}) from run ${{ github.run_id }}"
+          git remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          git push -f origin i18n-source
