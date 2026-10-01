@@ -3,6 +3,7 @@
 # 배포: kubectl apply -k kubernetes/overlays/aks
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+namespace: easytravel                           # overlay 에서 추가한 Ingress·Job 도 easytravel 로
 resources:
   - ../../base
   - ingress.yaml
