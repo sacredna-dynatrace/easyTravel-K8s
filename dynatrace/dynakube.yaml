@@ -11,6 +11,10 @@ kind: DynaKube
 metadata:
   name: dynakube
   namespace: dynatrace
+  annotations:
+    # Dynatrace Kubernetes 앱에 표시되는 클러스터 이름 (기본값은 DynaKube 이름 "dynakube")
+    # 클러스터가 처음 연결될 때 적용됨. 이미 연결된 클러스터 이름은 Dynatrace UI 에서 변경
+    feature.dynatrace.com/automatic-kubernetes-api-monitoring-cluster-name: "easytravel"   # [CUSTOMIZE]
 spec:
   apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api   # [CUSTOMIZE] 테넌트 URL (Managed: https://<domain>/e/<env-id>/api)
 

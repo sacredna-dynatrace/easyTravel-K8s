@@ -122,7 +122,7 @@ kubectl -n easytravel logs deploy/loadgen-classic --tail=50
 
 Dynatrace 에서 5~10분 안에 다음이 보이면 정상입니다.
 
-- [ ] Kubernetes 앱에 `easytravel-demo` 클러스터
+- [ ] Kubernetes 앱에 `easytravel` 클러스터 (이름은 `dynatrace/dynakube.yaml` 의 `automatic-kubernetes-api-monitoring-cluster-name` annotation)
 - [ ] Hosts 에 노드 2대 (host group `easytravel-demo`)
 - [ ] Services 에 easyTravel 서비스 (frontend, backend, angular-frontend 등)
 - [ ] Frontend RUM 애플리케이션에 loadgen 세션
