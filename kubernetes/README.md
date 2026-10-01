@@ -2,6 +2,17 @@
 
 Kustomize로 easyTravel 전체 스택을 배포합니다. Classic frontend와 Angular frontend를 함께 올리고, Dynatrace Operator(cloudNativeFullStack)로 모니터링합니다.
 
+## 빠른 시작 (EKS, 클러스터 생성부터)
+
+클러스터가 없다면 [`cluster/eks/README.md`](cluster/eks/README.md) 의 `up` 스크립트 하나로 EKS 클러스터 생성 → AWS Load Balancer Controller → Dynatrace Operator·DynaKube → easyTravel(한글) 배포까지 끝납니다. 삭제는 `down` 스크립트로 합니다.
+
+```powershell
+$env:DT_API_URL="https://<environment-id>.live.dynatrace.com/api"; $env:DT_OPERATOR_TOKEN="..."; $env:DT_INGEST_TOKEN="..."
+powershell -ExecutionPolicy Bypass -File .\kubernetes\cluster\eks\up.ps1
+```
+
+이미 클러스터가 있다면 아래 "배포 순서"를 따르세요.
+
 ## 구조
 
 ```
@@ -16,6 +27,7 @@ kubernetes/
 │   ├── nginx.yaml                #   www: 80(Classic) / 9079(Angular) / 8080(Backend)
 │   ├── loadgen-classic.yaml      #   headless Chrome + problem pattern 순환 담당
 │   └── loadgen-angular.yaml
+├── cluster/eks/                  # EKS 데모 클러스터 생성·삭제 (eksctl + up/down 스크립트)
 ├── components/                   # 필요할 때만 켜는 옵션
 │   ├── korean/                   #   한글 UI 이미지(GHCR -ko)로 교체 → i18n/README.md
 │   ├── problem-patterns-delayed/ #   problem pattern 시작을 7500초 늦춤 (Davis baseline 학습용)
