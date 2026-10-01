@@ -168,24 +168,44 @@ jobs:
       - name: Check Korean UI
         run: |
           set -uo pipefail
+          mkdir -p /tmp/pages
           fail=0
-          check() {  # url, 기대 문자열
-            if curl -sf "$1" | grep -q "$2"; then echo "OK    $1 : $2"; else echo "FAIL  $1 : $2"; fail=1; fi
+          # JSF 컴포넌트는 비ASCII 를 &#NNNNN; 숫자 엔티티로 출력할 수 있으므로 디코딩 후 비교
+          check() {  # 이름, url, 기대 문자열
+            local meta
+            meta=$(curl -sL -o "/tmp/pages/$1.html" -w '%{http_code} %{content_type}' "$2")
+            python3 -c 'import html,sys; print(html.unescape(open(sys.argv[1],encoding="utf-8",errors="replace").read()))' \
+              "/tmp/pages/$1.html" > "/tmp/pages/$1.txt"
+            if grep -q "$3" "/tmp/pages/$1.txt"; then
+              echo "OK    [$meta] $2 : $3"
+            else
+              echo "FAIL  [$meta] $2 : $3"; fail=1
+              echo "      ---- title / header / error lines ----"
+              grep -iE "<title>|mainBoxHeader|exception|error|\.xhtml" "/tmp/pages/$1.txt" | head -15 | sed 's/^/      /'
+            fi
           }
-          check http://localhost:8000/orange.jsf          "여행지"
-          check http://localhost:8000/orange.jsf          "회사 소개"
-          check http://localhost:8000/orange.jsf          "운임 약관"
-          check http://localhost:8000/legal-orange.jsf    "이용약관"
-          check http://localhost:8000/privacy-orange.jsf  "개인정보처리방침"
-          check http://localhost:8000/orange-newaccount.jsf "가입하기"
-          check http://localhost:8000/special-offers.jsp  "특가 상품"
-          check http://localhost:9079/                    'lang="ko"'
+          check home      http://localhost:8000/orange.jsf            "여행지"
+          check home2     http://localhost:8000/orange.jsf            "회사 소개"
+          check home3     http://localhost:8000/orange.jsf            "운임 약관"
+          check legal     http://localhost:8000/legal-orange.jsf      "이용약관"
+          check privacy   http://localhost:8000/privacy-orange.jsf    "개인정보처리방침"
+          check newacct   http://localhost:8000/orange-newaccount.jsf "가입하기"
+          check offers    http://localhost:8000/special-offers.jsp    "특가 상품"
+          check angular   http://localhost:9079/                      'lang="ko"'
+          echo "--- 엔티티 인코딩 여부 (참고)"
+          grep -c "&#" /tmp/pages/home.html || true
           echo "--- MongoDB 번역 확인"
           docker run --rm --network et mongo:3.4 mongo --quiet --host easytravel-mongodb \
             -u etAdmin -p adminadmin --authenticationDatabase admin \
-            --eval 'db.getSiblingDB("easyTravel-Business").JourneyCollection.count({name:"파리 - 사랑의 도시"})' | tee /tmp/cnt
+            --eval 'db.getSiblingDB("easyTravel-Business").JourneyCollection.count({name:"파리 - 사랑의 도시"})' | tail -1 | tee /tmp/cnt
           grep -qv '^0$' /tmp/cnt || fail=1
           exit $fail
+      - name: Upload fetched pages
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: smoke-pages
+          path: /tmp/pages
       - name: Logs on failure
         if: failure()
         run: for c in easytravel-mongodb easytravel-backend easytravel-frontend easytravel-angular-frontend easytravel-www; do echo "=== $c"; docker logs --tail 80 $c; done
