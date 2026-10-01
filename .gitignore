@@ -1,1 +1,5 @@
 deploy
+
+# EKS 데모 로컬 환경 변수 (토큰 포함)
+kubernetes/cluster/eks/env.local.ps1
+kubernetes/cluster/eks/env.local.sh

@@ -2,6 +2,8 @@
 
 > **Kubernetes (EKS / AKS) 배포:** [`kubernetes/README.md`](kubernetes/README.md)를 참고하세요. Kustomize, Ingress, Dynatrace Operator 구성이 들어 있습니다. 기존 `kubernetes-manifests/`는 upstream 원본 그대로 두었습니다.
 >
+> **EKS 데모 클러스터 생성·삭제:** [`kubernetes/cluster/eks/README.md`](kubernetes/cluster/eks/README.md) — `up.ps1` 하나로 클러스터부터 Dynatrace·easyTravel 까지, `down.ps1` 로 전부 삭제.
+
 > **한글 UI:** 데모 화면 한글화 진행 절차는 [`i18n/README.md`](i18n/README.md)를 참고하세요.
 
 ![easyTravel Logo](https://github.com/dynatrace-innovationlab/easyTravel-Builder/blob/images/easyTravel-logo.png)

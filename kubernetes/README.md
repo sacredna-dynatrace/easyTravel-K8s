@@ -7,9 +7,13 @@ Kustomize로 easyTravel 전체 스택을 배포합니다. Classic frontend와 An
 클러스터가 없다면 [`cluster/eks/README.md`](cluster/eks/README.md) 의 `up` 스크립트 하나로 EKS 클러스터 생성 → AWS Load Balancer Controller → Dynatrace Operator·DynaKube → easyTravel(한글) 배포까지 끝납니다. 삭제는 `down` 스크립트로 합니다.
 
 ```powershell
-$env:DT_API_URL="https://<environment-id>.live.dynatrace.com/api"; $env:DT_OPERATOR_TOKEN="..."; $env:DT_INGEST_TOKEN="..."
-powershell -ExecutionPolicy Bypass -File .\kubernetes\cluster\eks\up.ps1
+Copy-Item .\kubernetes\cluster\eks\env.example.ps1 .\kubernetes\cluster\eks\env.local.ps1   # 최초 1회, 값 채우기
+. .\kubernetes\cluster\eks\env.local.ps1                                                        # 새 창마다
+powershell -ExecutionPolicy Bypass -File .\kubernetes\cluster\eks\up.ps1                       # 생성
+powershell -ExecutionPolicy Bypass -File .\kubernetes\cluster\eks\down.ps1                     # 삭제
 ```
+
+Dynatrace 토큰 2개(Operator, Data Ingest)는 **classic access token(`dt0c01.`)** 이어야 합니다. Platform token(`dt0s16.`)은 DynaKube 가 `Error` 가 됩니다.
 
 이미 클러스터가 있다면 아래 "배포 순서"를 따르세요.
 
@@ -56,9 +60,9 @@ cloudNativeFullStack은 Pod가 **생성될 때** code module을 주입합니다.
 ```bash
 # Operator 설치 (Helm)
 helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operator \
-  --create-namespace --namespace dynatrace --atomic
+  --create-namespace --namespace dynatrace --wait
 
-# 토큰 Secret (Secret 이름 = DynaKube 이름)
+# 토큰 Secret (Secret 이름 = DynaKube 이름, 두 토큰 모두 classic token dt0c01.)
 kubectl -n dynatrace create secret generic dynakube \
   --from-literal=apiToken=<OPERATOR_TOKEN> \
   --from-literal=dataIngestToken=<DATA_INGEST_TOKEN>
@@ -91,6 +95,7 @@ Backend와 frontend는 MongoDB가 뜰 때까지 기다린 뒤 Tomcat을 시작�
 | EKS | `http://<ALB-DNS>/` | `http://<ALB-DNS>:9079/` |
 | AKS | `http://easytravel.<IP>.nip.io/` | `http://angular.easytravel.<IP>.nip.io/` |
 
+- Overlay 의 `namespace: easytravel` 이 overlay 에서 추가한 Ingress 까지 같은 namespace 로 보냅니다. 이 설정이 없으면 Ingress 가 `default` 에 생겨 `www` Service 를 찾지 못합니다.
 - EKS: ALB 하나를 공유(`group.name`)하고 리스너 포트로 Classic과 Angular를 나눕니다. `kubectl -n easytravel get ingress`로 ALB 주소를 확인하세요.
 - AKS: Ingress가 host 기반입니다. `ingress.yaml`의 host를 실제 도메인이나 nip.io 주소로 바꾸세요.
 - Ingress 없이 빠르게 확인: `kubectl -n easytravel port-forward svc/www 8080:80 9079:9079`

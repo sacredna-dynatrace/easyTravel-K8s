@@ -53,6 +53,15 @@ foreach ($t in "aws","eksctl","kubectl","helm") {
 foreach ($v in "DT_API_URL","DT_OPERATOR_TOKEN","DT_INGEST_TOKEN") {
   if (-not [Environment]::GetEnvironmentVariable($v)) { throw "환경 변수 $v 를 설정하세요" }
 }
+# Operator / Data Ingest token 은 classic access token(dt0c01.) 이어야 함.
+#   platform token(dt0s16.) 은 Operator 이미지 탐색에서 ActiveGate 이미지를 못 찾아 DynaKube 가 Error 가 됨
+foreach ($v in "DT_OPERATOR_TOKEN","DT_INGEST_TOKEN") {
+  $val = [Environment]::GetEnvironmentVariable($v)
+  if (-not $val.StartsWith("dt0c01.")) {
+    Write-Warning "$v 가 classic token(dt0c01.) 이 아닙니다 (prefix: $($val.Substring(0, [Math]::Min(7, $val.Length)))). DynaKube 가 Error 가 될 수 있습니다."
+  }
+}
+if ($env:AWS_PROFILE) { Write-Host "AWS_PROFILE = $env:AWS_PROFILE" }
 $AccountId = (aws sts get-caller-identity --query Account --output text)
 if ($LASTEXITCODE -ne 0) { throw "AWS 자격 증명을 확인하세요 (aws configure 또는 aws sso login)" }
 Log "AWS 계정 $AccountId / 리전 $Region / 클러스터 $Cluster / overlay $Overlay"

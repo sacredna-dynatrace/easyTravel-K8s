@@ -28,6 +28,11 @@ for t in aws eksctl kubectl helm; do command -v "$t" >/dev/null || { echo "필�
 : "${DT_API_URL:?DT_API_URL 환경 변수를 설정하세요 (예: https://abc12345.live.dynatrace.com/api)}"
 : "${DT_OPERATOR_TOKEN:?DT_OPERATOR_TOKEN 환경 변수를 설정하세요}"
 : "${DT_INGEST_TOKEN:?DT_INGEST_TOKEN 환경 변수를 설정하세요}"
+# Operator / Data Ingest token 은 classic access token(dt0c01.) 이어야 함 (platform token dt0s16. 은 ActiveGate 이미지 탐색 실패)
+for v in DT_OPERATOR_TOKEN DT_INGEST_TOKEN; do
+  case "${!v}" in dt0c01.*) ;; *) echo "경고: $v 가 classic token(dt0c01.) 이 아닙니다 (prefix: ${!v:0:7}). DynaKube 가 Error 가 될 수 있습니다." >&2 ;; esac
+done
+[ -n "${AWS_PROFILE:-}" ] && echo "AWS_PROFILE = $AWS_PROFILE"
 ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
 log "AWS 계정 ${ACCOUNT_ID} / 리전 ${REGION} / 클러스터 ${CLUSTER} / overlay ${OVERLAY}"
 
