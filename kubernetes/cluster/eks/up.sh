@@ -65,8 +65,11 @@ kubectl -n kube-system rollout status deploy/aws-load-balancer-controller --time
 
 # ---------------------------------------------------------------- 3. Dynatrace Operator + DynaKube
 log "3/4 Dynatrace Operator + DynaKube"
-helm upgrade --install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operator \
-  --create-namespace --namespace dynatrace --atomic --wait
+# 빈 레지스트리 설정으로 credential helper 를 쓰지 않고 익명 pull (up.ps1 주석 참고)
+REG_DIR=$(mktemp -d); echo '{"auths":{"none.invalid":{}}}' > "$REG_DIR/config.json"
+DOCKER_CONFIG="$REG_DIR" helm upgrade --install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operator \
+  --registry-config "$REG_DIR/config.json" \
+  --create-namespace --namespace dynatrace --wait --timeout 10m
 kubectl -n dynatrace create secret generic dynakube \
   --from-literal="apiToken=${DT_OPERATOR_TOKEN}" \
   --from-literal="dataIngestToken=${DT_INGEST_TOKEN}" \

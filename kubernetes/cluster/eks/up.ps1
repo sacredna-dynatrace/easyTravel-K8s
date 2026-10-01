@@ -93,8 +93,22 @@ Run { kubectl -n kube-system rollout status deploy/aws-load-balancer-controller 
 
 # ---------------------------------------------------------------- 3. Dynatrace Operator + DynaKube
 Log "3/4 Dynatrace Operator + DynaKube"
-Run { helm upgrade --install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operator `
-        --create-namespace --namespace dynatrace --atomic --wait }
+# public.ecr.aws 는 익명 pull 이 가능하지만, helm(ORAS) 은 자격 증명 저장소가 비어 있으면 Windows 자격 증명
+# 관리자(wincred)를 자동으로 찾다가 "A specified logon session does not exist" 로 실패할 수 있다.
+# → 이 호출에서만 빈 레지스트리 설정을 지정해 credential helper 를 쓰지 않게 한다.
+$RegDir  = Join-Path $Tmp "registry"
+New-Item -ItemType Directory -Force -Path $RegDir | Out-Null
+$RegFile = Join-Path $RegDir "config.json"
+[IO.File]::WriteAllText($RegFile, '{"auths":{"none.invalid":{}}}', (New-Object Text.UTF8Encoding($false)))
+$prevDockerConfig = $env:DOCKER_CONFIG
+$env:DOCKER_CONFIG = $RegDir
+try {
+  Run { helm upgrade --install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operator `
+          --registry-config $RegFile `
+          --create-namespace --namespace dynatrace --wait --timeout 10m }
+} finally {
+  $env:DOCKER_CONFIG = $prevDockerConfig
+}
 $SecretFile = Join-Path $Tmp "dynakube-secret.yaml"
 $y = kubectl -n dynatrace create secret generic dynakube `
         "--from-literal=apiToken=$env:DT_OPERATOR_TOKEN" `
