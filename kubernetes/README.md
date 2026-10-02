@@ -1,6 +1,6 @@
-# easyTravel on Kubernetes (EKS / AKS)
+# easyTravel on Kubernetes (EKS)
 
-Kustomize로 easyTravel 전체 스택을 배포합니다. Classic frontend와 Angular frontend를 함께 올리고, Dynatrace Operator(cloudNativeFullStack)로 모니터링합니다.
+Kustomize로 easyTravel 전체 스택을 배포합니다. 표준 실행 환경은 **Amazon EKS** 입니다 (`overlays/aks` 는 참고용, 미검증). Classic frontend와 Angular frontend를 함께 올리고, Dynatrace Operator(cloudNativeFullStack)로 모니터링합니다.
 
 ## 빠른 시작 (EKS, 클러스터 생성부터)
 
@@ -15,7 +15,7 @@ powershell -ExecutionPolicy Bypass -File .\kubernetes\cluster\eks\down.ps1      
 
 Dynatrace 토큰 2개(Operator, Data Ingest)는 **classic access token(`dt0c01.`)** 이어야 합니다. Platform token(`dt0s16.`)은 DynaKube 가 `Error` 가 됩니다.
 
-이미 클러스터가 있다면 아래 "배포 순서"를 따르세요.
+이미 EKS 클러스터가 있다면 아래 "기존 EKS 클러스터에 수동 배포"를 따르세요. `up` 스크립트가 하는 일과 같습니다.
 
 ## 구조
 
@@ -37,8 +37,8 @@ kubernetes/
 │   ├── problem-patterns-delayed/ #   problem pattern 시작을 7500초 늦춤 (Davis baseline 학습용)
 │   └── mongodb-content-creator/  #   빈 MongoDB에 데이터 넣는 Job
 └── overlays/
-    ├── eks/                      # ALB Ingress (AWS Load Balancer Controller)
-    └── aks/                      # App Routing(NGINX) Ingress
+    ├── eks/                      # ALB Ingress (AWS Load Balancer Controller)  ← 표준
+    └── aks/                      # App Routing(NGINX) Ingress  (참고용, 미검증)
 dynatrace/
 └── dynakube.yaml                 # DynaKube v1beta6 (cloudNativeFullStack)
 ```
@@ -51,7 +51,9 @@ dynatrace/
  loadgen-angular ─▶ www:9079
 ```
 
-## 배포 순서
+## 기존 EKS 클러스터에 수동 배포
+
+전제: AWS Load Balancer Controller 설치됨 (`cluster/eks/up.ps1` 2단계 참고).
 
 ### 1. Dynatrace Operator + DynaKube (먼저 설치)
 
@@ -77,11 +79,7 @@ kubectl -n dynatrace get dynakube -w      # Running 이 될 때까지 대기
 ### 2. easyTravel
 
 ```bash
-# EKS (AWS Load Balancer Controller 사전 설치 필요)
 kubectl apply -k kubernetes/overlays/eks
-
-# AKS (az aks approuting enable -g <RG> -n <CLUSTER>)
-kubectl apply -k kubernetes/overlays/aks
 
 kubectl -n easytravel get pods -w
 ```
@@ -93,11 +91,9 @@ Backend와 frontend는 MongoDB가 뜰 때까지 기다린 뒤 Tomcat을 시작�
 | 환경 | Classic | Angular |
 |---|---|---|
 | EKS | `http://<ALB-DNS>/` | `http://<ALB-DNS>:9079/` |
-| AKS | `http://easytravel.<IP>.nip.io/` | `http://angular.easytravel.<IP>.nip.io/` |
 
 - Overlay 의 `namespace: easytravel` 이 overlay 에서 추가한 Ingress 까지 같은 namespace 로 보냅니다. 이 설정이 없으면 Ingress 가 `default` 에 생겨 `www` Service 를 찾지 못합니다.
 - EKS: ALB 하나를 공유(`group.name`)하고 리스너 포트로 Classic과 Angular를 나눕니다. `kubectl -n easytravel get ingress`로 ALB 주소를 확인하세요.
-- AKS: Ingress가 host 기반입니다. `ingress.yaml`의 host를 실제 도메인이나 nip.io 주소로 바꾸세요.
 - Ingress 없이 빠르게 확인: `kubectl -n easytravel port-forward svc/www 8080:80 9079:9079`
 
 ## 커스터마이즈 포인트 (`[CUSTOMIZE]` 주석)
@@ -106,7 +102,6 @@ Backend와 frontend는 MongoDB가 뜰 때까지 기다린 뒤 Tomcat을 시작�
 |---|---|
 | 테넌트 URL, host group | `dynatrace/dynakube.yaml` |
 | ALB scheme / 접속 허용 IP | `overlays/eks/ingress.yaml` |
-| Ingress class / host | `overlays/aks/ingress.yaml` |
 | Problem pattern 목록 | `base/configmap.yaml` → `ET_PROBLEMS` |
 | Problem pattern 시작 지연 | overlay의 `components`에서 `problem-patterns-delayed` 주석 해제 |
 | 한글 UI 사용 | overlay의 `components`에 `../../components/korean` 추가 |
@@ -132,5 +127,5 @@ Backend와 frontend는 MongoDB가 뜰 때까지 기다린 뒤 Tomcat을 시작�
 ## 정리
 
 ```bash
-kubectl delete -k kubernetes/overlays/eks     # 또는 aks
+kubectl delete -k kubernetes/overlays/eks     # ALB 도 함께 정리됨. 클러스터째 지우려면 cluster/eks/down.ps1
 ```

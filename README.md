@@ -1,135 +1,156 @@
-# easyTravel-Docker (한국어)
+# easyTravel on Amazon EKS (한국어 데모)
 
-> **Kubernetes (EKS / AKS) 배포:** [`kubernetes/README.md`](kubernetes/README.md)를 참고하세요. Kustomize, Ingress, Dynatrace Operator 구성이 들어 있습니다. 기존 `kubernetes-manifests/`는 upstream 원본 그대로 두었습니다.
->
-> **EKS 데모 클러스터 생성·삭제:** [`kubernetes/cluster/eks/README.md`](kubernetes/cluster/eks/README.md) — `up.ps1` 하나로 클러스터부터 Dynatrace·easyTravel 까지, `down.ps1` 로 전부 삭제.
+Dynatrace 데모 애플리케이션 **easyTravel** 을 **Amazon EKS** 에 올리고 **Dynatrace Operator(cloudNativeFullStack)** 로 모니터링하는 데모 환경입니다. 데모 화면은 한글입니다.
 
-> **한글 UI:** 데모 화면 한글화 진행 절차는 [`i18n/README.md`](i18n/README.md)를 참고하세요.
+- PowerShell 스크립트 하나(`up.ps1`)로 EKS 클러스터 생성부터 Dynatrace, easyTravel 배포까지 끝납니다. 데모가 끝나면 `down.ps1` 로 모두 지웁니다.
+- Classic(JSF)과 Angular 두 가지 frontend, headless Chrome loadgen 2개, problem pattern 자동 순환이 포함됩니다.
+- Dynatrace 에서 호스트·프로세스·서비스·분산 추적·RUM·Kubernetes 클러스터와 Davis problem 을 볼 수 있습니다.
 
-![easyTravel Logo](https://github.com/dynatrace-innovationlab/easyTravel-Builder/blob/images/easyTravel-logo.png)
+## 실행 방식
 
-이 프로젝트는 [Dynatrace easyTravel](https://community.dynatrace.com/community/display/DL/Demo+Applications+-+easyTravel) 데모 애플리케이션을 [Docker](https://www.docker.com/)로 빌드하고 배포합니다. 모든 컴포넌트 이미지는 [Docker Hub](https://hub.docker.com/u/dynatrace/)에 공개되어 있습니다.
+| 방식 | 상태 | 비고 |
+|---|---|---|
+| **Amazon EKS** (`kubernetes/cluster/eks`) | ✅ 표준 | 이 README 의 모든 내용은 EKS 기준 |
+| Azure AKS (`kubernetes/overlays/aks`) | ⚠️ 참고용 | 매니페스트만 있음. 미검증 |
+| docker-compose (`docker-compose.yml`) | ❌ 사용 안 함 | upstream 원본. 영문 이미지, Dynatrace 연동 없음 → [docs/upstream-docker.md](docs/upstream-docker.md) |
+| 로컬 PC / Codespaces | ❌ 사용 안 함 | Docker Desktop(WSL2)·kind 에서는 OneAgent cloudNativeFullStack 불가. 로컬 Linux VM 은 리소스 부족 |
 
-## 애플리케이션 구성 요소
+## 빠른 시작 (EKS)
 
-| 컴포넌트                | 설명
-|:------------------------|:-----------
-| mongodb                 | 여행 데이터가 미리 적재된 데이터베이스 (MongoDB)
-| backend                 | easyTravel Business Backend (Java)
-| frontend                | easyTravel Customer Frontend (Java)
-| nginx                   | easyTravel Customer Frontend 앞단의 reverse proxy (NGINX)
-| angularfrontend         | easyTravel Customer Frontend (Java, Angular)
-| headlessloadgen         | headless Chrome 기반 부하 발생기 (Java)
-| pluginservice           | plugin 상태를 보관하는 선택 컴포넌트. backend가 여러 개일 때 사용 (Java)
-| mongodb-content-creator | 비어 있는 MongoDB에 easyTravel 데이터를 생성
-| loadgen (deprecated)    | 합성 부하 발생기 (Java)
+준비물: AWS CLI, eksctl, kubectl, helm, EKS 권한이 있는 AWS 프로필, Dynatrace **classic access token(`dt0c01.`)** 2개(Operator, Data Ingest).
+도구 설치와 토큰 만드는 방법은 [`kubernetes/cluster/eks/README.md`](kubernetes/cluster/eks/README.md) 1장을 보세요.
 
-## Docker로 easyTravel 실행
+PowerShell 에서 repo 루트로 이동한 뒤 한 줄씩 실행합니다.
 
-제공되는 `docker-compose.yml` 파일로 [Docker Compose](https://docs.docker.com/compose/)를 실행합니다.
+```powershell
+# 최초 1회: 환경 변수 파일 만들고 [CUSTOMIZE] 값 채우기 (커밋되지 않음)
+Copy-Item .\kubernetes\cluster\eks\env.example.ps1 .\kubernetes\cluster\eks\env.local.ps1
+notepad .\kubernetes\cluster\eks\env.local.ps1
 
-```
-docker-compose up
-```
+# 새 PowerShell 창마다 (앞의 점 + 공백)
+. .\kubernetes\cluster\eks\env.local.ps1
 
-참고: 메모리 사용량을 줄이려면 `docker-compose.yml`에서 loadgen 컴포넌트를 빼세요.
+# 생성 (25~30분) → 마지막에 접속 주소 출력
+powershell -ExecutionPolicy Bypass -File .\kubernetes\cluster\eks\up.ps1
 
-## Docker에서 easyTravel 설정
-
-[12factor app](http://12factor.net/config) 원칙(설정과 코드의 엄격한 분리)에 따라, easyTravel은 기동 시점에 아래 환경 변수로 설정합니다.
-
-| 컴포넌트                         | 환경 변수             | 기본값                        | 설명
-|:---------------------------------|:----------------------|:------------------------------|:-----------
-| backend                          | ET_DATABASE_LOCATION  | easytravel-mongodb:27017      | Business Backend가 연결할 데이터베이스 위치
-| backend                          | ET_MONGO_AUTH_DB      | admin                         | MongoDB 인증 데이터베이스 이름
-| backend                          | ET_DATABASE_USER      | etAdmin                       | MongoDB 사용자 이름
-| backend                          | ET_DATABASE_PASSWORD  | adminadmin                    | MongoDB 사용자 비밀번호
-| frontend                         | ET_BACKEND_URL        | http://easytravel-backend:8080| Business Backend URL
-| nginx                            | ET_FRONTEND_LOCATION  | easytravel-frontend:8080      | WWW 서버가 80 포트로 제공할 Customer Frontend 위치
-| nginx                            | ET_BACKEND_LOCATION   | easytravel-backend:8080       | WWW 서버가 8080 포트로 제공할 Business Backend 위치
-| backend<br/>frontend             | ET_APM_SERVER_DEFAULT | APM                           | 사용하는 서버 종류. Dynatrace는 "APM", AppMon은 "Classic"
-| angularfrontend                  | ET_BACKEND_URL        | http://easytravel-backend:8080| Business Backend URL
-| headlessloadgen                  | ET_FRONTEND_URL       | http://easytravel-www:9079    | Frontend URL
-| headlessloadgen                  | ET_VISIT_NUMBER       | 1                             | 분당 생성할 방문(visit) 수
-| headlessloadgen                  | MAX_CHROME_DRIVERS    | 1                             | 최대 Chrome driver 수
-| headlessloadgen                  | REUSE_CHROME_DRIVER_FREQUENCY | 1                     | Chrome 인스턴스 하나로 방문을 몇 번 생성할지. 값을 올리면 성능은 좋아지지만 생성되는 user session이 이상하게 보일 수 있음
-| headlessloadgen                  | SCENARIO_NAME         | Headless Scenario             | 시나리오 이름
-| headlessloadgen                  | ET_PROBLEMS           | BadCacheSynchronization,<br/>CPULoad,<br/>DatabaseCleanup,<br/>FetchSizeTooSmall,<br/>JourneySearchError404,<br/>JourneySearchError500,<br/>LoginProblems,<br/>MobileErrors,<br/>TravellersOptionBox | 지원하는 problem pattern 목록. 활성화 방법은 아래 참고
-| headlessloadgen                  | ET_PROBLEMS_DELAY     | 0                             | 지연 시간(초). Dynatrace와 함께 쓸 때는 7500(2시간 조금 넘음)을 권장합니다. Dynatrace가 먼저 정상 상태를 학습할 수 있습니다.
-| loadgen                          | ET_WWW_URL            | http://easytravel-www:80      | Customer Frontend URL
-| loadgen                          | ET_BACKEND_URL        | http://easytravel-www:8080    | Business Backend URL (선택). 지정하면 `ET_PROBLEMS`의 problem pattern을 10분씩 차례로 적용
-| loadgen                          | ET_PROBLEMS           | BadCacheSynchronization,<br/>CPULoad,<br/>DatabaseCleanup,<br/>FetchSizeTooSmall,<br/>JourneySearchError404,<br/>JourneySearchError500,<br/>LoginProblems,<br/>MobileErrors,<br/>TravellersOptionBox | 지원하는 problem pattern 목록. 활성화 방법은 아래 참고
-| loadgen                          | ET_PROBLEMS_DELAY     | 0                             | 지연 시간(초). Dynatrace와 함께 쓸 때는 7500(2시간 조금 넘음)을 권장합니다. Dynatrace가 먼저 정상 상태를 학습할 수 있습니다.
-| loadgen                          | ET_VISIT_NUMBER       | 2                             | 분당 생성할 방문(visit) 수
-
-## easyTravel Problem Pattern 활성화
-
-아래 problem pattern을 지원하며, 위에서 설명한 대로 *loadgen* 컴포넌트가 켜고 끕니다.
-
-| Pattern                 | 설명
-|:------------------------|:------------
-| BadCacheSynchronization | Customer Frontend에 동기화 문제를 일으키고, 비효율적인 cache lookup으로 CPU를 많이 씁니다. 활성화하면 'CacheLookup' 클래스가 동기화를 과도하게 수행하는 것으로 보입니다.
-| CPULoad                 | Business Backend 프로세스의 CPU 사용률을 높여 host health를 unhealthy 상태로 만듭니다. 검색·예약 활동과 무관하게 별도 스레드 8개에서 CPU 시간을 소모합니다.
-| DatabaseCleanup         | Booking, LoginHistory처럼 데이터베이스에 계속 쌓이는 항목을 정리하고 최근 5000건만 남깁니다. Journey 검색 시점에 5분마다 실행됩니다. 보통 기본으로 켜져 있으며, 끄면 특히 자동 트래픽이 있을 때 데이터베이스가 계속 커집니다.
-| FetchSizeTooSmall       | Hibernate persistence layer의 fetch size를 1로 설정합니다. Hibernate가 원래 묶어서 가져오던 조회가 비효율적인 select 문으로 데이터베이스에 나타납니다.
-| JourneySearchError404   | Customer Frontend에서 journey 검색 시 존재하지 않는 이미지 이름을 반환해 HTTP 404 오류를 일으킵니다.
-| JourneySearchError500   | journey 검색 조건이 잘못된 경우(예: toDate가 fromDate보다 앞선 경우) HTTP 500 서버 오류를 발생시킵니다.
-| LargeMemoryLeak         | Customer Frontend 검색창의 자동 완성으로 location을 조회할 때 Business Backend에 큰 메모리 누수를 일으킵니다. 주의: out-of-memory 오류로 Java backend가 금방 동작하지 않게 됩니다.
-| LoginProblems           | Customer Frontend에서 로그인할 때 exception을 발생시킵니다.
-| MobileErrors            | 모바일 기기에서의 journey 검색·예약에서 오류가 발생합니다. (태블릿은 제외)
-| TravellersOptionBox     | Customer Frontend 예약 흐름의 review 단계에서 'travellers' 콤보박스의 마지막 옵션('2 adults+2 kids')을 선택하면 'InvalidTravellerCostItemException'으로 감싼 'ArrayIndexOutOfBoundsException'이 발생합니다.
-
-## easyTravel Docker 이미지 빌드
-
-이미지를 직접 빌드하려면 `build.sh`를 사용하세요.
-
-## easyTravel 배포 산출물 빌드
-
-### 방법 A: 'build-et.sh'
-
-`build-et.sh`는 기본적으로 현재 작업 디렉터리 아래 `deploy` 디렉터리에 배포 산출물을 만듭니다. 아래 *환경 변수*로 기본 동작을 바꿀 수 있습니다.
-
-| 환경 변수             | 기본값                      | 설명
-|:----------------------|:----------------------------|:-----------
-| ET_SRC_URL            | http://etinstallers.demoability.dynatracelabs.com/latest/dynatrace-easytravel-src.zip | easyTravel 소스 배포본 .zip 파일 URL
-| ET_DEPLOY_HOME        | ./deploy                    | 배포 산출물을 담을 디렉터리
-| ET_BB_DEPLOY_HOME     | ./backend                   | `${ET_DEPLOY_HOME}` 아래 Business Backend 산출물 디렉터리 (`${ET_DEPLOY_HOME}/${ET_BB_DEPLOY_HOME}`)
-| ET_CF_DEPLOY_HOME     | ./frontend                  | `${ET_DEPLOY_HOME}` 아래 Customer Frontend 산출물 디렉터리 (`${ET_DEPLOY_HOME}/${ET_CF_DEPLOY_HOME}`)
-| ET_ACF_DEPLOY_HOME    | ./angularfrontend           | `${ET_DEPLOY_HOME}` 아래 Customer Frontend (Angular) 산출물 디렉터리 (`${ET_DEPLOY_HOME}/${ET_ACF_DEPLOY_HOME}`)
-| ET_LG_DEPLOY_HOME     | ./loadgen                   | `${ET_DEPLOY_HOME}` 아래 UEM load generator 산출물 디렉터리 (`${ET_DEPLOY_HOME}/${ET_LG_DEPLOY_HOME}`)
-| ET_HLG_DEPLOY_HOME    | ./headlessloadgen           | `${ET_DEPLOY_HOME}` 아래 headless Angular load generator (Java) 산출물 디렉터리 (`${ET_DEPLOY_HOME}/${ET_HLG_DEPLOY_HOME}`)
-| ET_MG_DEPLOY_HOME     | ./mongodb                   | `${ET_DEPLOY_HOME}` 아래 사전 적재 여행 데이터베이스 디렉터리 (`${ET_DEPLOY_HOME}/${ET_MG_DEPLOY_HOME}`)
-| ET_MGC_DEPLOY_HOME    | ./mongodb-content-creator   | `${ET_DEPLOY_HOME}` 아래 MongoDB Content Creator 산출물 디렉터리 (`${ET_DEPLOY_HOME}/${ET_MGC_DEPLOY_HOME}`)
-| ET_PS_DEPLOY_HOME     | ./pluginservice             | `${ET_DEPLOY_HOME}` 아래 Plugin Service 산출물 디렉터리 (`${ET_DEPLOY_HOME}/${ET_PS_DEPLOY_HOME}`)
-
-#### 예시: `./deploy`에 배포 산출물 생성
-
-```
-./build-et.sh
+# 삭제 (15~20분)
+powershell -ExecutionPolicy Bypass -File .\kubernetes\cluster\eks\down.ps1
 ```
 
-#### 예시: 하위 폴더 없이 `./deploy`에 바로 생성
+| 화면 | 주소 |
+|---|---|
+| Classic (JSF) | `http://<ALB 주소>/` |
+| Angular | `http://<ALB 주소>:9079/` |
+
+ALB 주소는 클러스터를 만들 때마다 바뀝니다. `kubectl -n easytravel get ingress` 로 확인하세요.
+
+클러스터가 떠 있는 동안 EKS·EC2·NAT·ALB 요금이 시간 단위로 나옵니다. 데모가 끝나면 바로 `down` 하세요.
+
+## 아키텍처
+
+```mermaid
+flowchart LR
+  user([브라우저]) --> alb[ALB<br/>:80 / :9079]
+  subgraph eks[EKS easytravel-demo · namespace easytravel]
+    alb --> www[www<br/>nginx]
+    www -->|:80| fe[frontend<br/>Classic JSF]
+    www -->|:9079| afe[angular-frontend]
+    www -->|:8080| be[backend]
+    fe --> be
+    afe --> be
+    be --> db[(mongodb)]
+    lgc[loadgen-classic<br/>headless Chrome<br/>+ problem pattern 순환] --> www
+    lga[loadgen-angular<br/>headless Chrome] --> www
+  end
+  subgraph dt[namespace dynatrace]
+    op[Dynatrace Operator] -.-> oa[OneAgent<br/>노드별]
+    ag[ActiveGate<br/>K8s monitoring]
+  end
+  oa -.code module 주입.-> fe & afe & be
+  oa & ag ==> tenant[(Dynatrace 테넌트)]
+```
+
+## 구성 요소
+
+| Deployment | 이미지 | 역할 |
+|---|---|---|
+| `mongodb` | `ghcr.io/sacredna-dynatrace/easytravel-mongodb-ko` | 여행 데이터 DB (여행상품 이름·설명 한글) |
+| `backend` | `dynatrace/easytravel-backend` | Business Backend (Java) |
+| `frontend` | `ghcr.io/sacredna-dynatrace/easytravel-frontend-ko` | Classic Customer Frontend (Java JSF, 한글) |
+| `angular-frontend` | `ghcr.io/sacredna-dynatrace/easytravel-angular-frontend-ko` | Angular Customer Frontend (한글) |
+| `www` | `dynatrace/easytravel-nginx` | reverse proxy (80 Classic / 9079 Angular / 8080 Backend) |
+| `loadgen-classic` | `ghcr.io/sacredna-dynatrace/easytravel-headless-loadgen-ko` | Classic 부하 + problem pattern 순환 (Dynatrace 주입 제외) |
+| `loadgen-angular` | `ghcr.io/sacredna-dynatrace/easytravel-headless-loadgen-ko` | Angular 부하 (Dynatrace 주입 제외) |
+
+`-ko` 이미지는 Docker Hub 원본 이미지를 한글로 패치한 것입니다. 만드는 방법은 [`i18n/README.md`](i18n/README.md) 를 보세요. 영문 화면이 필요하면 `kubernetes/overlays/eks/kustomization.yaml` 의 `../../components/korean` 줄을 주석 처리합니다.
+
+## Dynatrace 에서 보이는 것
+
+`up` 이 끝나고 5~10분 뒤 확인합니다.
+
+- [ ] **Kubernetes** 앱: `easytravel` 클러스터, 노드 2대, easytravel namespace 워크로드
+- [ ] **Hosts**: EKS 노드 2대 (host group `easytravel-demo`)
+- [ ] **Services**: frontend, angular-frontend, backend 및 MongoDB 호출
+- [ ] **Frontend (RUM)**: loadgen 이 만든 사용자 세션
+- [ ] **Problems**: problem pattern 이 켜질 때 Davis problem
+
+클러스터 이름은 `dynatrace/dynakube.yaml` 의 `automatic-kubernetes-api-monitoring-cluster-name` annotation 으로 정합니다.
+
+## Problem pattern
+
+`loadgen-classic` 이 `ET_PROBLEMS` 목록을 10분 간격으로 하나씩 켜고 끕니다. 목록은 `kubernetes/base/configmap.yaml` 에 있습니다.
+
+| Pattern | 증상 |
+|---|---|
+| BadCacheSynchronization | Customer Frontend 의 `CacheLookup` 과도한 동기화 → CPU 증가 |
+| CPULoad | Backend 에서 스레드 8개가 CPU 소모 → host 상태 unhealthy |
+| DatabaseCleanup | 누적 데이터 정리 (최근 5000건 유지). 끄면 DB 가 계속 커짐 |
+| DatabaseSlowdown | 데이터베이스 응답 지연 |
+| FetchSizeTooSmall | Hibernate fetch size 1 → 비효율적인 select 다수 |
+| JourneySearchError404 | 검색 시 없는 이미지 → HTTP 404 |
+| JourneySearchError500 | 잘못된 검색 조건 → HTTP 500 |
+| LoginProblems | 로그인 시 exception |
+| MobileErrors | 모바일 기기 검색·예약 오류 |
+| TravellersOptionBox | 예약 review 단계 '2 adults+2 kids' 선택 시 exception |
+
+Davis 가 정상 상태를 먼저 학습하게 하려면 `kubernetes/overlays/eks/kustomization.yaml` 에서 `problem-patterns-delayed` component 주석을 풉니다. 그러면 problem pattern 이 7500초(약 2시간) 뒤에 시작합니다.
+
+## 자주 바꾸는 설정 (`[CUSTOMIZE]` 주석)
+
+| 항목 | 파일 |
+|---|---|
+| AWS 프로필, 테넌트 URL, 토큰 | `kubernetes/cluster/eks/env.local.ps1` (`env.example.ps1` 복사본) |
+| 클러스터 이름·리전·노드 타입·개수 | `kubernetes/cluster/eks/cluster.yaml` |
+| Dynatrace 클러스터 이름, host group, ActiveGate 리소스 | `dynatrace/dynakube.yaml` |
+| 한글/영문, problem pattern 지연 | `kubernetes/overlays/eks/kustomization.yaml` |
+| ALB 접속 허용 IP | `kubernetes/overlays/eks/ingress.yaml` (`inbound-cidrs`) |
+| Problem pattern 목록 | `kubernetes/base/configmap.yaml` (`ET_PROBLEMS`) |
+
+## Repo 구조
 
 ```
-export ET_BB_DEPLOY_HOME=. \
-export ET_CF_DEPLOY_HOME=. \
-export ET_ACF_DEPLOY_HOME=. \
-export ET_LG_DEPLOY_HOME=. \
-export ET_HLG_DEPLOY_HOME=. \
-export ET_MG_DEPLOY_HOME=. \
-export ET_MGC_DEPLOY_HOME=. \
-export ET_PS_DEPLOY_HOME=. \
-./build-et.sh
+├── kubernetes/
+│   ├── cluster/eks/        ★ EKS 생성·삭제 스크립트 (up/down, cluster.yaml, env.example.ps1)
+│   ├── base/               ★ easyTravel 매니페스트 (Kustomize)
+│   ├── components/         ★ korean, problem-patterns-delayed, mongodb-content-creator
+│   └── overlays/eks/       ★ ALB Ingress   (overlays/aks 는 참고용)
+├── dynatrace/dynakube.yaml ★ DynaKube v1beta6 cloudNativeFullStack
+├── i18n/                   ★ 한글 이미지 빌드 (번역 리소스, 패치 도구, Dockerfile)
+├── .github/workflows/      ★ i18n 추출·빌드·스모크 테스트
+├── docs/upstream-docker.md   upstream README 번역 (참고용)
+└── docker-compose.yml, build*.sh, images/, scripts/, kubernetes-manifests/
+                              upstream 원본 보존 (이 repo 에서 사용·검증하지 않음)
 ```
 
-### 방법 B: 'build-in-docker.sh'
+## 문서
 
-빌드 환경을 직접 준비하지 않고 Docker 안에서 배포 산출물을 빌드하려면 `build-in-docker.sh`를 사용하세요. 산출물은 현재 작업 디렉터리 아래 `deploy`에 생성됩니다. 방법 A와 같은 *환경 변수*로 기본 동작을 바꿀 수 있습니다.
+| 문서 | 내용 |
+|---|---|
+| [`kubernetes/cluster/eks/README.md`](kubernetes/cluster/eks/README.md) | EKS 준비·생성·확인·삭제·비용·문제 해결 (**먼저 볼 문서**) |
+| [`kubernetes/README.md`](kubernetes/README.md) | Kustomize 구조, 기존 EKS 클러스터에 수동 배포, 원본 매니페스트 대비 변경점 |
+| [`i18n/README.md`](i18n/README.md) | 한글 이미지 빌드 절차와 번역 범위 |
+| [`docs/upstream-docker.md`](docs/upstream-docker.md) | upstream docker-compose·빌드 문서와 환경 변수 전체 목록 (참고용) |
 
-## 문제·질문·제안
+## 출처·라이선스
 
-이 프로젝트는 [Dynatrace Community Supported](https://community.dynatrace.com/community/display/DL/Support+Levels#SupportLevels-Communitysupported/NotSupportedbyDynatrace(providedbyacommunitymember)) 대상입니다. 문제나 질문, 제안은 Dynatrace Community의 [Application Monitoring & UEM Forum](https://answers.dynatrace.com/spaces/146/index.html)에서 공유해 주세요.
-
-## 라이선스
-
-MIT License로 배포됩니다. 자세한 내용은 [LICENSE](https://github.com/dynatrace-innovationlab/easyTravel-Docker/blob/master/LICENSE) 파일을 참고하세요.
+[Dynatrace/easyTravel-Docker](https://github.com/Dynatrace/easyTravel-Docker) (MIT License) 를 기반으로 Kubernetes 배포, EKS 자동화, 한글화를 추가했습니다. 데모 목적의 개인 repo 이며 Dynatrace 공식 지원 대상이 아닙니다.
