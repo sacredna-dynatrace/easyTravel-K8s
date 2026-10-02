@@ -109,6 +109,35 @@ flowchart LR
 | 수동 | `problem-patterns-manual` | `kubernetes/problem.ps1 list / on / off / reset` |
 | 자동 순환 | 둘 다 주석 처리 | `loadgen-classic` 이 `ET_PROBLEMS` 를 10분마다 하나씩 순환 |
 
+### 사용법
+
+**웹 패널** — 브라우저로 `http://<ALB 주소>:9090/` 접속 → 로그인 → 카드의 **켜기 / 끄기**. 데모가 끝나면 **데모 pattern 모두 끄기**.
+
+![Problem pattern 제어 패널](docs/images/problem-panel.png)
+
+**명령줄** — repo 루트의 PowerShell 에서:
+
+```powershell
+.\kubernetes\problem.ps1 list              # 켜짐/꺼짐 목록
+.\kubernetes\problem.ps1 on  CPULoad       # 켜기 (대소문자 무관)
+.\kubernetes\problem.ps1 off CPULoad       # 끄기
+.\kubernetes\problem.ps1 reset             # 장애 시나리오 모두 끄기 (DatabaseCleanup 유지)
+```
+
+**데모 흐름 예시**
+
+1. 패널에서 `CPULoad` 켜기
+2. 3~10분 뒤 Dynatrace **Problems** 에서 Davis problem 확인 (root cause: backend 프로세스 CPU)
+3. 패널에서 끄기 → problem 이 닫히는지 확인
+
+**알아 둘 점**
+
+- 패널 계정: 사용자 `demo`(또는 `PANEL_USER`), 비밀번호는 `PANEL_PASSWORD` 또는 처음 `up` 할 때 자동 생성되어 출력된 값
+- 상태는 backend 메모리에 있어 backend Pod 가 재시작되면 초기 상태로 돌아갑니다
+- 웹 패널·수동 모드에서는 켜기 전에는 장애가 발생하지 않습니다 (자동 순환 꺼짐)
+
+### Pattern 목록
+
 | Pattern | 증상 |
 |---|---|
 | CPULoad | Backend 에서 스레드 8개가 CPU 소모 → 호스트·프로세스 CPU 포화 |
