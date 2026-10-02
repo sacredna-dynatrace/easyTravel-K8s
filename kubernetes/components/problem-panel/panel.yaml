@@ -1,0 +1,64 @@
+# Problem pattern 제어 패널 (nginx)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: problem-panel
+  labels:
+    app.kubernetes.io/part-of: easytravel
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: problem-panel
+  template:
+    metadata:
+      labels:
+        app: problem-panel
+        app.kubernetes.io/name: problem-panel
+        app.kubernetes.io/component: demo-control
+        app.kubernetes.io/part-of: easytravel
+      annotations:
+        # 데모 제어용 도구라 모니터링 대상에서 제외
+        oneagent.dynatrace.com/inject: "false"
+    spec:
+      enableServiceLinks: false
+      nodeSelector:
+        kubernetes.io/arch: amd64
+      containers:
+        - name: nginx
+          image: nginx:stable-alpine
+          imagePullPolicy: IfNotPresent
+          ports:
+            - { name: http, containerPort: 8080 }
+          volumeMounts:
+            - { name: conf, mountPath: /etc/nginx/conf.d, readOnly: true }
+            - { name: html, mountPath: /usr/share/nginx/html, readOnly: true }
+            - { name: auth, mountPath: /etc/nginx/auth, readOnly: true }
+          readinessProbe:
+            httpGet: { path: /healthz, port: http }
+            periodSeconds: 10
+          livenessProbe:
+            httpGet: { path: /healthz, port: http }
+            periodSeconds: 20
+          resources:
+            requests: { cpu: 10m, memory: 16Mi }
+            limits:   { memory: 64Mi }
+      volumes:
+        - name: conf
+          configMap: { name: problem-panel-nginx }
+        - name: html
+          configMap: { name: problem-panel-html }
+        - name: auth
+          secret: { secretName: problem-panel-auth }   # up.ps1 / up.sh 가 생성
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: problem-panel
+  labels:
+    app.kubernetes.io/part-of: easytravel
+spec:
+  selector:
+    app: problem-panel
+  ports:
+    - { name: http, port: 80, targetPort: http }

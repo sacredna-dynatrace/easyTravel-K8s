@@ -1,0 +1,37 @@
+# Problem pattern 웹 제어 패널 (EKS ALB :9090, Basic 인증)
+#   - nginx 가 정적 화면을 제공하고, 허용된 pattern 이름만 backend ConfigurationService 로 전달
+#   - backend(8080) 자체는 계속 외부에 노출하지 않음
+#   - 수동 제어를 위해 loadgen-classic 의 자동 순환을 끈다 (problem-patterns-manual 과 같은 패치)
+#   - 로그인 계정: Secret problem-panel-auth (up.ps1 / up.sh 가 생성. PANEL_USER / PANEL_PASSWORD)
+# overlay 의 components 에 - ../../components/problem-panel 추가
+apiVersion: kustomize.config.k8s.io/v1alpha1
+kind: Component
+
+resources:
+  - panel.yaml
+  - ingress.yaml
+
+configMapGenerator:
+  - name: problem-panel-nginx
+    files:
+      - default.conf
+  - name: problem-panel-html
+    files:
+      - index.html
+
+patches:
+  - target: { kind: Deployment, name: loadgen-classic }
+    patch: |-
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: loadgen-classic
+      spec:
+        template:
+          spec:
+            containers:
+              - name: loadgen
+                env:
+                  - name: ET_BACKEND_URL
+                    value: ""
+                    valueFrom: null

@@ -98,6 +98,18 @@ if [ -n "${GHCR_TOKEN:-}" ]; then
     --dry-run=client -o yaml | kubectl apply -f -
   kubectl -n easytravel patch serviceaccount default -p '{"imagePullSecrets":[{"name":"ghcr"}]}'
 fi
+# Problem pattern 제어 패널(components/problem-panel) 로그인 계정. PANEL_PASSWORD 가 없으면 기존 값 유지, 없으면 새로 생성
+PANEL_USER="${PANEL_USER:-demo}"
+PANEL_PASS="${PANEL_PASSWORD:-}"
+PANEL_NEW=false
+if [ -z "$PANEL_PASS" ] && ! kubectl -n easytravel get secret problem-panel-auth >/dev/null 2>&1; then
+  PANEL_PASS=$(LC_ALL=C tr -dc 'abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789' </dev/urandom | head -c 16 || true)
+  PANEL_NEW=true
+fi
+if [ -n "$PANEL_PASS" ]; then
+  kubectl -n easytravel create secret generic problem-panel-auth \
+    --from-literal="htpasswd=${PANEL_USER}:{PLAIN}${PANEL_PASS}" --dry-run=client -o yaml | kubectl apply -f -
+fi
 kubectl apply -k "$ROOT/kubernetes/overlays/${OVERLAY}"
 kubectl -n easytravel wait --for=condition=Available deploy --all --timeout=15m
 
@@ -110,4 +122,9 @@ done
 log "완료"
 echo "  Classic : http://${ALB:-<pending>}/"
 echo "  Angular : http://${ALB:-<pending>}:9079/"
+if kubectl -n easytravel get ingress easytravel-panel >/dev/null 2>&1; then
+  echo "  Problem : http://${ALB:-<pending>}:9090/   (계정: ${PANEL_USER})"
+  if $PANEL_NEW; then echo "            비밀번호(새로 생성): ${PANEL_PASS}"
+  elif [ -z "${PANEL_PASSWORD:-}" ]; then echo "            비밀번호: 기존 값 유지 (README 의 '비밀번호 확인' 참고)"; fi
+fi
 echo "  (ALB DNS 전파와 target 등록에 2~3분 더 걸릴 수 있습니다)"

@@ -9,6 +9,10 @@ $env:DT_API_URL        = "https://<environment-id>.live.dynatrace.com/api"   # [
 $env:DT_OPERATOR_TOKEN = "dt0c01.<...>"                               # [CUSTOMIZE] classic access token (dt0s16 platform token 아님)
 $env:DT_INGEST_TOKEN   = "dt0c01.<...>"                               # [CUSTOMIZE] classic access token, Data Ingest 용
 
+# Problem pattern 제어 패널(http://<ALB>:9090/) 로그인 계정. 비워 두면 user=demo, 비밀번호는 최초 생성 시 자동 생성되어 up 출력에 표시
+# $env:PANEL_USER     = "demo"
+# $env:PANEL_PASSWORD = "<데모용 비밀번호>"                       # [CUSTOMIZE] 다른 서비스와 같은 비밀번호 사용 금지
+
 # GHCR 패키지를 private 로 둔 경우에만 (read:packages 권한 PAT)
 # $env:GHCR_USER  = "sacredna-dynatrace"
 # $env:GHCR_TOKEN = "<PAT>"

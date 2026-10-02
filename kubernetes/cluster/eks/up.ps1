@@ -158,6 +158,25 @@ if ($env:GHCR_TOKEN) {
   [IO.File]::WriteAllText($PatchFile, "imagePullSecrets:`n- name: ghcr`n")
   Run { kubectl -n easytravel patch serviceaccount default --patch-file $PatchFile }
 }
+# Problem pattern 제어 패널(components/problem-panel) 로그인 계정. PANEL_PASSWORD 가 없으면 기존 값 유지, 없으면 새로 생성
+$PanelUser = if ($env:PANEL_USER) { $env:PANEL_USER } else { "demo" }
+$PanelPass = $env:PANEL_PASSWORD
+$PanelNew  = $false
+if (-not $PanelPass) {
+  if (-not (Try-Run { kubectl -n easytravel get secret problem-panel-auth })) {
+    $chars = "abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789".ToCharArray()
+    $PanelPass = -join (1..16 | ForEach-Object { $chars | Get-Random })
+    $PanelNew = $true
+  }
+}
+if ($PanelPass) {
+  $AuthFile = Join-Path $Tmp "panel-auth.yaml"
+  $y = kubectl -n easytravel create secret generic problem-panel-auth "--from-literal=htpasswd=${PanelUser}:{PLAIN}${PanelPass}" --dry-run=client -o yaml
+  if ($LASTEXITCODE -ne 0) { throw "problem-panel-auth secret 생성 실패" }
+  Save-Yaml $AuthFile $y
+  Run { kubectl apply -f $AuthFile }
+  Remove-Item $AuthFile -Force
+}
 Run { kubectl apply -k (Join-Path $Root "kubernetes/overlays/$Overlay") }
 Run { kubectl -n easytravel wait --for=condition=Available deploy --all --timeout=15m }
 
@@ -171,4 +190,9 @@ for ($i = 0; $i -lt 30; $i++) {
 Log "완료"
 Write-Host "  Classic : http://$Alb/"
 Write-Host "  Angular : http://${Alb}:9079/"
+if (Try-Run { kubectl -n easytravel get ingress easytravel-panel }) {
+  Write-Host "  Problem : http://${Alb}:9090/   (계정: $PanelUser)"
+  if ($PanelNew) { Write-Host "            비밀번호(새로 생성): $PanelPass" -ForegroundColor Yellow }
+  elseif (-not $env:PANEL_PASSWORD) { Write-Host "            비밀번호: 기존 값 유지 (README 의 '비밀번호 확인' 참고)" }
+}
 Write-Host "  (ALB DNS 전파와 target 등록에 2~3분 더 걸릴 수 있습니다)"

@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>easyTravel Problem Pattern</title>
+<style>
+  :root {
+    --bg: #f5f7fa; --card: #ffffff; --text: #1b2430; --muted: #5b6676; --line: #dfe4ea;
+    --on: #c62828; --on-bg: #fdecec; --off: #2e7d32; --accent: #1a3a5c; --warn: #b26a00; --warn-bg: #fff4e0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #11161d; --card: #19212b; --text: #e6ebf1; --muted: #9aa6b4; --line: #2a3542;
+      --on: #ff6b6b; --on-bg: #3a1f22; --off: #66bb6a; --accent: #8fb8e0; --warn: #ffb74d; --warn-bg: #3a2e1a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif;
+         background: var(--bg); color: var(--text); }
+  header { background: var(--accent); color: #fff; padding: 18px 20px; }
+  @media (prefers-color-scheme: dark) { header { background: #1a3a5c; } }
+  header h1 { margin: 0; font-size: 20px; }
+  header p { margin: 4px 0 0; font-size: 13px; opacity: .85; }
+  main { max-width: 1040px; margin: 0 auto; padding: 16px; }
+  .bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 14px; }
+  .bar .status { flex: 1 1 auto; font-size: 13px; color: var(--muted); }
+  .count { font-weight: 700; color: var(--on); }
+  button { font: inherit; cursor: pointer; border-radius: 8px; border: 1px solid var(--line);
+           background: var(--card); color: var(--text); padding: 8px 14px; }
+  button:disabled { opacity: .5; cursor: progress; }
+  .notice { background: var(--warn-bg); color: var(--warn); border-radius: 8px; padding: 10px 14px;
+            font-size: 13px; margin-bottom: 14px; }
+  .error { display: none; background: var(--on-bg); color: var(--on); border-radius: 8px; padding: 10px 14px;
+           font-size: 13px; margin-bottom: 14px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-left: 5px solid var(--line);
+          border-radius: 10px; padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+  .card.on { border-left-color: var(--on); background: linear-gradient(0deg, var(--on-bg), var(--card) 60%); }
+  .row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .row.head { flex-wrap: wrap; }
+  .name { font-weight: 700; font-size: 15px; }
+  .tier { font-size: 11px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 2px 8px; white-space: nowrap; }
+  .desc { font-size: 13px; color: var(--muted); line-height: 1.5; margin: 0; }
+  .state { font-size: 13px; font-weight: 700; }
+  .on .state { color: var(--on); }
+  .off .state { color: var(--off); }
+  .toggle { min-width: 84px; }
+  .on .toggle { border-color: var(--on); color: var(--on); }
+  .danger { font-size: 12px; color: var(--warn); }
+  .card.maint.on { border-left-color: var(--off); background: var(--card); }
+  .maint.on .state { color: var(--off); }
+  .maint.on .toggle { border-color: var(--line); color: var(--text); }
+  .maint.off .state { color: var(--warn); }
+  h2 { font-size: 15px; margin: 22px 0 10px; color: var(--muted); }
+  footer { font-size: 12px; color: var(--muted); margin: 22px 0 8px; }
+  code { font-size: 12px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>easyTravel Problem Pattern 제어</h1>
+  <p>켜면 몇 분 안에 Dynatrace Davis 가 문제를 감지합니다. 데모가 끝나면 모두 끄세요.</p>
+</header>
+<main>
+  <div class="notice">수동 모드입니다. loadgen 의 자동 순환은 꺼져 있고, 이 화면에서 켠 pattern 만 동작합니다. 여러 명이 동시에 이 화면을 쓰면 서로의 변경이 반영됩니다.</div>
+  <div class="error" id="error"></div>
+  <div class="bar">
+    <div class="status" id="status">상태 확인 중...</div>
+    <button id="refresh" type="button">새로고침</button>
+    <button id="alloff" type="button">데모 pattern 모두 끄기</button>
+  </div>
+
+  <h2>장애 시나리오</h2>
+  <div class="grid" id="grid-problem"></div>
+
+  <h2>유지 관리 (켜 두기 권장)</h2>
+  <div class="grid" id="grid-maint"></div>
+
+  <footer>
+    backend 재시작 시 상태가 초기화됩니다. · 5초마다 자동 갱신 · 그 외 켜진 plugin: <span id="others">-</span>
+  </footer>
+</main>
+
+<script>
+(function () {
+  "use strict";
+  var PATTERNS = [
+    { n: "CPULoad",                 t: "Backend",  d: "Backend 에서 스레드 8개가 CPU 를 계속 소모합니다. 호스트·프로세스 CPU 포화." },
+    { n: "DatabaseSlowdown",        t: "Backend → DB", d: "데이터베이스 호출이 느려져 서비스 응답 시간이 늘어납니다." },
+    { n: "FetchSizeTooSmall",       t: "Backend → DB", d: "Hibernate fetch size 1 → 작은 select 가 대량으로 발생합니다." },
+    { n: "BadCacheSynchronization", t: "Frontend", d: "CacheLookup 의 과도한 동기화로 Classic frontend CPU·응답 시간 증가." },
+    { n: "JourneySearchError404",   t: "Frontend", d: "여행 검색 시 없는 이미지를 반환해 HTTP 404 가 발생합니다." },
+    { n: "JourneySearchError500",   t: "Backend",  d: "잘못된 검색 조건에서 HTTP 500 서버 오류가 발생합니다." },
+    { n: "LoginProblems",           t: "Backend",  d: "로그인할 때 exception 이 발생해 로그인이 실패합니다." },
+    { n: "MobileErrors",            t: "Frontend", d: "모바일 기기의 검색·예약에서 오류가 발생합니다 (태블릿 제외)." },
+    { n: "TravellersOptionBox",     t: "Frontend", d: "예약 review 단계에서 '2 adults+2 kids' 선택 시 exception." },
+    { n: "LargeMemoryLeak",         t: "Backend",  d: "위치 자동완성 시 큰 메모리 누수. backend 가 곧 OOM 으로 재시작됩니다.", danger: true }
+  ];
+  var MAINT = [
+    { n: "DatabaseCleanup", t: "Backend → DB", d: "예약·로그인 이력을 정리해 최근 5000건만 유지합니다. 끄면 DB 가 계속 커집니다.", maint: true }
+  ];
+  var ALL = PATTERNS.concat(MAINT);
+  var KNOWN = {}; ALL.forEach(function (p) { KNOWN[p.n] = true; });
+  var enabled = {};
+  var busy = false;
+
+  function $(id) { return document.getElementById(id); }
+
+  function card(p) {
+    var el = document.createElement("div");
+    el.className = "card off"; el.id = "card-" + p.n;
+    el.innerHTML =
+      '<div class="row head"><span class="name"></span><span class="tier"></span></div>' +
+      '<p class="desc"></p>' +
+      (p.danger ? '<span class="danger">⚠ 켜면 backend 가 재시작될 수 있습니다</span>' : '') +
+      '<div class="row"><span class="state">꺼짐</span><button class="toggle" type="button">켜기</button></div>';
+    el.querySelector(".name").textContent = p.n;
+    el.querySelector(".tier").textContent = p.t;
+    el.querySelector(".desc").textContent = p.d;
+    el.querySelector(".toggle").addEventListener("click", function () { toggle(p); });
+    return el;
+  }
+  PATTERNS.forEach(function (p) { $("grid-problem").appendChild(card(p)); });
+  MAINT.forEach(function (p) { $("grid-maint").appendChild(card(p)); });
+
+  function showError(msg) {
+    var e = $("error");
+    if (msg) { e.textContent = msg; e.style.display = "block"; } else { e.style.display = "none"; }
+  }
+
+  function parseNames(xml) {
+    var names = [];
+    try {
+      var doc = new DOMParser().parseFromString(xml, "application/xml");
+      var nodes = doc.getElementsByTagNameNS("*", "return");
+      for (var i = 0; i < nodes.length; i++) { var v = (nodes[i].textContent || "").trim(); if (v) names.push(v); }
+    } catch (e) { /* fall through */ }
+    if (!names.length) {
+      var re = /<(?:\w+:)?return[^>]*>([^<]+)<\/(?:\w+:)?return>/g, m;
+      while ((m = re.exec(xml))) names.push(m[1].trim());
+    }
+    return names;
+  }
+
+  function render() {
+    var on = 0, others = [];
+    ALL.forEach(function (p) {
+      var el = $("card-" + p.n), isOn = !!enabled[p.n];
+      el.className = "card " + (isOn ? "on" : "off") + (p.maint ? " maint" : "");
+      el.querySelector(".state").textContent = isOn ? "켜짐" : "꺼짐";
+      el.querySelector(".toggle").textContent = isOn ? "끄기" : "켜기";
+      if (isOn && !p.maint) on++;
+    });
+    Object.keys(enabled).forEach(function (n) { if (!KNOWN[n]) others.push(n); });
+    $("others").textContent = others.length ? others.join(", ") : "-";
+    $("status").innerHTML = '장애 시나리오 <span class="count">' + on + '</span>개 켜짐 · ' +
+      new Date().toLocaleTimeString("ko-KR") + ' 기준';
+  }
+
+  function refresh() {
+    return fetch("api/enabled", { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error("상태 조회 실패 (HTTP " + r.status + ")"); return r.text(); })
+      .then(function (xml) {
+        enabled = {}; parseNames(xml).forEach(function (n) { enabled[n] = true; });
+        showError(""); render();
+      })
+      .catch(function (e) { showError(e.message + " — backend 가 준비 중일 수 있습니다."); });
+  }
+
+  function post(path) {
+    return fetch(path, { method: "POST", cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error(path + " 실패 (HTTP " + r.status + ")"); });
+  }
+
+  function setPattern(name, on) {
+    var q = "name=" + encodeURIComponent(name);
+    var chain = on ? post("api/register?" + q) : Promise.resolve();
+    return chain.then(function () { return post("api/set?" + q + "&enabled=" + (on ? "true" : "false")); });
+  }
+
+  function lock(v) {
+    busy = v;
+    Array.prototype.forEach.call(document.querySelectorAll("button"), function (b) { b.disabled = v; });
+  }
+
+  function toggle(p) {
+    if (busy) return;
+    var on = !enabled[p.n];
+    if (on && p.danger && !confirm(p.n + " 을(를) 켜면 backend 가 메모리 부족으로 재시작될 수 있습니다. 계속할까요?")) return;
+    if (!on && p.maint && !confirm(p.n + " 을(를) 끄면 데이터베이스가 계속 커집니다. 끌까요?")) return;
+    lock(true);
+    setPattern(p.n, on).catch(function (e) { showError(e.message); })
+      .then(refresh).then(function () { lock(false); });
+  }
+
+  $("refresh").addEventListener("click", function () { if (!busy) refresh(); });
+  $("alloff").addEventListener("click", function () {
+    if (busy) return;
+    var targets = PATTERNS.filter(function (p) { return enabled[p.n]; });
+    if (!targets.length) { refresh(); return; }
+    lock(true);
+    targets.reduce(function (acc, p) { return acc.then(function () { return setPattern(p.n, false); }); }, Promise.resolve())
+      .catch(function (e) { showError(e.message); })
+      .then(refresh).then(function () { lock(false); });
+  });
+
+  refresh();
+  setInterval(function () { if (!busy && !document.hidden) refresh(); }, 5000);
+})();
+</script>
+</body>
+</html>

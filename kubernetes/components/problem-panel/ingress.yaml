@@ -1,0 +1,26 @@
+# 같은 ALB(group.name: easytravel)에 :9090 리스너 추가
+#   http://<ALB-DNS>:9090/  → problem-panel (Basic 인증)
+# HTTP 이므로 계정 정보가 암호화되지 않음 → 데모 전용 계정을 쓰고, 가능하면 접속 IP 를 제한하세요
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: easytravel-panel
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/group.name: easytravel
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 9090}]'
+    alb.ingress.kubernetes.io/healthcheck-path: /healthz        # / 는 인증 때문에 401
+    alb.ingress.kubernetes.io/success-codes: "200"
+    # alb.ingress.kubernetes.io/inbound-cidrs: "x.x.x.x/32"   # [CUSTOMIZE] 패널 접속 허용 IP 제한 권장
+spec:
+  ingressClassName: alb
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: problem-panel
+                port: { name: http }

@@ -1,0 +1,23 @@
+# Problem pattern 수동 모드: loadgen-classic 의 자동 순환(10분마다 다음 pattern)을 끈다.
+#   켜고 끄기는 kubernetes/problem.ps1 (또는 problem.sh) / problem-panel 웹 화면으로 한다.
+#   자동 순환은 5초마다 상태를 다시 덮어쓰기 때문에, 수동 제어를 하려면 이 component 가 필요하다.
+#   (problem-panel component 에도 같은 패치가 들어 있으므로 둘을 함께 켤 필요는 없다)
+apiVersion: kustomize.config.k8s.io/v1alpha1
+kind: Component
+patches:
+  - target: { kind: Deployment, name: loadgen-classic }
+    patch: |-
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: loadgen-classic
+      spec:
+        template:
+          spec:
+            containers:
+              - name: loadgen
+                env:
+                  # 비어 있으면 run-process.sh 가 run-problem-patterns.sh 를 실행하지 않음 (부하 발생은 계속)
+                  - name: ET_BACKEND_URL
+                    value: ""
+                    valueFrom: null

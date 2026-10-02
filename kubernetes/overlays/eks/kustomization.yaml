@@ -8,5 +8,7 @@ resources:
   - ingress.yaml
 components:
   - ../../components/korean                     # [CUSTOMIZE] 한글 UI (i18n/README.md 2단계 이후)
-  # - ../../components/problem-patterns-delayed    # [CUSTOMIZE] Davis baseline 학습 후 문제 발생시키려면 주석 해제
+  - ../../components/problem-panel              # [CUSTOMIZE] Problem pattern 웹 제어(:9090) + 수동 모드. 주석 처리하면 자동 순환(10분 간격)
+  # - ../../components/problem-patterns-manual     # [CUSTOMIZE] 웹 패널 없이 수동 모드만 (kubernetes/problem.ps1 로 제어)
+  # - ../../components/problem-patterns-delayed    # [CUSTOMIZE] 자동 순환 모드에서 Davis baseline 학습 후 문제 발생시키려면 주석 해제
   # - ../../components/mongodb-content-creator     # [CUSTOMIZE] 빈 MongoDB 사용 시에만

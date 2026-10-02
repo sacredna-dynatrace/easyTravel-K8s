@@ -32,9 +32,12 @@ kubernetes/
 │   ├── loadgen-classic.yaml      #   headless Chrome + problem pattern 순환 담당
 │   └── loadgen-angular.yaml
 ├── cluster/eks/                  # EKS 데모 클러스터 생성·삭제 (eksctl + up/down 스크립트)
+├── problem.ps1 / problem.sh      # problem pattern 명령줄 제어 (list / on / off / reset)
 ├── components/                   # 필요할 때만 켜는 옵션
 │   ├── korean/                   #   한글 UI 이미지(GHCR -ko)로 교체 → i18n/README.md
-│   ├── problem-patterns-delayed/ #   problem pattern 시작을 7500초 늦춤 (Davis baseline 학습용)
+│   ├── problem-panel/            #   problem pattern 웹 제어 패널 (:9090, Basic 인증) + 자동 순환 끄기  ← EKS 기본
+│   ├── problem-patterns-manual/  #   자동 순환만 끄기 (problem.ps1 로 제어)
+│   ├── problem-patterns-delayed/ #   (자동 순환 모드) problem pattern 시작을 7500초 늦춤
 │   └── mongodb-content-creator/  #   빈 MongoDB에 데이터 넣는 Job
 └── overlays/
     ├── eks/                      # ALB Ingress (AWS Load Balancer Controller)  ← 표준
@@ -94,6 +97,7 @@ Backend와 frontend는 MongoDB가 뜰 때까지 기다린 뒤 Tomcat을 시작�
 
 - Overlay 의 `namespace: easytravel` 이 overlay 에서 추가한 Ingress 까지 같은 namespace 로 보냅니다. 이 설정이 없으면 Ingress 가 `default` 에 생겨 `www` Service 를 찾지 못합니다.
 - EKS: ALB 하나를 공유(`group.name`)하고 리스너 포트로 Classic과 Angular를 나눕니다. `kubectl -n easytravel get ingress`로 ALB 주소를 확인하세요.
+- Problem pattern 웹 패널: `http://<ALB-DNS>:9090/` (Secret `problem-panel-auth` 가 먼저 있어야 함. `up` 스크립트가 생성. 수동 배포 시: `kubectl -n easytravel create secret generic problem-panel-auth --from-literal=htpasswd='demo:{PLAIN}<비밀번호>'`)
 - Ingress 없이 빠르게 확인: `kubectl -n easytravel port-forward svc/www 8080:80 9079:9079`
 
 ## 커스터마이즈 포인트 (`[CUSTOMIZE]` 주석)
@@ -103,7 +107,7 @@ Backend와 frontend는 MongoDB가 뜰 때까지 기다린 뒤 Tomcat을 시작�
 | 테넌트 URL, host group | `dynatrace/dynakube.yaml` |
 | ALB scheme / 접속 허용 IP | `overlays/eks/ingress.yaml` |
 | Problem pattern 목록 | `base/configmap.yaml` → `ET_PROBLEMS` |
-| Problem pattern 시작 지연 | overlay의 `components`에서 `problem-patterns-delayed` 주석 해제 |
+| Problem pattern 모드 | overlay의 `components`: `problem-panel`(기본) / `problem-patterns-manual` / 둘 다 주석 = 자동 순환 (+`problem-patterns-delayed`) → [docs/problem-patterns.md](../docs/problem-patterns.md) |
 | 한글 UI 사용 | overlay의 `components`에 `../../components/korean` 추가 |
 | 이미지 태그, 사설 레지스트리 | `base/kustomization.yaml` → `images` |
 | Release 버전 표기 | `base/kustomization.yaml` → `app.kubernetes.io/version` |

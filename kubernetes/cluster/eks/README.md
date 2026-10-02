@@ -29,7 +29,11 @@ powershell -ExecutionPolicy Bypass -File .\kubernetes\cluster\eks\down.ps1
 ```
 Classic : http://k8s-easytravel-xxxx.ap-northeast-2.elb.amazonaws.com/
 Angular : http://k8s-easytravel-xxxx.ap-northeast-2.elb.amazonaws.com:9079/
+Problem : http://k8s-easytravel-xxxx.ap-northeast-2.elb.amazonaws.com:9090/   (계정: demo)
+          비밀번호(새로 생성): xxxxxxxxxxxxxxxx
 ```
+
+`Problem` 은 problem pattern 웹 제어 패널입니다. 비밀번호는 클러스터를 처음 만들 때만 자동 생성되어 표시되므로 메모해 두거나 `env.local.ps1` 에 `PANEL_PASSWORD` 를 정해 두세요. 자세한 내용은 [`docs/problem-patterns.md`](../../../docs/problem-patterns.md).
 
 ## 1. 준비 (최초 1회)
 
@@ -126,6 +130,9 @@ Dynatrace 에서 5~10분 안에 다음이 보이면 정상입니다.
 - [ ] Hosts 에 노드 2대 (host group `easytravel-demo`)
 - [ ] Services 에 easyTravel 서비스 (frontend, backend, angular-frontend 등)
 - [ ] Frontend RUM 애플리케이션에 loadgen 세션
+- [ ] `http://<ALB>:9090/` 패널에서 `CPULoad` 를 켜고 몇 분 뒤 Problems 에 Davis problem 이 열리는지, 끈 뒤 닫히는지
+
+Problem pattern 은 기본이 웹 패널 모드라 **켜기 전에는 장애가 발생하지 않습니다.** 명령줄로는 `.\kubernetes\problem.ps1 list / on <이름> / off <이름> / reset` 을 씁니다.
 
 클러스터를 새로 만들 때마다 노드(호스트)와 Pod 엔티티는 새 ID 로 생깁니다. 이전 엔티티는 보존 기간이 지나면 사라집니다.
 
@@ -168,5 +175,8 @@ aws elbv2 describe-load-balancers --region ap-northeast-2 --query "LoadBalancers
 | Pod 가 `ImagePullBackOff` | GHCR 패키지가 private. Public 으로 바꾸거나 `GHCR_USER`/`GHCR_TOKEN` 을 설정하고 `up` 재실행 |
 | `kubectl -n easytravel get ingress` 가 비어 있음 | overlay 에 `namespace: easytravel` 이 없던 이전 버전에서는 Ingress 가 `default` 에 생성됨. `kubectl -n default delete ingress --all` 후 최신 overlay 로 재적용 |
 | Ingress ADDRESS 가 안 생김 | `kubectl -n easytravel describe ingress easytravel-classic`, `kubectl -n kube-system logs deploy/aws-load-balancer-controller --tail=50` |
+| 패널(:9090) 접속 시 계속 로그인 창 | 계정 확인: `docs/problem-patterns.md` 의 "비밀번호 확인" 명령 |
+| 패널에 "상태 조회 실패 (HTTP 502)" | backend 가 아직 기동 중. `kubectl -n easytravel get pods` 로 `backend` Ready 확인 |
+| 패널에서 켠 pattern 이 몇 초 뒤 꺼짐 | 자동 순환 모드. overlay 에 `problem-panel` component 가 켜져 있는지 확인 후 `kubectl apply -k .\kubernetes\overlays\eks` |
 | 접속 시 503 | ALB target 이 아직 unhealthy. 2~3분 대기, `kubectl -n easytravel get pods` 로 `www`·`frontend` Ready 확인 |
 | 같은 이름으로 다시 만들 때 실패 | 이전 `down` 이 끝까지 됐는지, CloudFormation 스택이 `DELETE_FAILED` 로 남아 있는지 확인 후 콘솔에서 삭제 |

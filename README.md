@@ -41,6 +41,7 @@ powershell -ExecutionPolicy Bypass -File .\kubernetes\cluster\eks\down.ps1
 |---|---|
 | Classic (JSF) | `http://<ALB 주소>/` |
 | Angular | `http://<ALB 주소>:9079/` |
+| Problem pattern 제어 패널 | `http://<ALB 주소>:9090/` (계정은 `up` 출력 참고) |
 
 ALB 주소는 클러스터를 만들 때마다 바뀝니다. `kubectl -n easytravel get ingress` 로 확인하세요.
 
@@ -50,7 +51,7 @@ ALB 주소는 클러스터를 만들 때마다 바뀝니다. `kubectl -n easytra
 
 ```mermaid
 flowchart LR
-  user([브라우저]) --> alb[ALB<br/>:80 / :9079]
+  user([브라우저]) --> alb[ALB<br/>:80 / :9079 / :9090]
   subgraph eks[EKS easytravel-demo · namespace easytravel]
     alb --> www[www<br/>nginx]
     www -->|:80| fe[frontend<br/>Classic JSF]
@@ -59,8 +60,9 @@ flowchart LR
     fe --> be
     afe --> be
     be --> db[(mongodb)]
-    lgc[loadgen-classic<br/>headless Chrome<br/>+ problem pattern 순환] --> www
+    lgc[loadgen-classic<br/>headless Chrome] --> www
     lga[loadgen-angular<br/>headless Chrome] --> www
+    alb -->|:9090| panel[problem-panel<br/>nginx + Basic 인증] -->|pattern on/off| be
   end
   subgraph dt[namespace dynatrace]
     op[Dynatrace Operator] -.-> oa[OneAgent<br/>노드별]
@@ -79,7 +81,8 @@ flowchart LR
 | `frontend` | `ghcr.io/sacredna-dynatrace/easytravel-frontend-ko` | Classic Customer Frontend (Java JSF, 한글) |
 | `angular-frontend` | `ghcr.io/sacredna-dynatrace/easytravel-angular-frontend-ko` | Angular Customer Frontend (한글) |
 | `www` | `dynatrace/easytravel-nginx` | reverse proxy (80 Classic / 9079 Angular / 8080 Backend) |
-| `loadgen-classic` | `ghcr.io/sacredna-dynatrace/easytravel-headless-loadgen-ko` | Classic 부하 + problem pattern 순환 (Dynatrace 주입 제외) |
+| `loadgen-classic` | `ghcr.io/sacredna-dynatrace/easytravel-headless-loadgen-ko` | Classic 부하 (자동 순환 모드에서는 problem pattern 순환도 담당, Dynatrace 주입 제외) |
+| `problem-panel` | `nginx:stable-alpine` | Problem pattern 웹 제어 (:9090, Basic 인증) |
 | `loadgen-angular` | `ghcr.io/sacredna-dynatrace/easytravel-headless-loadgen-ko` | Angular 부하 (Dynatrace 주입 제외) |
 
 `-ko` 이미지는 Docker Hub 원본 이미지를 한글로 패치한 것입니다. 만드는 방법은 [`i18n/README.md`](i18n/README.md) 를 보세요. 영문 화면이 필요하면 `kubernetes/overlays/eks/kustomization.yaml` 의 `../../components/korean` 줄을 주석 처리합니다.
@@ -98,22 +101,29 @@ flowchart LR
 
 ## Problem pattern
 
-`loadgen-classic` 이 `ET_PROBLEMS` 목록을 10분 간격으로 하나씩 켜고 끕니다. 목록은 `kubernetes/base/configmap.yaml` 에 있습니다.
+기본 설정은 **웹 패널 모드**입니다. 데모 진행자가 `http://<ALB 주소>:9090/` 에서 장애 시나리오를 직접 켜고 끕니다 (Basic 인증). 계정은 `up` 출력에 표시됩니다.
+
+| 모드 | 설정 (`overlays/eks/kustomization.yaml`) | 제어 |
+|---|---|---|
+| **웹 패널** (기본) | `problem-panel` | 브라우저 `:9090` + `kubernetes/problem.ps1` |
+| 수동 | `problem-patterns-manual` | `kubernetes/problem.ps1 list / on / off / reset` |
+| 자동 순환 | 둘 다 주석 처리 | `loadgen-classic` 이 `ET_PROBLEMS` 를 10분마다 하나씩 순환 |
 
 | Pattern | 증상 |
 |---|---|
-| BadCacheSynchronization | Customer Frontend 의 `CacheLookup` 과도한 동기화 → CPU 증가 |
-| CPULoad | Backend 에서 스레드 8개가 CPU 소모 → host 상태 unhealthy |
-| DatabaseCleanup | 누적 데이터 정리 (최근 5000건 유지). 끄면 DB 가 계속 커짐 |
-| DatabaseSlowdown | 데이터베이스 응답 지연 |
-| FetchSizeTooSmall | Hibernate fetch size 1 → 비효율적인 select 다수 |
+| CPULoad | Backend 에서 스레드 8개가 CPU 소모 → 호스트·프로세스 CPU 포화 |
+| DatabaseSlowdown | 데이터베이스 호출 지연 → 응답 시간 증가 |
+| FetchSizeTooSmall | Hibernate fetch size 1 → 작은 select 대량 발생 |
+| BadCacheSynchronization | Classic frontend 의 `CacheLookup` 과도한 동기화 → CPU 증가 |
 | JourneySearchError404 | 검색 시 없는 이미지 → HTTP 404 |
 | JourneySearchError500 | 잘못된 검색 조건 → HTTP 500 |
 | LoginProblems | 로그인 시 exception |
 | MobileErrors | 모바일 기기 검색·예약 오류 |
 | TravellersOptionBox | 예약 review 단계 '2 adults+2 kids' 선택 시 exception |
+| LargeMemoryLeak | 큰 메모리 누수 → backend OOM 재시작 (웹 패널·수동 전용, 확인 후 실행) |
+| DatabaseCleanup | 장애가 아닌 DB 정리 기능 (켜 두기 권장) |
 
-Davis 가 정상 상태를 먼저 학습하게 하려면 `kubernetes/overlays/eks/kustomization.yaml` 에서 `problem-patterns-delayed` component 주석을 풉니다. 그러면 problem pattern 이 7500초(약 2시간) 뒤에 시작합니다.
+모드 전환, 비밀번호 확인, 보안 설정은 [`docs/problem-patterns.md`](docs/problem-patterns.md) 를 보세요.
 
 ## 자주 바꾸는 설정 (`[CUSTOMIZE]` 주석)
 
@@ -122,9 +132,11 @@ Davis 가 정상 상태를 먼저 학습하게 하려면 `kubernetes/overlays/ek
 | AWS 프로필, 테넌트 URL, 토큰 | `kubernetes/cluster/eks/env.local.ps1` (`env.example.ps1` 복사본) |
 | 클러스터 이름·리전·노드 타입·개수 | `kubernetes/cluster/eks/cluster.yaml` |
 | Dynatrace 클러스터 이름, host group, ActiveGate 리소스 | `dynatrace/dynakube.yaml` |
-| 한글/영문, problem pattern 지연 | `kubernetes/overlays/eks/kustomization.yaml` |
+| 한글/영문, problem pattern 모드(웹 패널·수동·자동) | `kubernetes/overlays/eks/kustomization.yaml` |
+| 웹 패널 계정 | `env.local.ps1` 의 `PANEL_USER` / `PANEL_PASSWORD` |
+| 웹 패널 접속 허용 IP | `kubernetes/components/problem-panel/ingress.yaml` (`inbound-cidrs`) |
 | ALB 접속 허용 IP | `kubernetes/overlays/eks/ingress.yaml` (`inbound-cidrs`) |
-| Problem pattern 목록 | `kubernetes/base/configmap.yaml` (`ET_PROBLEMS`) |
+| 자동 순환 pattern 목록 | `kubernetes/base/configmap.yaml` (`ET_PROBLEMS`) |
 
 ## Repo 구조
 
@@ -132,7 +144,8 @@ Davis 가 정상 상태를 먼저 학습하게 하려면 `kubernetes/overlays/ek
 ├── kubernetes/
 │   ├── cluster/eks/        ★ EKS 생성·삭제 스크립트 (up/down, cluster.yaml, env.example.ps1)
 │   ├── base/               ★ easyTravel 매니페스트 (Kustomize)
-│   ├── components/         ★ korean, problem-patterns-delayed, mongodb-content-creator
+│   ├── components/         ★ korean, problem-panel, problem-patterns-manual/delayed, mongodb-content-creator
+│   ├── problem.ps1 / .sh   ★ problem pattern 명령줄 제어
 │   └── overlays/eks/       ★ ALB Ingress   (overlays/aks 는 참고용)
 ├── dynatrace/dynakube.yaml ★ DynaKube v1beta6 cloudNativeFullStack
 ├── i18n/                   ★ 한글 이미지 빌드 (번역 리소스, 패치 도구, Dockerfile)
@@ -148,6 +161,7 @@ Davis 가 정상 상태를 먼저 학습하게 하려면 `kubernetes/overlays/ek
 |---|---|
 | [`kubernetes/cluster/eks/README.md`](kubernetes/cluster/eks/README.md) | EKS 준비·생성·확인·삭제·비용·문제 해결 (**먼저 볼 문서**) |
 | [`kubernetes/README.md`](kubernetes/README.md) | Kustomize 구조, 기존 EKS 클러스터에 수동 배포, 원본 매니페스트 대비 변경점 |
+| [`docs/problem-patterns.md`](docs/problem-patterns.md) | Problem pattern 웹 패널·명령줄·모드 전환·보안 |
 | [`i18n/README.md`](i18n/README.md) | 한글 이미지 빌드 절차와 번역 범위 |
 | [`docs/upstream-docker.md`](docs/upstream-docker.md) | upstream docker-compose·빌드 문서와 환경 변수 전체 목록 (참고용) |
 
