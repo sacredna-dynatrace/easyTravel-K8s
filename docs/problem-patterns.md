@@ -2,9 +2,9 @@
 
 easyTravel 은 backend 의 `ConfigurationService` 로 problem pattern(장애 시나리오 plugin)을 켜고 끕니다. 이 repo 는 세 가지 제어 방식을 제공합니다.
 
-| 모드 | `overlays/eks/kustomization.yaml` 의 components | 제어 방법 |
+| 모드 | `overlays/eks/kustomization.yaml` (GKE: `overlays/gke/...`) 의 components | 제어 방법 |
 |---|---|---|
-| **웹 패널** (기본) | `problem-panel` | 브라우저 `http://<ALB>:9090/` + `problem.ps1` |
+| **웹 패널** (기본) | `problem-panel` | 브라우저 `http://<ALB>:9090/` (GKE: `http://<problem-panel-lb IP>:9090/`) + `problem.ps1` |
 | 수동 | `problem-patterns-manual` | `kubernetes/problem.ps1` (또는 `problem.sh`) |
 | 자동 순환 | 위 둘 다 주석 처리 | `loadgen-classic` 이 `ET_PROBLEMS` 를 10분마다 하나씩 순환 (`problem-patterns-delayed` 로 시작 지연 가능) |
 
@@ -31,7 +31,7 @@ http://<ALB 주소>:9090/
 | 저장 위치 | Secret `easytravel/problem-panel-auth` (`up` 이 생성) |
 | 통신 | ALB HTTP(:9090) + Basic 인증. **암호화되지 않으므로** 데모 전용 비밀번호를 쓰세요 |
 | 접근 범위 | nginx 가 허용 목록의 pattern 이름과 `true`/`false` 만 backend 로 전달. backend(8080) 자체는 외부에 노출되지 않음 |
-| 접속 IP 제한 | `kubernetes/components/problem-panel/ingress.yaml` 의 `inbound-cidrs` 주석을 풀고 사무실 IP 입력 (권장) |
+| 접속 IP 제한 | `kubernetes/components/problem-panel/ingress.yaml` 의 `inbound-cidrs` 주석을 풀고 사무실 IP 입력 (권장). GKE 는 `kubernetes/overlays/gke/panel-lb.yaml` 의 `loadBalancerSourceRanges` |
 
 비밀번호 확인 (PowerShell):
 

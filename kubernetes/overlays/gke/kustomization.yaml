@@ -1,0 +1,29 @@
+# Google GKE Standard — Service type LoadBalancer (L4 외부 패스스루 Network Load Balancer)
+#   - GKE Ingress(GCE L7 LB)는 80/443 만 열 수 있어 EKS 처럼 :9079 / :9090 포트 분리가 안 됨
+#     → L4 LoadBalancer Service 로 www(80, 9079)와 problem-panel(9090)을 직접 노출 (추가 컨트롤러 설치 불필요)
+#   - 외부 IP 2개: www-lb(Classic :80 / Angular :9079), problem-panel-lb(:9090)
+# 배포: kubectl apply -k kubernetes/overlays/gke   (cluster/gke/up.ps1 / up.sh 가 자동 실행)
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: easytravel                           # overlay 에서 추가한 Service 도 easytravel 로
+resources:
+  - ../../base
+  - service-lb.yaml
+  - panel-lb.yaml                               # [CUSTOMIZE] 아래 problem-panel component 를 끄면 이 줄도 주석 처리
+components:
+  - ../../components/korean                     # [CUSTOMIZE] 한글 UI (i18n/README.md 2단계 이후)
+  - ../../components/problem-panel              # [CUSTOMIZE] Problem pattern 웹 제어(:9090) + 수동 모드. 주석 처리하면 자동 순환(10분 간격)
+  # - ../../components/problem-patterns-manual     # [CUSTOMIZE] 웹 패널 없이 수동 모드만 (kubernetes/problem.ps1 로 제어)
+  # - ../../components/problem-patterns-delayed    # [CUSTOMIZE] 자동 순환 모드에서 Davis baseline 학습 후 문제 발생시키려면 주석 해제
+  # - ../../components/mongodb-content-creator     # [CUSTOMIZE] 빈 MongoDB 사용 시에만
+
+patches:
+  # problem-panel component 에 들어 있는 EKS ALB 전용 Ingress(ingressClassName: alb)는 GKE 에서 쓰지 않으므로 제거
+  # (component 를 끄면 대상이 없어 이 패치는 아무 일도 하지 않음)
+  - target: { kind: Ingress, name: easytravel-panel }
+    patch: |-
+      $patch: delete
+      apiVersion: networking.k8s.io/v1
+      kind: Ingress
+      metadata:
+        name: easytravel-panel

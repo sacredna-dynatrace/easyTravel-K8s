@@ -1,0 +1,21 @@
+# Problem pattern 제어 패널을 외부 L4 Network Load Balancer :9090 으로 노출 (www-lb 와 IP 가 다름)
+#   http://<PANEL-EXTERNAL-IP>:9090/  → problem-panel (Basic 인증)
+# HTTP 이므로 계정 정보가 암호화되지 않음 → 데모 전용 계정을 쓰고, 가능하면 접속 IP 를 제한하세요
+# components/problem-panel 을 끄면 kustomization.yaml 에서 이 파일도 주석 처리
+apiVersion: v1
+kind: Service
+metadata:
+  name: problem-panel-lb
+  labels:
+    app.kubernetes.io/part-of: easytravel
+  annotations:
+    cloud.google.com/l4-rbs: "enabled"
+spec:
+  type: LoadBalancer
+  externalTrafficPolicy: Cluster
+  selector:
+    app: problem-panel
+  ports:
+    - { name: http, port: 9090, targetPort: http, protocol: TCP }
+  # loadBalancerSourceRanges:                   # [CUSTOMIZE] 패널 접속 허용 IP 제한 권장
+  #   - x.x.x.x/32

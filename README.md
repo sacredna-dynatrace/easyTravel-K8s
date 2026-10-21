@@ -1,8 +1,8 @@
-# easyTravel on Amazon EKS (한국어 데모)
+# easyTravel on Amazon EKS / Google GKE (한국어 데모)
 
-Dynatrace 데모 애플리케이션 **easyTravel** 을 **Amazon EKS** 에 올리고 **Dynatrace Operator(cloudNativeFullStack)** 로 모니터링하는 데모 환경입니다. 데모 화면은 한글입니다.
+Dynatrace 데모 애플리케이션 **easyTravel** 을 **Amazon EKS** 또는 **Google GKE** 에 올리고 **Dynatrace Operator(cloudNativeFullStack)** 로 모니터링하는 데모 환경입니다. 데모 화면은 한글입니다.
 
-- PowerShell 스크립트 하나(`up.ps1`)로 EKS 클러스터 생성부터 Dynatrace, easyTravel 배포까지 끝납니다. 데모가 끝나면 `down.ps1` 로 모두 지웁니다.
+- PowerShell 스크립트 하나(`up.ps1`)로 EKS / GKE 클러스터 생성부터 Dynatrace, easyTravel 배포까지 끝납니다. 데모가 끝나면 `down.ps1` 로 모두 지웁니다.
 - Classic(JSF)과 Angular 두 가지 frontend, headless Chrome loadgen 2개, problem pattern 자동 순환이 포함됩니다.
 - Dynatrace 에서 호스트·프로세스·서비스·분산 추적·RUM·Kubernetes 클러스터와 Davis problem 을 볼 수 있습니다.
 
@@ -11,6 +11,7 @@ Dynatrace 데모 애플리케이션 **easyTravel** 을 **Amazon EKS** 에 올리
 | 방식 | 상태 | 비고 |
 |---|---|---|
 | **Amazon EKS** (`kubernetes/cluster/eks`) | ✅ 표준 | 이 README 의 모든 내용은 EKS 기준 |
+| **Google GKE Standard** (`kubernetes/cluster/gke`) | ✅ 지원 | 같은 매니페스트, 노출만 L4 LoadBalancer → [`kubernetes/cluster/gke/README.md`](kubernetes/cluster/gke/README.md) |
 | Azure AKS (`kubernetes/overlays/aks`) | ⚠️ 참고용 | 매니페스트만 있음. 미검증 |
 | docker-compose (`docker-compose.yml`) | ❌ 사용 안 함 | upstream 원본. 영문 이미지, Dynatrace 연동 없음 → [docs/upstream-docker.md](docs/upstream-docker.md) |
 | 로컬 PC / Codespaces | ❌ 사용 안 함 | Docker Desktop(WSL2)·kind 에서는 OneAgent cloudNativeFullStack 불가. 로컬 Linux VM 은 리소스 부족 |
@@ -46,6 +47,27 @@ powershell -ExecutionPolicy Bypass -File .\kubernetes\cluster\eks\down.ps1
 ALB 주소는 클러스터를 만들 때마다 바뀝니다. `kubectl -n easytravel get ingress` 로 확인하세요.
 
 클러스터가 떠 있는 동안 EKS·EC2·NAT·ALB 요금이 시간 단위로 나옵니다. 데모가 끝나면 바로 `down` 하세요.
+
+## 빠른 시작 (GKE)
+
+준비물: gcloud CLI(+ `gke-gcloud-auth-plugin`), kubectl, helm, 결제 계정이 연결된 GCP 프로젝트, Dynatrace classic access token 2개. **Google Cloud Shell** 에는 도구가 모두 설치되어 있습니다. 자세한 내용은 [`kubernetes/cluster/gke/README.md`](kubernetes/cluster/gke/README.md).
+
+```powershell
+Copy-Item .\kubernetes\cluster\gke\env.example.ps1 .\kubernetes\cluster\gke\env.local.ps1   # 최초 1회, [CUSTOMIZE] 값 채우기
+. .\kubernetes\cluster\gke\env.local.ps1                                                        # 새 창마다
+powershell -ExecutionPolicy Bypass -File .\kubernetes\cluster\gke\up.ps1                       # 생성 (약 15분)
+powershell -ExecutionPolicy Bypass -File .\kubernetes\cluster\gke\down.ps1                     # 삭제 (약 10분)
+```
+
+bash(Cloud Shell): `source kubernetes/cluster/gke/env.local.sh && ./kubernetes/cluster/gke/up.sh` / `./kubernetes/cluster/gke/down.sh`
+
+| 화면 | 주소 |
+|---|---|
+| Classic (JSF) | `http://<www-lb 외부 IP>/` |
+| Angular | `http://<www-lb 외부 IP>:9079/` |
+| Problem pattern 제어 패널 | `http://<problem-panel-lb 외부 IP>:9090/` |
+
+GKE Ingress 는 80/443 만 열 수 있어 L4 LoadBalancer Service 2개(외부 IP 2개)로 노출합니다. `kubectl -n easytravel get svc www-lb problem-panel-lb` 로 확인하세요. Dynatrace 에는 클러스터 `easytravel-gke`, host group `easytravel-gke` 로 표시되어 EKS 와 구분됩니다. GKE Autopilot 은 cloudNativeFullStack 을 지원하지 않아 **Standard** 모드를 씁니다.
 
 ## 아키텍처
 
@@ -172,10 +194,11 @@ flowchart LR
 ```
 ├── kubernetes/
 │   ├── cluster/eks/        ★ EKS 생성·삭제 스크립트 (up/down, cluster.yaml, env.example.ps1)
+│   ├── cluster/gke/        ★ GKE 생성·삭제 스크립트 (up/down, env.example.ps1/.sh)
 │   ├── base/               ★ easyTravel 매니페스트 (Kustomize)
 │   ├── components/         ★ korean, problem-panel, problem-patterns-manual/delayed, mongodb-content-creator
 │   ├── problem.ps1 / .sh   ★ problem pattern 명령줄 제어
-│   └── overlays/eks/       ★ ALB Ingress   (overlays/aks 는 참고용)
+│   └── overlays/eks, gke/  ★ EKS: ALB Ingress / GKE: L4 LoadBalancer Service   (overlays/aks 는 참고용)
 ├── dynatrace/dynakube.yaml ★ DynaKube v1beta6 cloudNativeFullStack
 ├── i18n/                   ★ 한글 이미지 빌드 (번역 리소스, 패치 도구, Dockerfile)
 ├── .github/workflows/      ★ i18n 추출·빌드·스모크 테스트
@@ -189,6 +212,7 @@ flowchart LR
 | 문서 | 내용 |
 |---|---|
 | [`kubernetes/cluster/eks/README.md`](kubernetes/cluster/eks/README.md) | EKS 준비·생성·확인·삭제·비용·문제 해결 (**먼저 볼 문서**) |
+| [`kubernetes/cluster/gke/README.md`](kubernetes/cluster/gke/README.md) | GKE 준비·생성·확인·삭제·비용·문제 해결, EKS 와 다른 점 |
 | [`kubernetes/README.md`](kubernetes/README.md) | Kustomize 구조, 기존 EKS 클러스터에 수동 배포, 원본 매니페스트 대비 변경점 |
 | [`docs/problem-patterns.md`](docs/problem-patterns.md) | Problem pattern 웹 패널·명령줄·모드 전환·보안 |
 | [`i18n/README.md`](i18n/README.md) | 한글 이미지 빌드 절차와 번역 범위 |
@@ -196,4 +220,4 @@ flowchart LR
 
 ## 출처·라이선스
 
-[Dynatrace/easyTravel-Docker](https://github.com/Dynatrace/easyTravel-Docker) (MIT License) 를 기반으로 Kubernetes 배포, EKS 자동화, 한글화를 추가했습니다. 데모 목적의 개인 repo 이며 Dynatrace 공식 지원 대상이 아닙니다.
+[Dynatrace/easyTravel-Docker](https://github.com/Dynatrace/easyTravel-Docker) (MIT License) 를 기반으로 Kubernetes 배포, EKS·GKE 자동화, 한글화를 추가했습니다. 데모 목적의 개인 repo 이며 Dynatrace 공식 지원 대상이 아닙니다.

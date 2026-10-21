@@ -1,0 +1,22 @@
+# www(nginx)를 외부 L4 Network Load Balancer 로 노출 — EKS ALB 와 같은 접속 방식
+#   http://<EXTERNAL-IP>/        → Classic frontend
+#   http://<EXTERNAL-IP>:9079/   → Angular frontend
+# backend(8080)는 노출하지 않음 (기존 ClusterIP Service www 는 그대로 두고 LB 용 Service 를 별도로 추가)
+apiVersion: v1
+kind: Service
+metadata:
+  name: www-lb
+  labels:
+    app.kubernetes.io/part-of: easytravel
+  annotations:
+    cloud.google.com/l4-rbs: "enabled"          # backend service 기반 외부 패스스루 NLB (GKE 권장 방식)
+spec:
+  type: LoadBalancer
+  externalTrafficPolicy: Cluster
+  selector:
+    app: www
+  ports:
+    - { name: classic, port: 80,   targetPort: classic, protocol: TCP }
+    - { name: angular, port: 9079, targetPort: angular, protocol: TCP }
+  # loadBalancerSourceRanges:                   # [CUSTOMIZE] 접속 허용 IP 제한 권장 (GCP 방화벽 규칙으로 적용됨)
+  #   - x.x.x.x/32

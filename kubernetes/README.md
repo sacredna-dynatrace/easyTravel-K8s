@@ -1,6 +1,6 @@
-# easyTravel on Kubernetes (EKS)
+# easyTravel on Kubernetes (EKS / GKE)
 
-Kustomize로 easyTravel 전체 스택을 배포합니다. 표준 실행 환경은 **Amazon EKS** 입니다 (`overlays/aks` 는 참고용, 미검증). Classic frontend와 Angular frontend를 함께 올리고, Dynatrace Operator(cloudNativeFullStack)로 모니터링합니다.
+Kustomize로 easyTravel 전체 스택을 배포합니다. 표준 실행 환경은 **Amazon EKS** 이고, **Google GKE Standard** 도 지원합니다 (`overlays/aks` 는 참고용, 미검증). Classic frontend와 Angular frontend를 함께 올리고, Dynatrace Operator(cloudNativeFullStack)로 모니터링합니다.
 
 ## 빠른 시작 (EKS, 클러스터 생성부터)
 
@@ -17,6 +17,8 @@ Dynatrace 토큰 2개(Operator, Data Ingest)는 **classic access token(`dt0c01.`
 
 이미 EKS 클러스터가 있다면 아래 "기존 EKS 클러스터에 수동 배포"를 따르세요. `up` 스크립트가 하는 일과 같습니다.
 
+**GKE** 는 [`cluster/gke/README.md`](cluster/gke/README.md) 의 `up` / `down` 스크립트(PowerShell·bash)를 씁니다. 기존 GKE Standard 클러스터라면 아래 1단계(Dynatrace) 후 `kubectl apply -k kubernetes/overlays/gke` 로 배포합니다 (추가 컨트롤러 불필요).
+
 ## 구조
 
 ```
@@ -32,6 +34,7 @@ kubernetes/
 │   ├── loadgen-classic.yaml      #   headless Chrome + problem pattern 순환 담당
 │   └── loadgen-angular.yaml
 ├── cluster/eks/                  # EKS 데모 클러스터 생성·삭제 (eksctl + up/down 스크립트)
+├── cluster/gke/                  # GKE 데모 클러스터 생성·삭제 (gcloud + up/down 스크립트)
 ├── problem.ps1 / problem.sh      # problem pattern 명령줄 제어 (list / on / off / reset)
 ├── components/                   # 필요할 때만 켜는 옵션
 │   ├── korean/                   #   한글 UI 이미지(GHCR -ko)로 교체 → i18n/README.md
@@ -41,6 +44,7 @@ kubernetes/
 │   └── mongodb-content-creator/  #   빈 MongoDB에 데이터 넣는 Job
 └── overlays/
     ├── eks/                      # ALB Ingress (AWS Load Balancer Controller)  ← 표준
+    ├── gke/                      # L4 LoadBalancer Service (www-lb :80/:9079, problem-panel-lb :9090)
     └── aks/                      # App Routing(NGINX) Ingress  (참고용, 미검증)
 dynatrace/
 └── dynakube.yaml                 # DynaKube v1beta6 (cloudNativeFullStack)
@@ -94,10 +98,12 @@ Backend와 frontend는 MongoDB가 뜰 때까지 기다린 뒤 Tomcat을 시작�
 | 환경 | Classic | Angular |
 |---|---|---|
 | EKS | `http://<ALB-DNS>/` | `http://<ALB-DNS>:9079/` |
+| GKE | `http://<www-lb IP>/` | `http://<www-lb IP>:9079/` |
 
 - Overlay 의 `namespace: easytravel` 이 overlay 에서 추가한 Ingress 까지 같은 namespace 로 보냅니다. 이 설정이 없으면 Ingress 가 `default` 에 생겨 `www` Service 를 찾지 못합니다.
 - EKS: ALB 하나를 공유(`group.name`)하고 리스너 포트로 Classic과 Angular를 나눕니다. `kubectl -n easytravel get ingress`로 ALB 주소를 확인하세요.
-- Problem pattern 웹 패널: `http://<ALB-DNS>:9090/` (Secret `problem-panel-auth` 가 먼저 있어야 함. `up` 스크립트가 생성. 수동 배포 시: `kubectl -n easytravel create secret generic problem-panel-auth --from-literal=htpasswd='demo:{PLAIN}<비밀번호>'`)
+- GKE: GKE Ingress 는 80/443 만 지원하므로 L4 LoadBalancer Service 로 노출합니다. `kubectl -n easytravel get svc www-lb problem-panel-lb` 로 외부 IP 를 확인하세요.
+- Problem pattern 웹 패널: `http://<ALB-DNS>:9090/` (GKE: `http://<problem-panel-lb IP>:9090/`) (Secret `problem-panel-auth` 가 먼저 있어야 함. `up` 스크립트가 생성. 수동 배포 시: `kubectl -n easytravel create secret generic problem-panel-auth --from-literal=htpasswd='demo:{PLAIN}<비밀번호>'`)
 - Ingress 없이 빠르게 확인: `kubectl -n easytravel port-forward svc/www 8080:80 9079:9079`
 
 ## 커스터마이즈 포인트 (`[CUSTOMIZE]` 주석)
@@ -106,6 +112,7 @@ Backend와 frontend는 MongoDB가 뜰 때까지 기다린 뒤 Tomcat을 시작�
 |---|---|
 | 테넌트 URL, host group | `dynatrace/dynakube.yaml` |
 | ALB scheme / 접속 허용 IP | `overlays/eks/ingress.yaml` |
+| GKE 접속 허용 IP | `overlays/gke/service-lb.yaml`, `panel-lb.yaml` → `loadBalancerSourceRanges` |
 | Problem pattern 목록 | `base/configmap.yaml` → `ET_PROBLEMS` |
 | Problem pattern 모드 | overlay의 `components`: `problem-panel`(기본) / `problem-patterns-manual` / 둘 다 주석 = 자동 순환 (+`problem-patterns-delayed`) → [docs/problem-patterns.md](../docs/problem-patterns.md) |
 | 한글 UI 사용 | overlay의 `components`에 `../../components/korean` 추가 |
@@ -122,7 +129,7 @@ Backend와 frontend는 MongoDB가 뜰 때까지 기다린 뒤 Tomcat을 시작�
 | Backend replicas | 2 | 1 (plugin 상태가 인스턴스별이라 데모 재현성 우선) |
 | Probe | 없음 | startup / readiness / liveness (TCP) |
 | CPU 아키텍처 | 미지정 | `kubernetes.io/arch: amd64` (Graviton/ARM 노드에 뜨지 않게) |
-| 노출 | nginx LoadBalancer (Angular만) | Ingress (EKS ALB / AKS App Routing) |
+| 노출 | nginx LoadBalancer (Angular만) | Ingress (EKS ALB / AKS App Routing), GKE 는 L4 LoadBalancer Service |
 | Content creator | 일반 Pod | 옵션 Job (component) |
 | 설정 | 매니페스트마다 하드코딩 | ConfigMap / Secret으로 모음 |
 | Service link 환경변수 | 주입됨 | `enableServiceLinks: false` (`*_PORT` 환경변수 충돌 방지) |
@@ -132,4 +139,5 @@ Backend와 frontend는 MongoDB가 뜰 때까지 기다린 뒤 Tomcat을 시작�
 
 ```bash
 kubectl delete -k kubernetes/overlays/eks     # ALB 도 함께 정리됨. 클러스터째 지우려면 cluster/eks/down.ps1
+kubectl delete -k kubernetes/overlays/gke     # LB 외부 IP 도 함께 정리됨. 클러스터째 지우려면 cluster/gke/down.ps1
 ```
